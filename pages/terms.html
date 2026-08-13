@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Mudita Living</title>
+  <meta name="description" content="Terms of Service for Mudita Living coaching and yoga services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --burgundy: #5C1A3A;
+      --dark-burgundy: #3D1028;
+      --gold: #B8882A;
+      --light-gold: #D4A84B;
+      --cream: #F2E8DC;
+      --off-white: #FAF4ED;
+      --muted-brown: #7A6E65;
+      --warm-beige: #DDD0BE;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: #3D1028;
+      background: #FAF4ED;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(242,232,220,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--warm-beige);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 5%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-burgundy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dark-burgundy);
+      background: var(--gold);
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--light-gold); }
+
+    .nav-hamburger { display:none; background:none; border:none; font-size:24px; color:#3D1028; cursor:pointer; padding:4px 8px; line-height:1; }
+    .nav-dropdown { display:none; position:absolute; top:100%; left:0; right:0; background:#F2E8DC; border-bottom:2px solid #B8882A; padding:1rem 5%; z-index:99; }
+    .nav-dropdown.open { display:block; }
+    .nav-dropdown a { display:block; padding:0.75rem 0; font-family:'Jost',sans-serif; font-size:14px; color:#3D1028; text-decoration:none; text-transform:uppercase; letter-spacing:0.1em; border-bottom:1px solid #DDD0BE; }
+    .nav-dropdown a:hover { color:#B8882A; }
+    .nav-dropdown .mob-book { display:block; margin-top:0.75rem; background:#B8882A; color:#3D1028 !important; text-align:center; padding:0.75rem 1rem; border-radius:999px; font-weight:600; border-bottom:none !important; }
+    @media(max-width:768px) { .nav-links,.nav-cta { display:none !important; } .nav-hamburger { display:block; } }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--cream);
+      padding: 140px 5% 80px;
+      text-align: center;
+    }
+    .hero-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-variant: small-caps;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .hero-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted-brown);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto;
+    }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      background: #fff;
+      padding: 60px 5% 80px;
+    }
+    .content-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .notice-box {
+      border-left: 4px solid var(--gold);
+      background: var(--cream);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .notice-box p {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--dark-burgundy);
+      line-height: 1.7;
+    }
+
+    .content-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      margin: 2.5rem 0 0.9rem;
+      line-height: 1.25;
+    }
+    .content-inner h2:first-of-type { margin-top: 0; }
+
+    .content-inner p {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #4A3A32;
+      line-height: 1.85;
+    }
+    .content-inner a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .content-inner a:hover { color: var(--dark-burgundy); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-burgundy);
+      color: var(--cream);
+      padding: 60px 5% 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+      max-width: 1280px;
+      margin: 0 auto 3rem;
+    }
+    .footer-col h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream);
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.5;
+    }
+    .footer-col ul li a:hover { color: var(--light-gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(242,232,220,0.15);
+      padding-top: 1.5rem;
+      text-align: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-bottom p {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(242,232,220,0.65);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero { padding: 120px 5% 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="../index.html">
+        <img src="../assets/images/logo.png" alt="Mudita Living" style="height:48px;" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'" />
+        <span style="display:none;font-family:'Cormorant Garamond',serif;font-size:22px;color:#3D1028;font-weight:600;letter-spacing:0.05em;">Mudita Living</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a class="nav-cta" href="contact.html">Book a Session</a>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">☰</button>
+    </div>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="about.html" onclick="closeHamburger()">About</a>
+      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
+      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
+      <a href="courses.html" onclick="closeHamburger()">Courses</a>
+      <a href="blog.html" onclick="closeHamburger()">Blog</a>
+      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-label">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="hero-subtitle">Last updated: January 2026 &middot; [PLACEHOLDER &mdash; replace with actual terms before launch]</p>
+    <div class="hero-divider"></div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content-wrap">
+    <div class="content-inner">
+
+      <div class="notice-box">
+        <p>&#9888;&#65039; This is a placeholder Terms of Service. Please replace this with legally reviewed terms before launching the website. Contact a legal professional for assistance.</p>
+      </div>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and using Mudita Living's services, you agree to these terms. [Placeholder &mdash; to be completed by legal counsel.]</p>
+
+      <h2>2. Services</h2>
+      <p>Mudita Living offers executive coaching, yoga, and wellness programmes. All services are delivered by Radhika Avanthsa or her trained team. [Placeholder &mdash; to be completed.]</p>
+
+      <h2>3. Payments &amp; Refunds</h2>
+      <p>Payment is processed securely via Stripe. Refund policy details will be added here. [Placeholder &mdash; to be completed.]</p>
+
+      <h2>4. Cancellations</h2>
+      <p>Cancellation policy for sessions and courses will be detailed here. [Placeholder &mdash; to be completed.]</p>
+
+      <h2>5. Disclaimer</h2>
+      <p>Coaching and yoga services are not a substitute for medical or psychological treatment. [Placeholder &mdash; to be completed.]</p>
+
+      <h2>6. Contact</h2>
+      <p>For any questions about these terms, contact: <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a></p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="coaching.html">Executive Coaching</a></li>
+          <li><a href="coaching.html">Menopause Coaching</a></li>
+          <li><a href="coaching.html">Corporate Programmes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Radhika</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="contact.html">Book a Discovery Call</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://instagram.com/muditaliving" target="_blank" rel="noopener">Instagram @muditaliving</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mudita Living &middot; hello@muditaliving.com &middot; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleHamburger(){const dd=document.getElementById('navDropdown');const btn=document.getElementById('navHamburger');const isOpen=dd.classList.toggle('open');btn.textContent=isOpen?'✕':'☰';}
+    function closeHamburger(){document.getElementById('navDropdown').classList.remove('open');document.getElementById('navHamburger').textContent='☰';}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeHamburger();});
+  </script>
+
+</body>
+</html>

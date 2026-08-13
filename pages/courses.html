@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Coaching Packages — Mudita Living | Singapore</title>
+  <meta name="description" content="Yoga Certification, Yoga Therapy, and 1:1 Coaching packages with Radhika Avanthsa. SGD and INR pricing. Installment plans available via Stripe.">
+  <meta property="og:title" content="Courses & Packages — Mudita Living">
+  <meta property="og:description" content="Yoga Certification, Yoga Therapy, and executive coaching programmes. Pay in SGD or INR, with installment options.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://muditaliving.com/pages/courses.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Brand Tokens ─── */
+    :root {
+      --burgundy: #5C1A3A;
+      --dark-burgundy: #3D1028;
+      --gold: #B8882A;
+      --light-gold: #D4A84B;
+      --cream: #F2E8DC;
+      --white: #FFFFFF;
+      --charcoal: #2C2C2C;
+      --shadow: 0 4px 24px rgba(60,16,40,0.10);
+      --radius: 12px;
+      --transition: 0.25s ease;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── Currency Toggle ─── */
+    .price-inr { display: none; }
+    body.inr .price-sgd { display: none; }
+    body.inr .price-inr { display: inline; }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(242,232,220,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184,136,42,0.18);
+    }
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav__logo img {
+      height: 48px;
+      width: auto;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav__links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.93rem;
+      color: var(--dark-burgundy);
+      letter-spacing: 0.03em;
+      transition: color var(--transition);
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__links a.active { color: var(--gold); font-weight: 500; }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px;
+      background: var(--gold);
+      color: var(--white) !important;
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+    }
+    .btn-nav:hover { background: var(--light-gold); transform: translateY(-1px); }
+
+    /* ─── HAMBURGER DROPDOWN ─── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #3D1028;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: #F2E8DC;
+      border-bottom: 2px solid #B8882A;
+      padding: 1rem 5%;
+      z-index: 99;
+    }
+    .nav-dropdown.open { display: block; }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.75rem 0;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: #3D1028;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid #DDD0BE;
+    }
+    .nav-dropdown a:hover { color: #B8882A; }
+    .nav-dropdown .mob-book {
+      display: block;
+      margin-top: 0.75rem;
+      background: #B8882A;
+      color: #3D1028 !important;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+    @media (max-width: 768px) {
+      .nav__links, .btn-nav { display: none !important; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--dark-burgundy);
+      padding: 140px 32px 80px;
+      text-align: center;
+    }
+    .section-label {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero__subtitle {
+      font-family: 'Jost', sans-serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(242,232,220,0.8);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .gold-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto;
+    }
+
+    /* ─── CURRENCY TOGGLE ─── */
+    .currency-bar {
+      background: var(--white);
+      padding: 28px 32px;
+      text-align: center;
+      border-bottom: 1px solid rgba(184,136,42,0.15);
+    }
+    .currency-bar__inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .currency-bar__label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+    .currency-pills {
+      display: flex;
+      gap: 8px;
+    }
+    .pill-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition);
+      min-height: 44px;
+      letter-spacing: 0.04em;
+    }
+    .pill-btn.active {
+      background: var(--gold);
+      color: var(--white);
+    }
+    .pill-btn:hover:not(.active) {
+      background: rgba(184,136,42,0.08);
+    }
+    .currency-bar__note {
+      width: 100%;
+      text-align: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(44,44,44,0.55);
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── SHARED SECTION STYLES ─── */
+    .section { padding: 96px 32px; }
+    .section--cream { background: var(--cream); }
+    .section--white { background: var(--white); }
+    .section--dark { background: var(--dark-burgundy); }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* Two-column course layout */
+    .course-grid {
+      display: grid;
+      grid-template-columns: 60fr 40fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .course-grid--reversed { grid-template-columns: 40fr 60fr; }
+
+    .course-description h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .course-description p {
+      font-size: 1rem;
+      color: var(--charcoal);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .course-bullets {
+      margin-bottom: 28px;
+    }
+    .course-bullets li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+      color: var(--charcoal);
+    }
+    .course-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .format-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid rgba(184,136,42,0.4);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      background: rgba(184,136,42,0.07);
+    }
+    .course-duration {
+      font-size: 0.85rem;
+      color: rgba(44,44,44,0.6);
+      font-style: italic;
+    }
+
+    /* Pricing Card */
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 30px;
+      position: sticky;
+      top: 96px;
+    }
+    .pricing-card--dark {
+      background: var(--dark-burgundy);
+    }
+    .pricing-tier {
+      margin-bottom: 30px;
+    }
+    .pricing-tier:last-child { margin-bottom: 0; }
+    .pricing-tier__label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .pricing-tier__price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--light-gold);
+      color: var(--white);
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .badge--dark {
+      background: var(--dark-burgundy);
+      color: var(--cream);
+    }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid rgba(184,136,42,0.2);
+      margin: 24px 0;
+    }
+    .fine-print {
+      font-size: 0.78rem;
+      color: rgba(44,44,44,0.55);
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 24px;
+      background: var(--dark-burgundy);
+      color: var(--white);
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-primary:hover { background: var(--burgundy); transform: translateY(-1px); }
+    .btn-outline {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 13px 24px;
+      background: transparent;
+      color: var(--dark-burgundy);
+      border: 2px solid var(--dark-burgundy);
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: all var(--transition);
+      min-height: 44px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-outline:hover { background: var(--dark-burgundy); color: var(--white); }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--white);
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+    }
+    .btn-gold:hover { background: var(--light-gold); transform: translateY(-1px); }
+    .btn-cream {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--cream);
+      border: 2px solid rgba(242,232,220,0.5);
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      transition: all var(--transition);
+      min-height: 44px;
+    }
+    .btn-cream:hover { background: rgba(242,232,220,0.1); border-color: var(--cream); }
+
+    /* ─── COACHING PACKAGES ─── */
+    .coaching-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .coaching-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+    .coaching-header p {
+      font-family: 'Jost', sans-serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(242,232,220,0.8);
+      font-weight: 300;
+    }
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .coaching-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .coaching-card--featured {
+      background: var(--gold);
+    }
+    .coaching-card__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--dark-burgundy);
+      color: var(--cream);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .coaching-card__label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .coaching-card--featured .coaching-card__label {
+      color: rgba(61,16,40,0.8);
+    }
+    .coaching-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .coaching-card--featured .coaching-card__title {
+      color: var(--dark-burgundy);
+    }
+    .coaching-card__price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      margin-bottom: 20px;
+    }
+    .coaching-card__features {
+      flex: 1;
+      margin-bottom: 24px;
+    }
+    .coaching-card__features li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 9px;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+    }
+    .coaching-card--featured .coaching-card__features li {
+      color: var(--dark-burgundy);
+    }
+    .coaching-card__features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .coaching-card--featured .coaching-card__features li::before {
+      color: var(--dark-burgundy);
+    }
+    .coaching-card .btn-primary {
+      background: var(--dark-burgundy);
+      color: var(--white);
+    }
+    .coaching-card--featured .btn-primary {
+      background: var(--dark-burgundy);
+      color: var(--cream);
+    }
+    .coaching-card--featured .btn-primary:hover {
+      background: var(--burgundy);
+    }
+
+    /* ─── INSTALLMENT NOTE ─── */
+    .installment-section {
+      text-align: center;
+    }
+    .installment-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      margin-bottom: 16px;
+    }
+    .installment-section p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      font-size: 1rem;
+      color: var(--charcoal);
+      line-height: 1.8;
+    }
+    .installment-checks {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .installment-checks li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+    }
+    .installment-checks li span.check {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* ─── CORPORATE ─── */
+    .corporate-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .corporate-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      margin-bottom: 12px;
+    }
+    .corporate-header p {
+      font-size: 1rem;
+      color: rgba(44,44,44,0.7);
+    }
+    .corporate-features {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .corp-feature {
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+      max-width: 280px;
+      padding: 28px 20px;
+      border: 1px solid rgba(184,136,42,0.2);
+      border-radius: var(--radius);
+    }
+    .corp-feature__icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .corp-feature__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+    }
+    .corporate-note {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      font-size: 0.95rem;
+      color: rgba(44,44,44,0.7);
+      line-height: 1.7;
+    }
+    .corporate-cta { text-align: center; }
+
+    /* ─── FAQ ACCORDION ─── */
+    .faq-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .faq-list { max-width: 740px; margin: 0 auto; }
+    .faq-item {
+      border-top: 1px solid rgba(92,26,58,0.15);
+    }
+    .faq-item:last-child { border-bottom: 1px solid rgba(92,26,58,0.15); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      cursor: pointer;
+      user-select: none;
+      gap: 20px;
+    }
+    .faq-question span:first-child {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark-burgundy);
+      flex: 1;
+    }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(184,136,42,0.4);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: var(--gold);
+      transition: transform var(--transition), color var(--transition), border-color var(--transition);
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-answer p {
+      padding-bottom: 22px;
+      font-size: 0.96rem;
+      color: rgba(44,44,44,0.8);
+      line-height: 1.8;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--dark-burgundy);
+      padding: 72px 32px 32px;
+      color: var(--cream);
+    }
+    .footer__top {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer__brand {
+      margin-bottom: 48px;
+    }
+    .footer__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(242,232,220,0.75);
+      margin-top: 10px;
+    }
+    .footer__cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+    .footer__col h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer__col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer__col ul li a {
+      font-size: 0.9rem;
+      color: rgba(242,232,220,0.7);
+      transition: color var(--transition);
+    }
+    .footer__col ul li a:hover { color: var(--cream); }
+    .footer__bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(242,232,220,0.1);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer__bottom p {
+      font-size: 0.82rem;
+      color: rgba(242,232,220,0.5);
+    }
+    .footer__bottom a {
+      color: rgba(242,232,220,0.6);
+      transition: color var(--transition);
+    }
+    .footer__bottom a:hover { color: var(--cream); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .footer__cols { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 64px 20px; }
+      .hero { padding: 120px 20px 64px; }
+
+      .course-grid,
+      .course-grid--reversed {
+        grid-template-columns: 1fr;
+      }
+      .course-grid--reversed .pricing-card {
+        order: 2;
+      }
+      .course-grid--reversed .course-description {
+        order: 1;
+      }
+      .pricing-card { position: static; }
+
+      .coaching-grid { grid-template-columns: 1fr; }
+
+      .footer__cols { grid-template-columns: repeat(2, 1fr); }
+      .footer { padding: 56px 20px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .currency-bar__inner { flex-direction: column; gap: 12px; }
+      .currency-pills { width: 100%; }
+      .pill-btn { flex: 1; justify-content: center; }
+      .installment-checks { flex-direction: column; align-items: center; gap: 16px; }
+      .footer__cols { grid-template-columns: 1fr; gap: 32px; }
+      .nav__inner { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/images/logo.png" alt="Mudita Living"
+          style="height:48px;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
+        <span style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#3D1028; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
+      </a>
+      <div class="nav__links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/coaching.html">Coaching</a>
+        <a href="../pages/yoga.html">Yoga</a>
+        <a href="../pages/courses.html" class="active">Courses</a>
+        <a href="../pages/blog.html">Blog</a>
+        <a href="../pages/contact.html" class="btn-nav">Book a Session</a>
+      </div>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">&#9776;</button>
+    </div>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="about.html" onclick="closeHamburger()">About</a>
+      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
+      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
+      <a href="courses.html" onclick="closeHamburger()">Courses</a>
+      <a href="blog.html" onclick="closeHamburger()">Blog</a>
+      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero">
+    <span class="section-label">Courses &amp; Programmes</span>
+    <h1>Courses &amp; Programmes</h1>
+    <p class="hero__subtitle">Structured learning for those ready to go deeper.</p>
+    <div class="gold-divider"></div>
+  </section>
+
+  <!-- ═══════════════════════════════ CURRENCY TOGGLE ═══════════════════ -->
+  <div class="currency-bar">
+    <div class="currency-bar__inner">
+      <span class="currency-bar__label">Show prices in:</span>
+      <div class="currency-pills">
+        <button class="pill-btn active" id="btn-sgd" onclick="setCurrency('sgd')">SGD $</button>
+        <button class="pill-btn" id="btn-inr" onclick="setCurrency('inr')">INR ₹</button>
+      </div>
+      <p class="currency-bar__note">All prices include GST where applicable.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ COURSE 1: YOGA CERTIFICATION ══════ -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="course-grid">
+        <!-- LEFT: Description -->
+        <div class="course-description">
+          <span class="section-label">Certification</span>
+          <h2>Yoga Certification Course</h2>
+          <p>A rigorous, traditional certification programme rooted in classical Hatha Yoga. Not a weekend workshop — a full immersion into the philosophy, anatomy, and practice of authentic yoga teaching.</p>
+          <ul class="course-bullets">
+            <li>Classical Hatha Yoga tradition</li>
+            <li>Pancha Kosha philosophy &amp; anatomy</li>
+            <li>Teaching methodology &amp; sequencing</li>
+            <li>Practicum: supervised teaching hours</li>
+          </ul>
+          <div class="format-chips">
+            <span class="chip">Online</span>
+            <span class="chip">Self-paced</span>
+            <span class="chip">Certificate issued</span>
+          </div>
+          <p class="course-duration">[Duration TBD — e.g. 200 hours over 6 months]</p>
+        </div>
+
+        <!-- RIGHT: Pricing Card -->
+        <div class="pricing-card">
+          <div class="pricing-tier">
+            <div class="pricing-tier__label">Full Payment</div>
+            <div class="pricing-tier__price">
+              <span class="price-sgd">S$1,497</span>
+              <span class="price-inr">₹92,000</span>
+            </div>
+            <span class="badge">Best value</span>
+            <!-- NOTE: Replace href with your Stripe Checkout link -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-primary" target="_blank" rel="noopener">
+              Enrol Now — Full Payment
+            </a>
+          </div>
+          <hr class="pricing-divider">
+          <div class="pricing-tier">
+            <div class="pricing-tier__label">Installment Plan</div>
+            <div class="pricing-tier__price">
+              <span class="price-sgd">S$549 &times; 3 months</span>
+              <span class="price-inr">₹31,000 &times; 3 months</span>
+            </div>
+            <!-- NOTE: Replace href with your Stripe Checkout link for installments -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-outline" target="_blank" rel="noopener">
+              Pay in 3 Instalments
+            </a>
+            <p class="fine-print">Installment plans processed via Stripe Payment Links. Contact us to arrange.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ COURSE 2: YOGA THERAPY ═══════════ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="course-grid course-grid--reversed">
+        <!-- LEFT: Pricing Card (reversed layout) -->
+        <div class="pricing-card">
+          <div class="pricing-tier">
+            <div class="pricing-tier__label">Full Payment</div>
+            <div class="pricing-tier__price">
+              <span class="price-sgd">S$2,197</span>
+              <span class="price-inr">₹1,35,000</span>
+            </div>
+            <span class="badge">Best value</span>
+            <!-- NOTE: Replace href with your Stripe Checkout link -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-primary" target="_blank" rel="noopener">
+              Enrol Now — Full Payment
+            </a>
+          </div>
+          <hr class="pricing-divider">
+          <div class="pricing-tier">
+            <div class="pricing-tier__label">3-Month Plan</div>
+            <div class="pricing-tier__price">
+              <span class="price-sgd">S$799 &times; 3</span>
+              <span class="price-inr">₹47,000 &times; 3</span>
+            </div>
+            <!-- NOTE: Replace href with your Stripe Checkout link for 3-month plan -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-outline" target="_blank" rel="noopener">
+              Pay in 3 Instalments
+            </a>
+          </div>
+          <hr class="pricing-divider">
+          <div class="pricing-tier">
+            <div class="pricing-tier__label">6-Month Plan</div>
+            <div class="pricing-tier__price">
+              <span class="price-sgd">S$419 &times; 6</span>
+              <span class="price-inr">₹25,000 &times; 6</span>
+            </div>
+            <!-- NOTE: Replace href with your Stripe Checkout link for 6-month plan -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-outline" target="_blank" rel="noopener">
+              Pay in 6 Instalments
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Description -->
+        <div class="course-description">
+          <span class="section-label">Therapy Training</span>
+          <h2>Yoga Therapy Course</h2>
+          <p>Evidence-based yoga therapy for working with specific conditions — stress, chronic pain, hormonal health, and nervous system dysregulation. Designed for yoga teachers, healthcare professionals, and dedicated practitioners.</p>
+          <ul class="course-bullets">
+            <li>Therapeutic applications of yoga</li>
+            <li>Nervous system &amp; somatic work</li>
+            <li>Hormonal health &amp; menopause</li>
+            <li>Case study practicum</li>
+          </ul>
+          <div class="format-chips">
+            <span class="chip">Online</span>
+            <span class="chip">Mentored</span>
+            <span class="chip">Certificate issued</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ COACHING PACKAGES ════════════════ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="coaching-header">
+        <h2>1:1 Coaching Packages</h2>
+        <p>Private coaching designed around you. Not a template — a transformation.</p>
+      </div>
+      <div class="coaching-grid">
+
+        <!-- STARTER -->
+        <div class="coaching-card">
+          <div class="coaching-card__label">Starter</div>
+          <div class="coaching-card__title">4 &times; 1:1 Sessions</div>
+          <div class="coaching-card__price">
+            <span class="price-sgd">[PRICE TBD]</span>
+            <span class="price-inr">[PRICE TBD]</span>
+          </div>
+          <ul class="coaching-card__features">
+            <li>4 private coaching sessions (60 min each)</li>
+            <li>Intake assessment</li>
+            <li>Personalised goals</li>
+            <li>Email support between sessions</li>
+          </ul>
+          <!-- NOTE: Replace href with your Stripe Checkout link -->
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-primary" target="_blank" rel="noopener">
+            Get Started
+          </a>
+        </div>
+
+        <!-- CORE (featured) -->
+        <div class="coaching-card coaching-card--featured">
+          <div class="coaching-card__badge">Most Popular</div>
+          <div class="coaching-card__label">Core</div>
+          <div class="coaching-card__title">8 &times; 1:1 Sessions</div>
+          <div class="coaching-card__price">
+            <span class="price-sgd">[PRICE TBD]</span>
+            <span class="price-inr">[PRICE TBD]</span>
+          </div>
+          <ul class="coaching-card__features">
+            <li>Everything in Starter</li>
+            <li>8 private sessions</li>
+            <li>Mid-programme review</li>
+            <li>Recorded sessions</li>
+          </ul>
+          <!-- NOTE: Replace href with your Stripe Checkout link -->
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-primary" target="_blank" rel="noopener">
+            Enrol in Core
+          </a>
+        </div>
+
+        <!-- TRANSFORMATION -->
+        <div class="coaching-card">
+          <div class="coaching-card__label">Transformation</div>
+          <div class="coaching-card__title">12 &times; 1:1 Sessions + Group</div>
+          <div class="coaching-card__price">
+            <span class="price-sgd">[PRICE TBD]</span>
+            <span class="price-inr">[PRICE TBD]</span>
+          </div>
+          <ul class="coaching-card__features">
+            <li>Everything in Core</li>
+            <li>12 sessions</li>
+            <li>Monthly group coaching call</li>
+            <li>Priority scheduling</li>
+            <li>30-day post-programme support</li>
+          </ul>
+          <!-- NOTE: Replace href with your Stripe Checkout link -->
+          <a href="https://buy.stripe.com/PLACEHOLDER" class="btn-primary" target="_blank" rel="noopener">
+            Begin Transformation
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ INSTALLMENT NOTE ════════════════ -->
+  <section class="section section--cream">
+    <div class="container installment-section">
+      <h3>Flexible Payment Options</h3>
+      <p>All coaching packages and courses are available in 3 or 6-month installment plans, processed securely via Stripe. Contact us to set up your personalised payment plan.</p>
+      <ul class="installment-checks">
+        <li><span class="check">&#10003;</span> Secure Stripe processing</li>
+        <li><span class="check">&#10003;</span> SGD and INR accepted</li>
+      </ul>
+      <a href="../pages/contact.html" class="btn-gold">Contact Us to Arrange Instalments</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CORPORATE ════════════════════════ -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="corporate-header">
+        <h2>Corporate &amp; Group Programmes</h2>
+        <p>Bespoke wellbeing and leadership programmes for teams.</p>
+      </div>
+      <div class="corporate-features">
+        <div class="corp-feature">
+          <div class="corp-feature__icon">&#127775;</div>
+          <div class="corp-feature__title">Leadership coaching for teams</div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature__icon">&#129496;</div>
+          <div class="corp-feature__title">Yoga &amp; stress management workshops</div>
+        </div>
+        <div class="corp-feature">
+          <div class="corp-feature__icon">&#127968;</div>
+          <div class="corp-feature__title">Executive wellbeing retreats</div>
+        </div>
+      </div>
+      <p class="corporate-note">All corporate programmes are custom-scoped and priced. Get in touch to discuss your team's needs.</p>
+      <div class="corporate-cta">
+        <a href="mailto:hello@muditaliving.com" class="btn-gold">hello@muditaliving.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ MINI FAQ ════════════════════════ -->
+  <section class="section section--cream">
+    <div class="container faq-section">
+      <h3>Quick Answers</h3>
+      <div class="faq-list">
+
+        <div class="faq-item" id="faq-0">
+          <div class="faq-question" onclick="toggleFaq(0)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(0)">
+            <span>Are the courses fully online?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes — all courses are delivered online and self-paced, with live mentoring sessions. You can join from anywhere in the world.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-1">
+          <div class="faq-question" onclick="toggleFaq(1)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(1)">
+            <span>How do I pay?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We accept payment via Stripe — all major credit and debit cards. We accept SGD and INR, and prices are shown in both currencies above.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-2">
+          <div class="faq-question" onclick="toggleFaq(2)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(2)">
+            <span>Can I pay in installments?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. All courses and packages are available in 3 or 6-month installment plans via Stripe Payment Links. Contact us to arrange yours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="../assets/images/logo.png" alt="Mudita Living" style="height:40px;filter:brightness(0) invert(1);opacity:0.85;" onerror="this.style.display='none'">
+        <p class="footer__tagline">Where ancient wisdom meets modern life.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../pages/coaching.html">1:1 Coaching</a></li>
+            <li><a href="../pages/yoga.html">Yoga Classes</a></li>
+            <li><a href="../pages/courses.html">Courses</a></li>
+            <li><a href="../pages/contact.html">Corporate</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="../pages/blog.html">Blog</a></li>
+            <li><a href="../pages/courses.html">Programmes</a></li>
+            <li><a href="../pages/about.html">About Radhika</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li><a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a></li>
+            <li><a href="https://instagram.com/muditaliving" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="../pages/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Mudita Living &nbsp;&middot;&nbsp; <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a></p>
+        <p>Designed with intention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════ JS ═══════════════════════════════ -->
+  <script>
+    /* ── Hamburger Dropdown ── */
+    function toggleHamburger() {
+      const dd = document.getElementById('navDropdown');
+      const btn = document.getElementById('navHamburger');
+      const isOpen = dd.classList.toggle('open');
+      btn.textContent = isOpen ? '✕' : '☰';
+    }
+    function closeHamburger() {
+      document.getElementById('navDropdown').classList.remove('open');
+      document.getElementById('navHamburger').textContent = '☰';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeHamburger();
+    });
+
+    /* ── Currency Toggle ── */
+    function setCurrency(currency) {
+      if (currency === 'inr') {
+        document.body.classList.add('inr');
+        document.getElementById('btn-inr').classList.add('active');
+        document.getElementById('btn-sgd').classList.remove('active');
+      } else {
+        document.body.classList.remove('inr');
+        document.getElementById('btn-sgd').classList.add('active');
+        document.getElementById('btn-inr').classList.remove('active');
+      }
+    }
+
+    /* ── FAQ Accordion ── */
+    function toggleFaq(index) {
+      var item = document.getElementById('faq-' + index);
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</body>
+</html>

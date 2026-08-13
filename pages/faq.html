@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Coaching, Yoga & Courses | Mudita Living</title>
+  <meta name="description" content="Frequently asked questions about executive coaching, menopause coaching, Traditional Hatha Yoga, courses, and payments at Mudita Living with Radhika Avanthsa." />
+  <link rel="canonical" href="https://muditaliving.com/pages/faq.html" />
+  <link rel="stylesheet" href="../assets/brand.css" />
+  <style>
+  /* Brand tokens — embedded for local file compatibility */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
+  :root {
+    --burgundy: #5C1A3A;
+    --dark-burgundy: #3D1028;
+    --gold: #B8882A;
+    --light-gold: #D4A84B;
+    --pale-gold: #E8D49A;
+    --cream: #F2E8DC;
+    --cream-2: #F7F0E8;
+    --off-white: #FAF4ED;
+    --muted-brown: #7A6E65;
+    --warm-beige: #DDD0BE;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', system-ui, sans-serif;
+    --text-hero: clamp(42px, 6vw, 64px);
+    --text-h1: clamp(28px, 4vw, 40px);
+    --text-h2: clamp(22px, 3vw, 28px);
+    --text-h3: 16px;
+    --text-body: 15px;
+    --text-caption: 12px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 2px 8px rgba(61,16,40,0.08);
+    --shadow-md: 0 4px 20px rgba(61,16,40,0.12);
+    --shadow-lg: 0 8px 40px rgba(61,16,40,0.16);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); font-size: var(--text-body); color: var(--muted-brown); background-color: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  h1,h2,h3,h4 { font-family: var(--font-display); color: var(--dark-burgundy); line-height: 1.2; }
+  .btn-primary { display:inline-block; background:var(--gold); color:var(--dark-burgundy); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:14px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:background 0.2s,transform 0.2s; }
+  .btn-primary:hover { background:var(--light-gold); transform:translateY(-1px); }
+  .btn-outline { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:13px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:all 0.2s; }
+  .btn-outline:hover { background:var(--gold); color:var(--dark-burgundy); }
+  .section-label { font-family:var(--font-body); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+  .divider-gold { width:48px; height:2px; background:var(--gold); margin:1rem 0; }
+</style>
+  <style>
+
+    /* ── NAV ── */
+    nav { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 5%; background: rgba(242,232,220,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--warm-beige); }
+    .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--dark-burgundy); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-burgundy); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { font-size: 13px !important; padding: 10px 24px !important; }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #3D1028;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: #F2E8DC;
+      border-bottom: 2px solid #B8882A;
+      padding: 1rem 5%;
+      z-index: 99;
+    }
+    .nav-dropdown.open { display: block; }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.75rem 0;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: #3D1028;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid #DDD0BE;
+    }
+    .nav-dropdown a:hover { color: #B8882A; }
+    .nav-dropdown .mob-book {
+      display: block;
+      margin-top: 0.75rem;
+      background: #B8882A;
+      color: #3D1028 !important;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none !important; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ── BASE ── */
+    section { padding: var(--space-lg) 5%; }
+    .section-inner { max-width: 800px; margin: 0 auto; }
+
+    /* ── PAGE HERO ── */
+    .page-hero { min-height: 45vh; display: flex; align-items: flex-end; background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 65%, #7A2550 100%); padding: 8rem 5% 4rem; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .page-hero-content { position: relative; max-width: 680px; }
+    .page-hero .eyebrow { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--light-gold); margin-bottom: 1rem; display: block; }
+    .page-hero h1 { font-size: var(--text-hero); color: var(--cream); font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
+    .page-hero h1 em { color: var(--light-gold); font-style: italic; }
+    .page-hero p { font-size: 17px; color: rgba(242,232,220,0.8); max-width: 520px; line-height: 1.8; }
+
+    /* ── FAQ SECTION ── */
+    .faq-section { background: var(--cream); }
+    .faq-section .section-inner { max-width: 800px; }
+
+    /* Category heading */
+    .faq-category { margin-bottom: 2.5rem; }
+    .faq-category:not(:first-child) { margin-top: 3rem; }
+    .faq-category-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;
+    }
+    .faq-category-title {
+      font-family: var(--font-display); font-size: clamp(22px, 3vw, 28px);
+      color: var(--dark-burgundy); font-weight: 400;
+    }
+    .faq-category-line { flex: 1; height: 1px; background: var(--warm-beige); }
+    .faq-category-icon { font-size: 1.4rem; }
+
+    /* Accordion */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: var(--off-white); border-radius: var(--radius-md); border: 1px solid var(--warm-beige); overflow: hidden; transition: box-shadow 0.2s; }
+    .faq-item.open { box-shadow: var(--shadow-sm); border-color: rgba(184,136,42,0.3); }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 1.5rem;
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      color: var(--dark-burgundy); text-align: left; gap: 1rem;
+      transition: color 0.2s; min-height: 44px;
+    }
+    .faq-q:hover { color: var(--burgundy); }
+    .faq-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      border: 1.5px solid var(--gold); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 400; flex-shrink: 0;
+      transition: transform 0.3s, background 0.2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--dark-burgundy); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+      font-size: 14px; line-height: 1.85; color: var(--muted-brown);
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 1.5rem 1.4rem; }
+    .faq-a a { color: var(--gold); text-decoration: none; }
+    .faq-a a:hover { text-decoration: underline; }
+    .faq-a strong { color: var(--dark-burgundy); font-weight: 600; }
+
+    /* ── CTA ── */
+    .cta-section { background: var(--dark-burgundy); text-align: center; padding: var(--space-lg) 5%; }
+    .cta-section h2 { font-size: var(--text-h1); color: var(--cream); max-width: 560px; margin: 0.5rem auto 1.25rem; }
+    .cta-section p { max-width: 420px; margin: 0 auto 2.5rem; font-size: 16px; line-height: 1.8; color: rgba(242,232,220,0.8); }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark-burgundy); color: rgba(242,232,220,0.7); padding: 3rem 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    footer p { font-size: 13px; line-height: 1.8; }
+    footer a { color: var(--light-gold); text-decoration: none; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div style="position:fixed; top:0; left:0; right:0; z-index:100;">
+    <nav>
+      <a class="nav-logo" href="../index.html">
+        <img src="../assets/images/logo.png" alt="Mudita Living"
+          style="height:48px;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
+        <span style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#3D1028; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="btn-primary nav-cta">Book a Session</a>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">☰</button>
+    </nav>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="about.html" onclick="closeHamburger()">About</a>
+      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
+      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
+      <a href="courses.html" onclick="closeHamburger()">Courses</a>
+      <a href="blog.html" onclick="closeHamburger()">Blog</a>
+      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h1>Everything you<br/><em>need to know.</em></h1>
+      <p>Can't find your question? <a href="contact.html" style="color:var(--light-gold); text-decoration:underline;">Reach out directly</a> — Radhika personally reads every message.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+
+      <!-- COACHING -->
+      <div class="faq-category">
+        <div class="faq-category-header">
+          <span class="faq-category-icon">🎯</span>
+          <h2 class="faq-category-title">Coaching</h2>
+          <div class="faq-category-line"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is Executive Human Performance Coaching?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Executive Human Performance Coaching is a specialised form of professional coaching that works with the whole person — not just strategy or habits — to build sustainable, high-level performance. Rather than optimising how much you do, it focuses on the quality of <em>how</em> you operate: your energy, decisions, relationships, identity, and inner alignment. Radhika draws on the Pancha Kosha framework, neuroscience, and ICF-accredited coaching methodology to do this work.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How is this different from regular life coaching?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Most life coaching works at the level of goals, mindset, and accountability. Radhika's approach goes deeper — integrating yoga philosophy, somatic awareness, and the Pancha Kosha model alongside formal ICF coaching methodology. This means the work addresses not just what you think, but how you carry yourself, what your body is telling you, and what values you're actually operating from (vs. the ones you'd like to be). It's also specifically designed for high-performing professionals — the language, pace, and depth reflect that context.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is Menopause Coaching and who is it for?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Menopause Coaching is specialist support for women navigating perimenopause and menopause — particularly high-achieving women who are managing significant professional responsibilities at the same time. It combines hormonal health education, emotional intelligence work, somatic practices, and practical workplace navigation. It is not therapy, and it works alongside (never against) any medical treatment you're receiving. It's for any woman in this transition who wants intelligent, compassionate support — and who refuses to disappear quietly into it.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How long does a coaching programme last?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">There are no fixed-length packages — programmes are designed around each client's goals and context. That said, most 1:1 coaching engagements run for 3–6 months, with fortnightly sessions of 60–90 minutes. Some clients continue beyond that; others complete intensive shorter programmes. Radhika will give you her honest recommendation during your discovery call.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do you offer 1:1 and group sessions?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — both. 1:1 coaching is available for individuals. Small group coaching programmes (typically 4–6 people) run periodically — these are curated carefully so participants are at a similar life stage or facing comparable challenges, which makes the group dynamic as valuable as the individual work. Dates and availability for group programmes are announced by email and on the website when they open.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do you work with corporate teams?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes. Radhika designs custom corporate programmes for leadership teams and organisations — including leadership development programmes, executive coaching for senior individuals, wellbeing workshops, and keynote speaking. Corporate engagements are custom-priced. To enquire, email <a href="mailto:hello@muditaliving.com?subject=Corporate%20Enquiry">hello@muditaliving.com</a> with a brief description of your team size and what you're looking for.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOGA -->
+      <div class="faq-category">
+        <div class="faq-category-header">
+          <span class="faq-category-icon">🪷</span>
+          <h2 class="faq-category-title">Yoga</h2>
+          <div class="faq-category-line"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What style of yoga do you teach?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Traditional Hatha Yoga — drawn from the classical texts (Hatha Yoga Pradipika, Shiva Samhita, Gheranda Samhita) and taught within a lineage-based framework. This is not hot yoga, power yoga, vinyasa flow, or any modern fitness variant. Traditional Hatha is precise, methodical, and deeply intelligent — and it works at a level that most modern yoga doesn't reach. For therapeutic applications, Yoga Therapy sessions use asana, pranayama, mudra, meditation, and Yoga Nidra tailored to your specific condition.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Is this yoga suitable for beginners?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Absolutely. Traditional Hatha is accessible to beginners — in fact, it's often easier to learn properly from the start than to unlearn habits acquired in less traditional settings. If you're new to yoga, Radhika's team will start with foundation practices and build from there. No prior experience, flexibility, or fitness level is required. The only prerequisite is genuine curiosity.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How are online yoga sessions conducted?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">All online sessions are conducted live via Zoom — not pre-recorded. You'll need a mat, a reasonably quiet space, and a stable internet connection. Sessions are conducted in real-time so the teacher can observe, correct, and adjust what you're doing — the quality of guidance is comparable to in-person practice. You'll receive a Zoom link and any preparation notes by email before your first session.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Where are in-person classes held?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">In-person yoga sessions in Singapore are conducted by Radhika's trained specialist team at a central Singapore location (CBD area). The exact address is shared on booking confirmation. Sessions are available on weekdays and weekends. To enquire about availability, use the <a href="contact.html">contact form</a> or email hello@muditaliving.com.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is Yoga Therapy?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yoga Therapy is the intentional, individualised application of yoga practices for health and healing — distinct from a yoga class. It begins with a thorough intake consultation covering your health history, current conditions, lifestyle, and goals. From there, a bespoke therapeutic protocol is designed using asana, pranayama, mudra, meditation, and Yoga Nidra. It works with a wide range of conditions including chronic stress, anxiety, sleep disruption, hormonal imbalance, back pain, and nervous system dysregulation. It always works alongside (never against) any existing medical treatment.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COURSES -->
+      <div class="faq-category">
+        <div class="faq-category-header">
+          <span class="faq-category-icon">📚</span>
+          <h2 class="faq-category-title">Courses</h2>
+          <div class="faq-category-line"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is included in the Yoga Certification Course?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">The Yoga Certification Course is a comprehensive foundational programme in Traditional Hatha Yoga — covering asana, pranayama, yoga philosophy (including the Hatha Yoga Pradipika), anatomy and physiology, teaching methodology, and the Pancha Kosha framework. It includes a combination of pre-recorded video modules, live Q&A sessions with Radhika and her team, a teaching practicum with feedback, and a final assessment. Lifetime access to all course materials is included. See the <a href="courses.html">Courses page</a> for full details and pricing.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Are the courses fully online?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — both the Yoga Certification Course and Yoga Therapy Course are fully online. This includes both self-paced video content and scheduled live sessions via Zoom. The live sessions are timed to be accessible for students in Singapore (SGT, UTC+8) and India (IST, UTC+5:30). If you are in a significantly different timezone, reach out and we'll discuss what's workable.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do I get a certificate after completing the course?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — a certificate of completion is issued by Mudita Living upon successful completion of all coursework and assessment. We are currently working toward formal external accreditation. If specific accreditation is important for your purposes (e.g. teaching at a specific school, insurance requirements), please <a href="contact.html">reach out before enrolling</a> so we can give you an honest answer about whether our certification currently meets those requirements.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I pay in installments?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes. Installment plans (3 or 6 monthly payments) are available for both courses and are processed securely through Stripe Payment Links. You get immediate full access to course materials upon your first payment. Installment pricing and options are shown on the <a href="courses.html">Courses page</a>. Full payment options are also available, and typically offer a small saving over the installment total.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAYMENTS & BOOKING -->
+      <div class="faq-category">
+        <div class="faq-category-header">
+          <span class="faq-category-icon">💳</span>
+          <h2 class="faq-category-title">Payments & Booking</h2>
+          <div class="faq-category-line"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What currencies do you accept?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a"><strong>SGD (Singapore Dollar) and INR (Indian Rupee)</strong> — both accepted with no geo-blocking. Payments are processed through Stripe, which handles currency at the card level. Singapore-issued cards are charged in SGD; India-issued cards are charged in INR. If you hold a card from another country, Stripe will handle conversion through your bank. There are no hidden currency surcharges from our end.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I pay?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">All payments are processed through <strong>Stripe</strong> — the same secure payment infrastructure used by Shopify, Amazon, and thousands of global businesses. Stripe accepts all major credit and debit cards (Visa, Mastercard, Amex), and in India also accepts RuPay. No account creation required. You'll receive a payment receipt by email immediately after checkout. For coaching programmes and private sessions, you'll receive a Stripe payment link directly from Radhika after your discovery call.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I pay in installments?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — installment plans are available for courses (3 or 6 monthly payments) and can also be arranged for coaching programmes. Installments are managed through Stripe Payment Links — your first payment is due at enrolment, and subsequent amounts are automatically collected monthly. You receive full access immediately. See the <a href="courses.html">Courses page</a> for specific installment pricing.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Is the discovery call really free?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — completely free, no credit card required, no commitment. The discovery call is a genuine conversation, not a sales call in disguise. Radhika uses it to understand where you are, ask the questions that matter, and give you an honest read on whether working together makes sense. If it's not the right fit, she'll tell you — and often point you toward something more useful. <a href="contact.html">Book yours here.</a></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What is your refund policy?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">For courses: a 7-day satisfaction guarantee from the date of enrolment — if the course isn't right for you, contact us within 7 days for a full refund, no questions asked. After 7 days, refunds are considered on a case-by-case basis. For coaching programmes: terms are discussed and agreed before payment. Radhika is fair — if something genuinely prevents you from continuing, reach out and we'll find a workable solution together.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GENERAL -->
+      <div class="faq-category">
+        <div class="faq-category-header">
+          <span class="faq-category-icon">🌏</span>
+          <h2 class="faq-category-title">General</h2>
+          <div class="faq-category-line"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Where is Radhika based?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Radhika is based in Singapore and works with clients globally — primarily Singapore and India, with clients also in the UK, the Middle East, and Southeast Asia. Almost all coaching and yoga sessions are conducted online, making location largely irrelevant for most services.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do you work with clients outside Singapore and India?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — Radhika works with clients globally. The primary markets are Singapore and India, and pricing is set in SGD and INR, but there is no geographical restriction on who can work with her. Coaching, yoga, and courses are all available internationally online. If you're in a significantly different timezone, mention it during the enquiry and scheduling options will be discussed.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How do I get started?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">The best starting point for almost everyone is a free discovery call — 30 minutes, no commitment. It gives Radhika a sense of where you are and what you're looking for, and gives you a real sense of her approach before committing to anything. <a href="contact.html">Book your discovery call here.</a> If you already know which course you want to enrol in, you can go directly to the <a href="courses.html">Courses page</a> and enrol. Any questions first? <a href="contact.html">Send a message</a> — responses arrive within one business day.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner" style="max-width:640px; margin:0 auto; text-align:center;">
+      <span class="section-label" style="color:var(--light-gold);">Still have questions?</span>
+      <div class="divider-gold" style="margin:0.75rem auto;"></div>
+      <h2>Ask Radhika directly.</h2>
+      <p>Every message is read personally. Expect a response within 48 hours, Monday–Friday.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Get in Touch</a>
+        <a href="contact.html" class="btn-outline" style="border-color:rgba(212,168,75,0.5); color:var(--light-gold);">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--cream); margin-bottom:0.5rem;">Ancient Wisdom, Modern Practices</p>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:12px;">
+      © 2026 Mudita Living · Radhika Avanthsa · Singapore & India<br/>
+      <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all open items
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      // Open this one if it wasn't open
+      if (!isOpen) item.classList.add('open');
+    }
+    function toggleHamburger() {
+      const dd = document.getElementById('navDropdown');
+      const btn = document.getElementById('navHamburger');
+      const isOpen = dd.classList.toggle('open');
+      btn.textContent = isOpen ? '✕' : '☰';
+    }
+    function closeHamburger() {
+      document.getElementById('navDropdown').classList.remove('open');
+      document.getElementById('navHamburger').textContent = '☰';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeHamburger();
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>

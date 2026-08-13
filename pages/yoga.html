@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traditional Hatha Yoga & Yoga Therapy | Mudita Living Singapore</title>
+  <meta name="description" content="Traditional Hatha Yoga and Yoga Therapy with Radhika Avanthsa — online globally, in-person Singapore. Not fitness yoga. Ancient practice for restoration, regulation, and healing." />
+  <meta name="keywords" content="hatha yoga therapy online, yoga therapy singapore, traditional hatha yoga, online yoga classes globally, yoga for nervous system" />
+  <meta property="og:title" content="Traditional Hatha Yoga & Therapy | Mudita Living" />
+  <meta property="og:description" content="Not fitness yoga. Classical Hatha Yoga and Yoga Therapy — online globally, in-person Singapore. Rooted in ancient lineage." />
+  <meta property="og:image" content="../assets/images/og-yoga.jpg" />
+  <link rel="canonical" href="https://muditaliving.com/pages/yoga.html" />
+  <link rel="stylesheet" href="../assets/brand.css" />
+  <style>
+  /* Brand tokens — embedded for local file compatibility */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
+  :root {
+    --burgundy: #5C1A3A;
+    --dark-burgundy: #3D1028;
+    --gold: #B8882A;
+    --light-gold: #D4A84B;
+    --pale-gold: #E8D49A;
+    --cream: #F2E8DC;
+    --cream-2: #F7F0E8;
+    --off-white: #FAF4ED;
+    --muted-brown: #7A6E65;
+    --warm-beige: #DDD0BE;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', system-ui, sans-serif;
+    --text-hero: clamp(42px, 6vw, 64px);
+    --text-h1: clamp(28px, 4vw, 40px);
+    --text-h2: clamp(22px, 3vw, 28px);
+    --text-h3: 16px;
+    --text-body: 15px;
+    --text-caption: 12px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 2px 8px rgba(61,16,40,0.08);
+    --shadow-md: 0 4px 20px rgba(61,16,40,0.12);
+    --shadow-lg: 0 8px 40px rgba(61,16,40,0.16);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); font-size: var(--text-body); color: var(--muted-brown); background-color: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  h1,h2,h3,h4 { font-family: var(--font-display); color: var(--dark-burgundy); line-height: 1.2; }
+  .btn-primary { display:inline-block; background:var(--gold); color:var(--dark-burgundy); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:14px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:background 0.2s,transform 0.2s; }
+  .btn-primary:hover { background:var(--light-gold); transform:translateY(-1px); }
+  .btn-outline { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:13px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:all 0.2s; }
+  .btn-outline:hover { background:var(--gold); color:var(--dark-burgundy); }
+  .section-label { font-family:var(--font-body); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+  .divider-gold { width:48px; height:2px; background:var(--gold); margin:1rem 0; }
+</style>
+  <style>
+
+    /* ── NAV ── */
+    nav { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 5%; background: rgba(242,232,220,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--warm-beige); }
+    .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--dark-burgundy); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-burgundy); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { font-size: 13px !important; padding: 10px 24px !important; }
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #3D1028;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: #F2E8DC;
+      border-bottom: 2px solid #B8882A;
+      padding: 1rem 5%;
+      z-index: 99;
+    }
+    .nav-dropdown.open { display: block; }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.75rem 0;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: #3D1028;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid #DDD0BE;
+    }
+    .nav-dropdown a:hover { color: #B8882A; }
+    .nav-dropdown .mob-book {
+      display: block;
+      margin-top: 0.75rem;
+      background: #B8882A;
+      color: #3D1028 !important;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none !important; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ── BASE ── */
+    section { padding: var(--space-lg) 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header h2 { font-size: var(--text-h1); margin: 0.5rem 0 1rem; }
+    .section-header p { max-width: 580px; margin: 0 auto; font-size: 16px; line-height: 1.8; }
+
+    /* ── HERO ── */
+    .hero { min-height: 85vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 60%, #7A2550 100%); padding: 8rem 5% 5rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-content { position: relative; max-width: 680px; }
+    .hero-eyebrow { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--light-gold); margin-bottom: 1.25rem; display: block; }
+    .hero h1 { font-size: var(--text-hero); color: var(--cream); font-weight: 300; line-height: 1.1; margin-bottom: 1.25rem; }
+    .hero h1 em { color: var(--light-gold); font-style: italic; }
+    .hero-sub { font-size: 18px; color: rgba(242,232,220,0.82); max-width: 540px; line-height: 1.75; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── 2. WHAT MAKES IT DIFFERENT ── */
+    .different { background: var(--off-white); }
+    .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .diff-card { background: var(--cream); border-radius: var(--radius-lg); padding: 2.5rem 2rem; border-top: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
+    .diff-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .diff-card h3 { font-size: 20px; color: var(--dark-burgundy); margin-bottom: 0.75rem; }
+    .diff-card p { font-size: 14px; line-height: 1.75; }
+
+    /* ── 3. ONLINE CLASSES ── */
+    .online-section { background: var(--cream); }
+    .online-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .online-text { display: flex; flex-direction: column; gap: 1.5rem; }
+    .online-text h2 { font-size: var(--text-h1); }
+    .online-text p { font-size: 15px; line-height: 1.85; }
+    .online-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .online-features li { display: flex; gap: 0.75rem; font-size: 14px; line-height: 1.65; }
+    .online-features li::before { content: '✦'; color: var(--gold); font-size: 10px; flex-shrink: 0; margin-top: 4px; }
+
+    /* ── 4. IN-PERSON SINGAPORE ── */
+    .inperson { background: var(--dark-burgundy); }
+    .inperson-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .inperson-text { display: flex; flex-direction: column; gap: 1.5rem; }
+    .inperson-text .section-label { color: var(--light-gold); }
+    .inperson-text h2 { font-size: var(--text-h1); color: var(--cream); }
+    .inperson-text p { font-size: 15px; color: rgba(242,232,220,0.8); line-height: 1.85; }
+    .location-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(184,136,42,0.25); border-radius: var(--radius-md); padding: 1.5rem; }
+    .location-card h4 { font-family: var(--font-display); font-size: 17px; font-style: italic; color: var(--light-gold); margin-bottom: 0.5rem; }
+    .location-card p { font-size: 13px; color: rgba(242,232,220,0.7); line-height: 1.7; }
+    .team-note { display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(184,136,42,0.08); border-left: 3px solid var(--gold); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; }
+    .team-note p { font-size: 13px; color: rgba(242,232,220,0.75); line-height: 1.65; }
+    .inperson-image { position: relative; }
+
+    /* ── 5. YOGA THERAPY ── */
+    .therapy { background: var(--cream-2); }
+    .therapy-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
+    .therapy-left { display: flex; flex-direction: column; gap: 1.5rem; }
+    .therapy-left h2 { font-size: var(--text-h1); }
+    .therapy-left p { font-size: 15px; line-height: 1.85; }
+    .therapy-conditions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .condition-chip { background: var(--off-white); border: 1px solid var(--warm-beige); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 13px; color: var(--dark-burgundy); display: flex; align-items: center; gap: 0.5rem; }
+    .condition-chip::before { content: '🌿'; font-size: 12px; }
+    .therapy-right { display: flex; flex-direction: column; gap: 1.5rem; }
+    .therapy-approach { background: var(--off-white); border-radius: var(--radius-lg); padding: 2rem; border-top: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
+    .therapy-approach h3 { font-size: 18px; color: var(--dark-burgundy); margin-bottom: 1rem; }
+    .approach-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .approach-list li { font-size: 13px; line-height: 1.6; display: flex; gap: 0.5rem; }
+    .approach-list li::before { content: '✦'; color: var(--gold); font-size: 9px; flex-shrink: 0; margin-top: 4px; }
+
+    /* ── 6. CLASS FORMATS ── */
+    .formats { background: var(--off-white); }
+    .formats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .format-card { background: var(--cream); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 1rem; transition: box-shadow 0.2s, transform 0.2s; }
+    .format-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .format-card-icon { font-size: 2rem; }
+    .format-card-tag { font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .format-card h3 { font-size: 22px; color: var(--dark-burgundy); }
+    .format-card p { font-size: 14px; line-height: 1.7; flex: 1; }
+    .format-card .format-detail { font-size: 12px; color: var(--muted-brown); background: var(--off-white); border-radius: var(--radius-sm); padding: 0.5rem 0.75rem; display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; }
+
+    /* ── 7. TESTIMONIALS ── */
+    .testimonials { background: var(--cream); }
+    .testimonials-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .testimonial-card { background: var(--off-white); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 1rem; position: relative; }
+    .quote-mark { font-family: var(--font-display); font-size: 56px; color: var(--gold); opacity: 0.2; line-height: 0.8; }
+    .testimonial-card blockquote { font-family: var(--font-display); font-size: 16px; font-style: italic; color: var(--dark-burgundy); line-height: 1.65; }
+    .testimonial-author { border-top: 1px solid var(--warm-beige); padding-top: 0.75rem; }
+    .author-name { font-size: 13px; font-weight: 600; color: var(--dark-burgundy); display: block; }
+    .author-role { font-size: 12px; color: var(--muted-brown); }
+
+    /* ── CTA ── */
+    .cta-section { background: var(--cream-2); text-align: center; }
+    .cta-section h2 { font-size: var(--text-h1); max-width: 580px; margin: 0.5rem auto 1.25rem; }
+    .cta-section p { max-width: 480px; margin: 0 auto 2.5rem; font-size: 16px; line-height: 1.8; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark-burgundy); color: rgba(242,232,220,0.7); padding: 3rem 5%; text-align: center; }
+    footer p { font-size: 13px; line-height: 1.8; }
+    footer a { color: var(--light-gold); text-decoration: none; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .diff-grid, .online-layout, .inperson-layout, .therapy-layout, .formats-grid, .testimonials-row { grid-template-columns: 1fr; }
+      .therapy-conditions { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+    }
+    @media (max-width: 480px) { input, select, textarea { font-size: 16px !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div style="position:fixed; top:0; left:0; right:0; z-index:100;">
+    <nav>
+      <a class="nav-logo" href="../index.html">
+        <img src="../assets/images/logo.png" alt="Mudita Living"
+          style="height:48px;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
+        <span style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#3D1028; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="yoga.html" class="active">Yoga</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="btn-primary nav-cta">Book a Session</a>
+      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">☰</button>
+    </nav>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="about.html" onclick="closeHamburger()">About</a>
+      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
+      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
+      <a href="courses.html" onclick="closeHamburger()">Courses</a>
+      <a href="blog.html" onclick="closeHamburger()">Blog</a>
+      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
+    </div>
+  </div>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Hatha Yoga & Yoga Therapy</span>
+      <h1>Traditional Hatha<br/>Yoga &<br/><em>Therapy.</em></h1>
+      <p class="hero-sub">Not fitness yoga. Ancient practice designed to restore, regulate, and reconnect — online globally, and in-person in Singapore via Radhika's trained team.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Book a Session</a>
+        <a href="courses.html" class="btn-outline">Explore Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHAT MAKES THIS DIFFERENT -->
+  <section class="different">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">What Makes This Different</span>
+        <div class="divider-gold" style="margin:0.75rem auto;"></div>
+        <h2>This is not the yoga you've tried before.</h2>
+        <p>Modern studio yoga and Traditional Hatha Yoga share a name and very little else. Here's the distinction — and why it matters.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-icon">📜</div>
+          <h3>Rooted in Classical Lineage</h3>
+          <p>Traditional Hatha Yoga is drawn from the original texts — the Hatha Yoga Pradipika, the Shiva Samhita, and the Gheranda Samhita. Not a fitness adaptation. The real thing, taught with the rigour and reverence it deserves.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🧬</div>
+          <h3>The Pancha Kosha Lens</h3>
+          <p>Every session is understood through the five-layer body model — physical, energetic, mental, wisdom, and spirit. This means your practice reaches further than the poses, into how you actually function as a whole person.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🩺</div>
+          <h3>Therapeutic at the Core</h3>
+          <p>Whether you're managing stress, regulating a nervous system running in overdrive, working with a chronic condition, or supporting hormonal health — this yoga is designed to do something, not just perform something.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ONLINE CLASSES -->
+  <section class="online-section">
+    <div class="section-inner">
+      <div class="online-layout">
+        <!-- Replace with: assets/images/yoga-online.jpg -->
+        <div id="online-session-image" style="width:100%; aspect-ratio:4/3; background:#F2E8DC; border:2px dashed #B8882A; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; min-height:280px;">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+            <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+          </svg>
+          <span style="font-family:'Jost',sans-serif; font-size:11px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">Online Session Photo</span>
+        </div>
+        <div class="online-text">
+          <span class="section-label">Online · Globally Available</span>
+          <div class="divider-gold"></div>
+          <h2>Practise from anywhere in the world.</h2>
+          <p>All yoga sessions are available online via Zoom — designed so that the quality of your practice doesn't depend on where you happen to live. Students join from Singapore, India, the UK, the Middle East, and beyond.</p>
+          <p>Sessions are intimate, personal, and held in real-time — not pre-recorded modules. Radhika and her team teach each session live, so you receive the guidance and correction that makes Classical Hatha practice transformative.</p>
+          <ul class="online-features">
+            <li>1:1 private sessions available globally</li>
+            <li>Small group classes — curated for depth, not scale</li>
+            <li>Schedules accommodate Singapore (SGT) and India (IST) time zones</li>
+            <li>No prior yoga experience required for beginner sessions</li>
+            <li>Consistent teacher — same practitioner each session for continuity</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Book an Online Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. IN-PERSON SINGAPORE -->
+  <section class="inperson">
+    <div class="section-inner">
+      <div class="inperson-layout">
+        <div class="inperson-text">
+          <span class="section-label">In-Person · Singapore</span>
+          <div class="divider-gold" style="background:var(--gold);"></div>
+          <h2>In-person sessions<br/>in Singapore.</h2>
+          <p>For those based in or visiting Singapore, in-person Traditional Hatha Yoga and Yoga Therapy sessions are available through Radhika's trained specialist team.</p>
+          <div class="team-note">
+            <span style="font-size:1.2rem;">🤝</span>
+            <p>In-person sessions in Singapore are conducted by Radhika's trained and certified team — teachers she has personally selected and oversees, working within the Mudita Living framework and standards.</p>
+          </div>
+          <div class="location-card">
+            <h4>Location</h4>
+            <p>Singapore CBD and central locations — specific studio address shared on booking confirmation. Sessions available on weekdays and weekends.</p>
+          </div>
+          <div class="location-card" style="margin-top:0.75rem;">
+            <h4>How to book</h4>
+            <p>Use the contact form or email hello@muditaliving.com — specify "In-Person Singapore" and your preferred schedule. The team will confirm availability and venue within 24 hours.</p>
+          </div>
+          <a href="contact.html" class="btn-primary" style="align-self:flex-start;">Book In-Person Session</a>
+        </div>
+        <!-- Replace with: assets/images/yoga-inperson.jpg -->
+        <div class="inperson-image">
+          <div id="inperson-image" style="width:100%; aspect-ratio:3/4; background:#F2E8DC; border:2px dashed #B8882A; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; min-height:280px;">
+            <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span style="font-family:'Jost',sans-serif; font-size:11px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">In-Person Session Photo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. YOGA THERAPY -->
+  <section class="therapy">
+    <div class="section-inner">
+      <div class="therapy-layout">
+        <div class="therapy-left">
+          <span class="section-label">Yoga Therapy</span>
+          <div class="divider-gold"></div>
+          <h2>Yoga as medicine.<br/>Applied with precision.</h2>
+          <p>Yoga Therapy is the intentional, individualised application of yoga practices for health, wellbeing, and healing. It is not a yoga class with modifications — it is a bespoke therapeutic protocol, designed around your specific condition and goals.</p>
+          <p>Radhika draws on her training in Yoga Therapy and her understanding of the Pancha Kosha model to design sessions that address the root — not just the symptom. Whether you're working with stress, anxiety, chronic pain, hormonal disruption, or burnout, there is a yoga therapy approach for it.</p>
+          <a href="courses.html" class="btn-outline" style="align-self:flex-start;">Explore Yoga Therapy Courses</a>
+          <h3 style="font-size:16px; color:var(--dark-burgundy); margin-top:0.5rem;">Conditions commonly supported:</h3>
+          <div class="therapy-conditions">
+            <div class="condition-chip">Chronic stress & anxiety</div>
+            <div class="condition-chip">Burnout recovery</div>
+            <div class="condition-chip">Insomnia & sleep disruption</div>
+            <div class="condition-chip">Hormonal imbalance</div>
+            <div class="condition-chip">Perimenopause & menopause</div>
+            <div class="condition-chip">Lower back & joint pain</div>
+            <div class="condition-chip">Nervous system dysregulation</div>
+            <div class="condition-chip">Autoimmune support</div>
+          </div>
+        </div>
+        <div class="therapy-right">
+          <!-- Replace with: assets/images/yoga-therapy.jpg -->
+          <div id="therapy-image" style="width:100%; aspect-ratio:3/4; background:#F2E8DC; border:2px dashed #B8882A; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; min-height:280px;">
+            <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span style="font-family:'Jost',sans-serif; font-size:11px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">Yoga Therapy Session</span>
+          </div>
+          <div class="therapy-approach">
+            <h3>How a Yoga Therapy session works</h3>
+            <ul class="approach-list">
+              <li>Initial consultation — deep assessment of your health history, goals, and current state</li>
+              <li>Bespoke practice protocol — asana, pranayama, mudra, meditation, and Yoga Nidra as appropriate</li>
+              <li>Home practice — simple daily practices to support between sessions</li>
+              <li>Ongoing refinement — protocols evolve as your condition and capacity change</li>
+              <li>Available 1:1 online globally and in-person Singapore</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CLASS FORMATS -->
+  <section class="formats">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">How to Work Together</span>
+        <div class="divider-gold" style="margin:0.75rem auto;"></div>
+        <h2>Find your format</h2>
+        <p>Four ways to engage — choose what fits your life, your goals, and your schedule.</p>
+      </div>
+      <div class="formats-grid">
+        <div class="format-card">
+          <div class="format-card-icon">🧘</div>
+          <span class="format-card-tag">Private · Most popular</span>
+          <h3>1:1 Private Sessions</h3>
+          <p>The most personalised option. Your practice is built entirely around you — your body, your history, your goals. Full attention, real progression, and the depth that only comes from one-on-one work.</p>
+          <span class="format-detail">⏱ 60–90 min · Online or Singapore</span>
+        </div>
+        <div class="format-card">
+          <div class="format-card-icon">👥</div>
+          <span class="format-card-tag">Group · Max 6 students</span>
+          <h3>Small Group Classes</h3>
+          <p>Traditional Hatha Yoga in small, carefully curated groups — intimate enough for real guidance, communal enough for the energy that practice in community creates. Available online.</p>
+          <span class="format-detail">⏱ 75 min · Online · Max 6 students</span>
+        </div>
+        <div class="format-card">
+          <div class="format-card-icon">🏢</div>
+          <span class="format-card-tag">Corporate · Custom</span>
+          <h3>Corporate Yoga Programmes</h3>
+          <p>Yoga and mindfulness for teams — designed as genuine wellness interventions, not token initiatives. Morning practices, lunchtime sessions, and multi-week wellbeing programmes available.</p>
+          <span class="format-detail">⏱ 30–90 min · Online or in-person Singapore</span>
+        </div>
+        <div class="format-card">
+          <div class="format-card-icon">🩺</div>
+          <span class="format-card-tag">Therapeutic · 1:1 only</span>
+          <h3>Yoga Therapy Sessions</h3>
+          <p>Individual therapeutic yoga for specific health conditions. Begins with a full intake consultation. Works alongside (never against) any existing medical care. Deeply evidence-informed.</p>
+          <span class="format-detail">⏱ 90 min initial · 60 min ongoing · Online or Singapore</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Student Stories</span>
+        <div class="divider-gold" style="margin:0.75rem auto;"></div>
+        <h2>From those who practice here</h2>
+      </div>
+      <div class="testimonials-row">
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <blockquote>"I had done yoga for years and thought I knew what it was. Radhika's teaching showed me I'd only scratched the surface. It's completely changed how I understand my own body and energy — and how I manage my stress at work."</blockquote>
+          <div class="testimonial-author">
+            <span class="author-name">[Student Name]</span>
+            <span class="author-role">Marketing Director · Singapore</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <blockquote>"I started yoga therapy for chronic back pain and insomnia. After 8 weeks I was sleeping through the night for the first time in two years. I wasn't expecting that — but the approach just works at a level that exercise and physio hadn't reached."</blockquote>
+          <div class="testimonial-author">
+            <span class="author-name">[Student Name]</span>
+            <span class="author-role">Consultant · Mumbai, India</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <blockquote>"The online sessions are genuinely as good as in-person — Radhika's team has figured out how to make it intimate and attentive. I practice from London and feel completely held. Worth every minute."</blockquote>
+          <div class="testimonial-author">
+            <span class="author-name">[Student Name]</span>
+            <span class="author-role">Banker · London, UK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <span class="section-label">Ready to begin?</span>
+      <div class="divider-gold" style="margin:0.75rem auto;"></div>
+      <h2>Book your first session.</h2>
+      <p>Whether you're new to yoga or deepening an existing practice, we'll find the right starting point for where you are.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Book a Yoga Session</a>
+        <a href="courses.html" class="btn-outline">Explore Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--cream); margin-bottom:0.5rem;">Ancient Wisdom, Modern Practices</p>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:12px;">
+      © 2026 Mudita Living · Radhika Avanthsa · Singapore & India<br/>
+      <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleHamburger() {
+      const dd = document.getElementById('navDropdown');
+      const btn = document.getElementById('navHamburger');
+      const isOpen = dd.classList.toggle('open');
+      btn.textContent = isOpen ? '✕' : '☰';
+    }
+    function closeHamburger() {
+      document.getElementById('navDropdown').classList.remove('open');
+      document.getElementById('navHamburger').textContent = '☰';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeHamburger();
+    });
+  </script>
+</body>
+</html>

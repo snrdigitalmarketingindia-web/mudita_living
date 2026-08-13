@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudita Living — Nav & Footer Snippet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BRAND TOKENS ===== */
+    :root {
+      --burgundy: #5C1A3A;
+      --dark-burgundy: #3D1028;
+      --gold: #B8882A;
+      --light-gold: #D4A84B;
+      --cream: #F2E8DC;
+      --white: #FFFFFF;
+      --charcoal: #2C2C2C;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: var(--charcoal);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== DEVELOPER BANNER ===== */
+    .dev-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: var(--gold);
+      color: var(--dark-burgundy);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 10px 24px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .dev-banner strong { font-weight: 700; }
+    .dev-banner code {
+      background: rgba(61, 16, 40, 0.15);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      /* Offset for the dev banner (approx 40px) */
+      top: 40px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(242, 232, 220, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184, 136, 42, 0.2);
+    }
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav__logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav__links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dark-burgundy);
+      transition: color 0.2s;
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__cta {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--gold);
+      color: var(--white) !important;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.8125rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav__cta:hover {
+      background: var(--light-gold);
+      transform: translateY(-1px);
+      color: var(--white) !important;
+    }
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark-burgundy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav__hamburger.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+      background: var(--cream);
+    }
+    .nav__hamburger.is-open span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+      background: var(--cream);
+    }
+
+    /* Mobile overlay */
+    .nav__overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--dark-burgundy);
+      z-index: 1050;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .nav__overlay.is-open {
+      display: flex;
+      opacity: 1;
+    }
+    .nav__overlay a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav__overlay a:hover { color: var(--light-gold); }
+    .nav__overlay .nav__cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+
+    /* ===== DEMO BODY ===== */
+    .demo-body {
+      /* Push content below banner + nav */
+      padding-top: calc(40px + 72px + 80px);
+      padding-bottom: 80px;
+      padding-left: 32px;
+      padding-right: 32px;
+      background: var(--cream);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 24px;
+    }
+    .demo-body__arrows {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .demo-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: var(--dark-burgundy);
+    }
+    .demo-body p {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--charcoal);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .demo-body__note {
+      background: var(--white);
+      border: 1px solid rgba(184, 136, 42, 0.35);
+      border-radius: 6px;
+      padding: 24px 32px;
+      max-width: 640px;
+      text-align: left;
+    }
+    .demo-body__note h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .demo-body__note ul {
+      list-style: disc;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .demo-body__note ul li {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    .demo-body__note code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8125rem;
+      background: rgba(92, 26, 58, 0.08);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: var(--burgundy);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark-burgundy);
+      padding: 72px 32px 40px;
+      border-top: 1px solid rgba(184, 136, 42, 0.25);
+    }
+    .footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+    .footer__col h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer__col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer__col ul li a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(242, 232, 220, 0.7);
+      transition: color 0.2s;
+    }
+    .footer__col ul li a:hover { color: var(--light-gold); }
+    .footer__bottom {
+      border-top: 1px solid rgba(184, 136, 42, 0.2);
+      padding-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .footer__bottom p {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8125rem;
+      color: rgba(242, 232, 220, 0.5);
+    }
+    .footer__bottom a {
+      color: rgba(242, 232, 220, 0.65);
+      transition: color 0.2s;
+    }
+    .footer__bottom a:hover { color: var(--light-gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav__links { gap: 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+      .nav__hamburger { display: flex; }
+
+      .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav__inner { padding: 0 20px; }
+      .demo-body { padding-left: 20px; padding-right: 20px; }
+      .footer { padding: 56px 20px 32px; }
+      .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== DEVELOPER BANNER (not to be copied) ===== -->
+  <div class="dev-banner" role="note">
+    <strong>DEVELOPER SNIPPET FILE</strong> — Copy the nav and footer sections below for new pages.
+    Replace <code>../</code> paths with the correct relative path for your page's depth.
+    This banner is NOT part of the snippet.
+  </div>
+
+  <!-- ===== NAV: COPY FROM HERE ===== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Mudita Living — Home">
+        <img src="../assets/images/logo.png" alt="Mudita Living" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'">
+        <span style="display:none">Mudita Living</span>
+      </a>
+      <div class="nav__links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/coaching.html">Coaching</a>
+        <a href="../pages/yoga.html">Yoga</a>
+        <a href="../pages/courses.html">Courses</a>
+        <a href="../pages/blog.html">Blog</a>
+        <a href="../pages/contact.html" class="nav__cta">Book a Session</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/coaching.html">Coaching</a>
+    <a href="../pages/yoga.html">Yoga</a>
+    <a href="../pages/courses.html">Courses</a>
+    <a href="../pages/blog.html">Blog</a>
+    <a href="../pages/contact.html" class="nav__cta">Book a Session</a>
+  </div>
+
+  <!-- Nav JS — include this script block immediately after the nav overlay -->
+  <script>
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var overlay = document.getElementById('navOverlay');
+      var isOpen = false;
+
+      function openMenu() {
+        isOpen = true;
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        isOpen = false;
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function () {
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      overlay.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen) closeMenu();
+      });
+    })();
+  </script>
+  <!-- ===== NAV: COPY TO HERE ===== -->
+
+
+  <!-- ===== DEMO BODY — DO NOT COPY — for visual context only ===== -->
+  <main class="demo-body">
+    <p class="demo-body__arrows">← NAV IS ABOVE &nbsp;|&nbsp; FOOTER IS BELOW →</p>
+    <h2>Developer Reference Snippet</h2>
+    <p>This file exists so developers can copy the nav and footer into any new page with consistent markup and styles. The content between nav and footer is your page's unique content.</p>
+    <div class="demo-body__note">
+      <h3>How to use this snippet</h3>
+      <ul>
+        <li>Copy everything between <code>&lt;!-- NAV: COPY FROM HERE --&gt;</code> and <code>&lt;!-- NAV: COPY TO HERE --&gt;</code> into the top of your new page's <code>&lt;body&gt;</code>.</li>
+        <li>Copy everything between <code>&lt;!-- FOOTER: COPY FROM HERE --&gt;</code> and <code>&lt;!-- FOOTER: COPY TO HERE --&gt;</code> just before your closing <code>&lt;/body&gt;</code> tag.</li>
+        <li>Copy the nav and footer <code>&lt;style&gt;</code> rules into your page's <code>&lt;style&gt;</code> block, along with the brand token variables (<code>:root { --burgundy: ... }</code>).</li>
+        <li>Adjust all <code>../pages/</code> and <code>../assets/</code> paths to match your page's directory depth.</li>
+        <li>Include the Google Fonts <code>&lt;link&gt;</code> tag in your page <code>&lt;head&gt;</code>.</li>
+        <li>Add <code>padding-top: 72px</code> (or <code>112px</code>) to your first content section to clear the fixed nav.</li>
+      </ul>
+    </div>
+  </main>
+  <!-- ===== END DEMO BODY ===== -->
+
+
+  <!-- ===== FOOTER: COPY FROM HERE ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../pages/coaching.html">Executive Coaching</a></li>
+            <li><a href="../pages/coaching.html">Menopause Coaching</a></li>
+            <li><a href="../pages/coaching.html">Corporate Programmes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="../pages/blog.html">Blog</a></li>
+            <li><a href="../pages/about.html#faq">FAQ</a></li>
+            <li><a href="../pages/about.html">About Radhika</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="../pages/contact.html">Book a Discovery Call</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram (@muditaliving)</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="../pages/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Mudita Living · <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a> · All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== FOOTER: COPY TO HERE ===== -->
+
+</body>
+</html>
