@@ -75,13 +75,14 @@
    RESET
 ───────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: 17px;
   color: var(--muted-brown);
   background-color: var(--cream);
-  line-height: 1.75;
+  line-height: 1.8;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -89,6 +90,73 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+/* ─────────────────────────────────────────
+   PHOTO REPLACE LABEL (global)
+───────────────────────────────────────── */
+.photo-label {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(0,0,0,0.62);
+  color: #FFD580;
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: 4px;
+  z-index: 20; pointer-events: none; white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────
+   PAGE PHOTO HERO (shared across all pages)
+───────────────────────────────────────── */
+.page-photo-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center 30%;
+  background-color: var(--dark-burgundy);
+}
+.page-photo-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top right,
+    rgba(30,8,18,0.88) 0%,
+    rgba(30,8,18,0.55) 50%,
+    rgba(30,8,18,0.18) 100%
+  );
+}
+.page-photo-hero__content {
+  position: relative; z-index: 2;
+  padding: calc(var(--nav-height) + 5rem) 7% 5rem;
+  max-width: 720px;
+  width: 100%;
+}
+.page-photo-hero__content .section-label { color: var(--gold); margin-bottom: 1rem; display: block; }
+.page-photo-hero__content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 600; color: #fff;
+  line-height: 1.1; margin-bottom: 1.25rem;
+}
+.page-photo-hero__content h1 em { font-style: italic; color: var(--light-gold); }
+.page-photo-hero__content p {
+  font-size: 17px; color: rgba(255,255,255,0.78);
+  line-height: 1.8; margin-bottom: 2rem; max-width: 560px;
+}
+.page-photo-hero__content .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.page-photo-hero__chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 1.5rem; }
+.page-photo-hero__chip {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1.5px solid rgba(184,136,42,0.7);
+  color: var(--light-gold);
+  padding: 7px 18px; border-radius: 999px;
+  background: rgba(184,136,42,0.12);
+}
 
 /* ─────────────────────────────────────────
    TYPOGRAPHY
@@ -103,7 +171,7 @@ h1 { font-size: var(--text-h1); font-weight: 300; }
 h2 { font-size: var(--text-h2); font-weight: 400; }
 h3 { font-size: var(--text-h3); font-weight: 500; }
 
-p { color: var(--muted-brown); line-height: 1.75; }
+p { color: var(--muted-brown); line-height: 1.8; font-size: 17px; }
 
 /* Section labels */
 .section-label {
@@ -165,7 +233,7 @@ p { color: var(--muted-brown); line-height: 1.75; }
 .section-header p {
   max-width: 560px;
   margin: 0 auto;
-  font-size: 34px;
+  font-size: 17px;
   line-height: 1.8;
 }
 section { padding: var(--space-lg) 0; }
@@ -181,7 +249,7 @@ section { padding: var(--space-lg) 0; }
   color: var(--dark-burgundy);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 15px 36px;
@@ -204,7 +272,7 @@ section { padding: var(--space-lg) 0; }
   color: var(--cream);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 14px 36px;
@@ -227,7 +295,7 @@ section { padding: var(--space-lg) 0; }
   color: var(--gold);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 14px 36px;
@@ -579,6 +647,13 @@ section { padding: var(--space-lg) 0; }
 }
 
 /* ─────────────────────────────────────────
+   CAROUSEL GLOBAL FIX
+───────────────────────────────────────── */
+.testimonial-carousel { overflow: hidden; }
+.tc-track { display: flex; width: 100%; }
+.tc-slide { min-width: 100%; flex-shrink: 0; }
+
+/* ─────────────────────────────────────────
    TESTIMONIAL CARDS
 ───────────────────────────────────────── */
 .testimonial-card {
@@ -604,9 +679,9 @@ section { padding: var(--space-lg) 0; }
 }
 .testimonial-card p {
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: clamp(18px, 2vw, 22px);
   font-style: italic;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--dark-burgundy);
   margin-bottom: 1.5rem;
 }
@@ -800,7 +875,7 @@ section { padding: var(--space-lg) 0; }
   border: none;
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 39px;
+  font-size: 20px;
   font-weight: 500;
   color: var(--dark-burgundy);
   transition: color var(--ease);
@@ -819,7 +894,7 @@ section { padding: var(--space-lg) 0; }
   flex-shrink: 0;
   transition: border-color var(--ease), background var(--ease), transform 0.3s ease;
   color: var(--muted-brown);
-  font-size: 34px;
+  font-size: 16px;
   font-weight: 300;
 }
 .faq-question.is-open .faq-icon {
@@ -836,7 +911,7 @@ section { padding: var(--space-lg) 0; }
 .faq-answer.is-open { max-height: 1000px; }
 .faq-answer-inner {
   padding: 0 0 1.75rem;
-  font-size: 31px;
+  font-size: 17px;
   line-height: 1.8;
   color: var(--muted-brown);
 }
@@ -862,7 +937,7 @@ section { padding: var(--space-lg) 0; }
   border: 1.5px solid var(--warm-beige);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
-  font-size: 31px;
+  font-size: 17px;
   color: var(--dark-burgundy);
   transition: border-color var(--ease), box-shadow var(--ease);
   outline: none;
@@ -1061,7 +1136,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .hero-actions .btn-outline { width: 100%; justify-content: center; }
 
   /* Forms */
-  .form-control { font-size: 34px !important; }
+  .form-control { font-size: 16px !important; }
 }
 
 @media (max-width: 480px) {

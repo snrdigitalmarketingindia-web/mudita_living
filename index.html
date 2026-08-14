@@ -182,6 +182,7 @@
     .services-section {
       background: #1a0a12;
       padding: 5rem 5%;
+      overflow: hidden;
     }
     .services-section .sec-header {
       text-align: center; margin-bottom: 3rem;
@@ -267,6 +268,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 520px;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
     .split-section--flip { direction: rtl; }
     .split-section--flip > * { direction: ltr; }
@@ -285,7 +289,8 @@
       background: var(--cream);
       display: flex; flex-direction: column;
       justify-content: center;
-      padding: 5rem 7%;
+      padding: 4rem 6%;
+      min-width: 0;
     }
     .split-text--dark { background: var(--dark-burgundy); }
     .split-text--dark .section-label { color: var(--gold); }
@@ -331,28 +336,29 @@
       margin: 0.5rem 0 0;
     }
 
-    .tc-outer { max-width: 860px; margin: 0 auto; position: relative; }
-    .tc-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .tc-outer { max-width: 860px; margin: 0 auto; position: relative; overflow: hidden; }
+    .tc-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); width: 100%; }
     .tc-slide {
       min-width: 100%;
+      flex-shrink: 0;
       display: flex; flex-direction: column;
       align-items: center; text-align: center;
-      padding: 0 2rem;
+      padding: 0 3rem;
     }
     .tc-quote-mark {
       font-family: var(--font-display);
-      font-size: 80px; line-height: 0.6;
+      font-size: 100px; line-height: 0.6;
       color: var(--pale-gold);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       display: block;
     }
     .tc-quote {
       font-family: var(--font-display);
-      font-size: clamp(18px, 2.2vw, 24px);
+      font-size: clamp(22px, 2.8vw, 32px);
       font-style: italic; font-weight: 300;
       color: var(--dark-burgundy);
-      line-height: 1.7;
-      max-width: 680px;
+      line-height: 1.75;
+      max-width: 700px;
       margin: 0 auto 2.5rem;
     }
     .tc-photo {
@@ -427,19 +433,22 @@
     @media (max-width: 900px) {
       .bento-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: 400px 280px 280px;
+        grid-template-rows: auto;
       }
-      .bento-card--large { grid-row: auto; }
+      .bento-card { min-height: 300px; }
+      .bento-card--large { min-height: 400px; grid-row: auto; }
       .split-section { grid-template-columns: 1fr; }
       .split-section--flip { direction: ltr; }
-      .split-img { height: 320px; }
-      .split-text { padding: 3.5rem 7%; }
+      .split-img { height: 320px; min-height: 280px; }
+      .split-text { padding: 3rem 5%; }
       .stats-band__item { border-right: none; border-bottom: 1px solid var(--warm-beige); }
       .stats-band__item:last-child { border-bottom: none; }
     }
     @media (max-width: 600px) {
-      .home-hero__content { left: 5%; right: 5%; }
-      .home-hero__title { font-size: clamp(32px, 8vw, 48px); }
+      .home-hero__content { left: 5%; right: 5%; max-width: 90%; }
+      .home-hero__title { font-size: clamp(30px, 8vw, 46px); }
+      .solution-pills { padding: 0 2%; }
+      .stats-band__inner { padding: 0 4%; }
     }
   </style>
 </head>
