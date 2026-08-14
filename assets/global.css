@@ -452,7 +452,7 @@ section { padding: var(--space-lg) 0; }
    HERO SHARED STYLES
 ───────────────────────────────────────── */
 .page-hero {
-  background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 65%, #7A2550 100%);
+  background: linear-gradient(135deg, #0D3B3E 0%, var(--deep-teal) 65%, #0E7077 100%);
   padding: 7rem 5% 5rem;
   text-align: center;
   position: relative;
@@ -665,7 +665,7 @@ section { padding: var(--space-lg) 0; }
    FOOTER
 ───────────────────────────────────────── */
 .site-footer {
-  background: var(--dark-burgundy);
+  background: #0B2E31;
   position: relative;
   overflow: hidden;
 }
