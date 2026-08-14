@@ -44,8 +44,8 @@
     }).join('');
 
     const logoImg = `<img src="${root}assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'" />
-      <span class="nav-logo-text" style="display:none">Mudita Living</span>`;
+      onerror="this.style.display='none'" />
+      <span class="nav-logo-text">Mudita Living</span>`;
 
     return `
 <nav class="ml-nav ${isHome ? 'is-transparent' : 'inner-page'}" id="mlNav" role="navigation" aria-label="Main">

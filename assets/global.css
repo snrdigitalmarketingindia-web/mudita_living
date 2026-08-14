@@ -302,8 +302,6 @@ section { padding: var(--space-lg) 0; }
   letter-spacing: 0.03em;
   transition: color var(--ease);
 }
-.ml-nav.is-transparent .nav-logo-text { color: var(--cream); }
-
 /* Nav links */
 .nav-links {
   display: flex;
