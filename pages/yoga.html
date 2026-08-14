@@ -15,16 +15,17 @@
   <style>
     /* ── PAGE-LEVEL STYLES ── */
 
-    /* Hero — left-aligned */
+    /* Hero — full-width centered */
     .yoga-hero {
       background: linear-gradient(135deg, #3D1028 0%, #5C1A3A 65%, #7A2550 100%);
       min-height: 80vh;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: center;
       padding: calc(var(--nav-height) + 4rem) 5% 5rem;
       position: relative;
       overflow: hidden;
-      text-align: left;
+      text-align: center;
       margin-top: 0;
     }
     .yoga-hero::before {
@@ -46,7 +47,8 @@
     .yoga-hero__content {
       position: relative;
       z-index: 1;
-      max-width: 680px;
+      max-width: var(--max-width);
+      width: 100%;
     }
     .yoga-hero .hero-eyebrow {
       display: block;
