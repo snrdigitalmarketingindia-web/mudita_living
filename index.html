@@ -8,89 +8,438 @@
   <link rel="canonical" href="https://muditaliving.com/">
   <link rel="stylesheet" href="assets/global.css">
   <style>
-    /* ── HOMEPAGE ONLY ── */
 
-    /* Pillars section */
-    .pillars-section { background: var(--cream); }
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .pillar-card {
-      background: var(--off-white);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      border: 1px solid var(--warm-beige);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .pillar-card::after {
-      content: '';
+    /* ── PHOTO REPLACE LABEL ── */
+    .photo-label {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+      top: 10px; left: 10px;
+      background: rgba(0,0,0,0.62);
+      color: #FFD580;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 4px;
+      z-index: 10;
+      pointer-events: none;
+      white-space: nowrap;
     }
-    .pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .pillar-card:hover::after { transform: scaleX(1); }
-    .pillar-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
-    .pillar-card h3 {
+
+    /* ══ HERO ══ */
+    .home-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: var(--dark-burgundy);
+    }
+    .home-hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    /* gradient: dark bottom-left fading to transparent top-right */
+    .home-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top right,
+        rgba(30,8,18,0.85) 0%,
+        rgba(30,8,18,0.55) 50%,
+        rgba(30,8,18,0.15) 100%
+      );
+    }
+    /* content anchored to bottom-left */
+    .home-hero__content {
+      position: absolute;
+      bottom: 12%;
+      left: 7%;
+      max-width: 620px;
+      z-index: 2;
+    }
+    .home-hero__eyebrow {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .home-hero__title {
       font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 400;
+      font-size: clamp(40px, 5.5vw, 72px);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .home-hero__title em { font-style: italic; color: var(--light-gold); }
+    .home-hero__subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.75;
+      margin-bottom: 2.25rem;
+    }
+    .home-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      color: rgba(212,168,75,0.7);
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
+    .scroll-cue span {
+      font-size: 10px; font-family: var(--font-body);
+      letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .scroll-cue svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ══ SOLUTIONS STRIP ══ */
+    .solutions-strip {
+      background: var(--off-white);
+      border-top: 1px solid var(--pale-gold);
+      border-bottom: 1px solid var(--pale-gold);
+      padding: 2.5rem 5%;
+      text-align: center;
+    }
+    .solutions-strip h3 {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 400;
       color: var(--dark-burgundy);
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .solution-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+    .solution-pill {
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 13px; font-weight: 500;
+      color: var(--dark-burgundy);
+      padding: 8px 20px;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+      cursor: pointer;
+    }
+    .solution-pill:hover { background: var(--gold); color: var(--dark-burgundy); }
+
+    /* ══ STATS BAND ══ */
+    .stats-band {
+      background: var(--cream-2);
+      border-top: 1px solid var(--warm-beige);
       border-bottom: 1px solid var(--warm-beige);
     }
-    .pillar-card p {
-      font-size: 15px;
-      line-height: 1.75;
+    .stats-band__inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .stats-band__item {
+      flex: 1; min-width: 180px;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--warm-beige);
+    }
+    .stats-band__item:last-child { border-right: none; }
+    .stats-band__value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 300;
+      color: var(--dark-burgundy);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stats-band__label {
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--muted-brown);
     }
 
-    /* CTA section */
-    .cta-section {
-      background: linear-gradient(135deg, #0D3B3E 0%, var(--deep-teal) 65%, #0E7077 100%);
-      text-align: center;
-      padding: 5rem 3%;
+    /* ══ BENTO SERVICE CARDS ══ */
+    .services-section {
+      background: #1a0a12;
+      padding: 5rem 5%;
+    }
+    .services-section .sec-header {
+      text-align: center; margin-bottom: 3rem;
+    }
+    .services-section .sec-header .section-label { color: var(--gold); }
+    .services-section .sec-header h2 {
+      font-size: clamp(28px, 3.5vw, 48px);
+      color: var(--cream); font-weight: 300;
+      margin: 0.5rem 0 0;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 400px 320px;
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Large left card spans both rows */
+    .bento-card--large { grid-row: 1 / 3; }
+
+    .bento-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #2a1020;
+    }
+    .bento-card__img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .bento-card:hover .bento-card__img { transform: scale(1.04); }
+    .bento-card__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(20,5,12,0.88) 0%, rgba(20,5,12,0.25) 55%, transparent 100%);
+    }
+    .bento-card__body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.75rem 2rem;
+    }
+    .bento-card__tag {
+      display: inline-block;
+      background: rgba(184,136,42,0.25);
+      color: var(--light-gold);
+      font-family: var(--font-body);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .bento-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .bento-card__desc {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .bento-card__link {
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .bento-card__link:hover { color: var(--light-gold); }
+
+    /* ══ SPLIT SECTIONS ══ */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+    .split-section--flip { direction: rtl; }
+    .split-section--flip > * { direction: ltr; }
+
+    .split-img {
       position: relative;
       overflow: hidden;
     }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
+    .split-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .cta-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 300;
-      color: var(--cream);
-      margin-bottom: 1rem;
-      position: relative;
-    }
-    .cta-section h2 em { font-style: italic; color: var(--light-gold); }
-    .cta-section p {
-      font-size: 16px;
-      color: rgba(242,232,220,0.75);
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.75;
-      position: relative;
-    }
-    .cta-section .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
-    @media (max-width: 768px) {
-      .pillars-grid { grid-template-columns: 1fr; }
+    .split-text {
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 5rem 7%;
+    }
+    .split-text--dark { background: var(--dark-burgundy); }
+    .split-text--dark .section-label { color: var(--gold); }
+    .split-text--dark h2 { color: var(--cream); }
+    .split-text--dark p { color: rgba(242,232,220,0.72); }
+
+    .split-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 42px);
+      font-weight: 300;
+      color: var(--dark-burgundy);
+      margin: 0.75rem 0 1.25rem;
+      line-height: 1.2;
+    }
+    .split-text p {
+      font-family: var(--font-body);
+      font-size: 15px; line-height: 1.8;
+      color: var(--muted-brown);
+      margin-bottom: 2rem;
+    }
+    .split-link {
+      font-family: var(--font-body);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .split-link:hover { color: var(--dark-burgundy); }
+    .split-link svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ══ TESTIMONIAL SECTION ══ */
+    .testimonial-section {
+      background: #FFF5E6;
+      padding: 5rem 5%;
+    }
+    .testimonial-section .sec-header { text-align: center; margin-bottom: 3.5rem; }
+    .testimonial-section .sec-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300;
+      color: var(--dark-burgundy);
+      margin: 0.5rem 0 0;
+    }
+
+    .tc-outer { max-width: 860px; margin: 0 auto; position: relative; }
+    .tc-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .tc-slide {
+      min-width: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 0 2rem;
+    }
+    .tc-quote-mark {
+      font-family: var(--font-display);
+      font-size: 80px; line-height: 0.6;
+      color: var(--pale-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .tc-quote {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-style: italic; font-weight: 300;
+      color: var(--dark-burgundy);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+    .tc-photo {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      border: 2.5px solid var(--gold);
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      background: var(--cream-2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      position: relative;
+    }
+    .tc-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .tc-name { font-family: var(--font-body); font-size: 15px; font-weight: 700; color: var(--dark-burgundy); }
+    .tc-role { font-family: var(--font-body); font-size: 13px; color: var(--muted-brown); margin-top: 2px; }
+    .tc-loc { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 3px; }
+
+    .tc-controls { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 2.5rem; }
+    .tc-arrow {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1.5px solid var(--gold); background: none;
+      color: var(--gold); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s, color 0.25s;
+    }
+    .tc-arrow:hover { background: var(--gold); color: var(--dark-burgundy); }
+    .tc-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .tc-dots { display: flex; gap: 0.5rem; align-items: center; }
+    .tc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warm-beige); border: none; cursor: pointer; transition: background 0.25s, transform 0.25s; padding: 0; }
+    .tc-dot.active { background: var(--gold); transform: scale(1.3); }
+
+    /* ══ CTA BAND ══ */
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+    }
+    .cta-band__bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .cta-band__overlay {
+      position: absolute; inset: 0;
+      background: rgba(40,10,25,0.75);
+    }
+    .cta-band__content {
+      position: relative; z-index: 2;
+      padding: 5rem 5%;
+      max-width: 680px;
+    }
+    .cta-band__content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 300; color: #fff;
+      margin: 0.75rem 0 1.25rem;
+      line-height: 1.2;
+    }
+    .cta-band__content p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .cta-band__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 900px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 280px 280px;
+      }
+      .bento-card--large { grid-row: auto; }
+      .split-section { grid-template-columns: 1fr; }
+      .split-section--flip { direction: ltr; }
+      .split-img { height: 320px; }
+      .split-text { padding: 3.5rem 7%; }
+      .stats-band__item { border-right: none; border-bottom: 1px solid var(--warm-beige); }
+      .stats-band__item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 600px) {
+      .home-hero__content { left: 5%; right: 5%; }
+      .home-hero__title { font-size: clamp(32px, 8vw, 48px); }
     }
   </style>
 </head>
@@ -98,63 +447,46 @@
 
   <!-- Nav injected by nav-component.js -->
 
-  <!-- ══════════════════════════════════════
-       1. VIDEO HERO
-  ══════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════
+       1. HERO — Full-bleed photo, text bottom-left
+  ═══════════════════════════════════════════════ -->
   <section class="home-hero" aria-label="Hero">
-    <!-- Video background — replace src when ready -->
-    <video class="home-hero__video" autoplay muted loop playsinline preload="none">
-      <source src="assets/videos/hero-bg.mp4" type="video/mp4">
-    </video>
-    <!-- Dark overlay -->
+    <!-- Stock: serene yoga at sunrise / Replace with Radhika's hero brand photo -->
+    <img
+      class="home-hero__bg"
+      src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&q=80&auto=format&fit=crop"
+      alt="Yoga meditation at sunrise"
+      loading="eager"
+    >
+    <div class="photo-label" style="position:absolute;top:80px;left:10px;z-index:10;">Replace with "Radhika hero" photo</div>
     <div class="home-hero__overlay" aria-hidden="true"></div>
 
-    <!-- Content -->
     <div class="home-hero__content">
       <span class="home-hero__eyebrow">ICF-Accredited · Singapore &amp; India</span>
-      <h1 class="home-hero__title fade-up">
-        Align Your Mind,<br><em>Body &amp; Spirit</em>
+      <h1 class="home-hero__title">
+        Live from the<br><em>inside out</em>
       </h1>
-      <p class="home-hero__subtitle fade-up">
-        Executive coaching, Traditional Hatha Yoga, and menopause wellness — guided by Radhika Avanthsa. Ancient wisdom woven into modern life.
+      <p class="home-hero__subtitle">
+        Executive coaching, Traditional Hatha Yoga &amp; menopause wellness — guided by Radhika Avanthsa. Ancient wisdom, modern practice.
       </p>
-      <div class="home-hero__actions fade-up">
+      <div class="home-hero__actions">
         <a href="pages/contact.html" class="btn-primary">Book a Discovery Call</a>
         <a href="pages/about.html" class="btn-outline">Meet Radhika</a>
       </div>
     </div>
 
-    <!-- Scroll arrow -->
-    <a href="#solutions" class="scroll-arrow" aria-label="Scroll down">
+    <a href="#solutions" class="scroll-cue" aria-label="Scroll down">
       <span>Explore</span>
       <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
     </a>
   </section>
 
-  <!-- ══════════════════════════════════════
-       2. TRUST / MEDIA BAR
-  ══════════════════════════════════════ -->
-  <!-- Replace with actual media logo images when available -->
-  <div class="media-bar" aria-label="Media features">
-    <div class="media-bar__inner">
-      <span class="media-bar__label">As featured in</span>
-      <div class="media-bar__logos">
-        <!-- Replace these placeholders with actual <img> tags -->
-        <div class="media-logo">Forbes</div>
-        <div class="media-logo">Business Today</div>
-        <div class="media-logo">Economic Times</div>
-        <div class="media-logo">Vogue India</div>
-        <div class="media-logo">LinkedIn News</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       3. FIND A SOLUTION FOR...
-  ══════════════════════════════════════ -->
-  <div class="solutions-section" id="solutions">
-    <h3 class="fade-up">Find a solution for&hellip;</h3>
-    <div class="solution-pills fade-up">
+  <!-- ═══════════════════════════════════════════════
+       2. "FIND A SOLUTION" PILLS
+  ═══════════════════════════════════════════════ -->
+  <div class="solutions-strip" id="solutions">
+    <h3>Find a solution for&hellip;</h3>
+    <div class="solution-pills">
       <a href="pages/coaching.html" class="solution-pill">Burnout</a>
       <a href="pages/coaching.html" class="solution-pill">Stress &amp; Anxiety</a>
       <a href="pages/yoga.html"     class="solution-pill">Low Energy</a>
@@ -163,277 +495,316 @@
       <a href="pages/coaching.html" class="solution-pill">Lack of Focus</a>
       <a href="pages/coaching.html" class="solution-pill">Leadership Fatigue</a>
       <a href="pages/coaching.html" class="solution-pill">Career Transition</a>
-      <a href="pages/coaching.html" class="solution-pill">Relationship Strain</a>
       <a href="pages/yoga.html"     class="solution-pill">Weight &amp; Wellness</a>
+      <a href="pages/coaching.html" class="solution-pill">Relationship Strain</a>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       4. THREE PILLARS
-  ══════════════════════════════════════ -->
-  <section class="pillars-section">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <span class="section-label">The Mudita Approach</span>
-        <h2>Whole-person transformation</h2>
-        <p>Three interconnected dimensions — because lasting change never lives in just one area of life.</p>
-      </div>
-      <div class="pillars-grid">
-        <div class="pillar-card fade-up">
-          <span class="pillar-icon">🌿</span>
-          <h3>Body</h3>
-          <p>The foundation of everything. Breath, movement, somatic intelligence, and physical regulation. Radhika's classical Hatha Yoga practice meets modern somatic understanding to help you inhabit your body with ease.</p>
-        </div>
-        <div class="pillar-card fade-up">
-          <span class="pillar-icon">🧠</span>
-          <h3>Mind</h3>
-          <p>Thoughts, emotions, identity narratives, and patterns of perception. ICF-accredited coaching methodology — neuroscience-informed and deeply compassionate — helps you rewrite the stories that no longer serve you.</p>
-        </div>
-        <div class="pillar-card fade-up">
-          <span class="pillar-icon">✨</span>
-          <h3>Spirit</h3>
-          <p>Purpose, meaning, and the deeper sense of who you are when external measures fall away. This isn't about religion — it's about reconnecting with your values, your wisdom, and the quiet knowing within you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       5. STATS BAND
-  ══════════════════════════════════════ -->
-  <section class="stats-band" aria-label="Key credentials">
+  <!-- ═══════════════════════════════════════════════
+       3. STATS BAND
+  ═══════════════════════════════════════════════ -->
+  <div class="stats-band" aria-label="Credentials">
     <div class="stats-band__inner">
-      <div class="stats-band__item fade-up">
+      <div class="stats-band__item">
         <span class="stats-band__value">ICF</span>
-        <span class="stats-band__label">Globally Recognised</span>
+        <span class="stats-band__label">Globally Accredited</span>
       </div>
-      <div class="stats-band__item fade-up">
-        <span class="stats-band__value" data-count="10" data-suffix="+">10+</span>
-        <span class="stats-band__label">Years Coaching Experience</span>
+      <div class="stats-band__item">
+        <span class="stats-band__value">10+</span>
+        <span class="stats-band__label">Years of Experience</span>
       </div>
-      <div class="stats-band__item fade-up">
+      <div class="stats-band__item">
         <span class="stats-band__value">SG &amp; IN</span>
         <span class="stats-band__label">Primary Markets</span>
       </div>
-      <div class="stats-band__item fade-up">
+      <div class="stats-band__item">
         <span class="stats-band__value">Online &amp; In‑Person</span>
         <span class="stats-band__label">Session Formats</span>
       </div>
     </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       4. BENTO SERVICE CARDS
+  ═══════════════════════════════════════════════ -->
+  <section class="services-section">
+    <div class="sec-header">
+      <span class="section-label">What We Offer</span>
+      <h2>Choose your path</h2>
+    </div>
+
+    <div class="bento-grid">
+
+      <!-- Large card — Executive Coaching -->
+      <a href="pages/coaching.html" class="bento-card bento-card--large">
+        <div class="photo-label">Replace with "executive coaching session" photo</div>
+        <img
+          class="bento-card__img"
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&auto=format&fit=crop"
+          alt="Executive coaching session"
+          loading="lazy"
+        >
+        <div class="bento-card__overlay"></div>
+        <div class="bento-card__body">
+          <span class="bento-card__tag">Coaching</span>
+          <div class="bento-card__title">Executive Human Performance</div>
+          <p class="bento-card__desc">For senior leaders navigating high-stakes decisions, burnout &amp; career transitions. ICF-accredited 1:1 and group formats.</p>
+          <span class="bento-card__link">Learn More →</span>
+        </div>
+      </a>
+
+      <!-- Top-right card — Menopause Coaching -->
+      <a href="pages/coaching.html" class="bento-card">
+        <div class="photo-label">Replace with "wellness woman" photo</div>
+        <img
+          class="bento-card__img"
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80&auto=format&fit=crop"
+          alt="Menopause wellness coaching"
+          loading="lazy"
+        >
+        <div class="bento-card__overlay"></div>
+        <div class="bento-card__body">
+          <span class="bento-card__tag">Wellness</span>
+          <div class="bento-card__title">Menopause Coaching</div>
+          <span class="bento-card__link">Learn More →</span>
+        </div>
+      </a>
+
+      <!-- Bottom-right card — Hatha Yoga -->
+      <a href="pages/yoga.html" class="bento-card">
+        <div class="photo-label">Replace with "Radhika yoga class" photo</div>
+        <img
+          class="bento-card__img"
+          src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=900&q=80&auto=format&fit=crop"
+          alt="Traditional Hatha Yoga"
+          loading="lazy"
+        >
+        <div class="bento-card__overlay"></div>
+        <div class="bento-card__body">
+          <span class="bento-card__tag">Yoga</span>
+          <div class="bento-card__title">Traditional Hatha Yoga &amp; Therapy</div>
+          <span class="bento-card__link">Learn More →</span>
+        </div>
+      </a>
+
+    </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       6. SERVICES — IMAGE-LED CARDS
-  ══════════════════════════════════════ -->
-  <section class="bg-cream-2">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <span class="section-label">What We Offer</span>
-        <h2>Choose your <em style="font-style:italic;color:var(--burgundy)">path</em></h2>
-        <p>Each offering is tailored to where you are right now — and where you want to go.</p>
+  <!-- ═══════════════════════════════════════════════
+       5. SPLIT SECTION — Coaching (photo left, text right)
+  ═══════════════════════════════════════════════ -->
+  <div class="split-section">
+    <div class="split-img">
+      <div class="photo-label">Replace with "Radhika coaching portrait" photo</div>
+      <img
+        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80&auto=format&fit=crop"
+        alt="Executive coaching with Radhika"
+        loading="lazy"
+      >
+    </div>
+    <div class="split-text">
+      <span class="section-label">Executive Coaching</span>
+      <h2>High-functioning on the outside, running on empty within.</h2>
+      <p>Radhika's Executive Human Performance programme takes you beyond conventional coaching — into the intersection of mindset, body intelligence, and leadership presence. ICF-accredited. Deeply personal.</p>
+      <a href="pages/coaching.html" class="split-link">
+        Explore Coaching
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       6. SPLIT SECTION — Yoga (text left, photo right) [flipped]
+  ═══════════════════════════════════════════════ -->
+  <div class="split-section split-section--flip">
+    <div class="split-img">
+      <div class="photo-label">Replace with "Radhika yoga instruction" photo</div>
+      <img
+        src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=900&q=80&auto=format&fit=crop"
+        alt="Traditional Hatha Yoga class"
+        loading="lazy"
+      >
+    </div>
+    <div class="split-text split-text--dark">
+      <span class="section-label">Traditional Yoga</span>
+      <h2>Ancient lineage. Modern life.</h2>
+      <p>Classical Hatha Yoga rooted in an unbroken tradition — not fitness yoga, but a complete system for body, breath &amp; consciousness. Online globally. In-person in Singapore.</p>
+      <a href="pages/yoga.html" class="split-link" style="color:var(--light-gold);">
+        Explore Yoga
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       7. SPLIT SECTION — About Radhika (photo left, text right)
+  ═══════════════════════════════════════════════ -->
+  <div class="split-section">
+    <div class="split-img">
+      <div class="photo-label">Replace with "Radhika Avanthsa portrait" photo</div>
+      <img
+        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&q=80&auto=format&fit=crop"
+        alt="Radhika Avanthsa, founder of Mudita Living"
+        loading="lazy"
+      >
+    </div>
+    <div class="split-text">
+      <span class="section-label">Meet Your Guide</span>
+      <h2>Radhika Avanthsa</h2>
+      <p style="font-size:13px;color:var(--gold);font-weight:600;letter-spacing:0.04em;margin-bottom:1rem;">ICF-Accredited Coach · Classical Yoga Teacher · Menopause Coach</p>
+      <p>Radhika brings over a decade of experience working with senior leaders and women across Singapore and India. Her work lives at the rare intersection of ICF coaching, classical Hatha Yoga, and holistic wellness — weaving ancient practice into modern professional life.</p>
+      <blockquote style="font-family:var(--font-display);font-size:20px;font-style:italic;font-weight:300;color:var(--dark-burgundy);border-left:3px solid var(--gold);padding-left:1.25rem;margin:1.5rem 0;">"Not fixing — realigning."</blockquote>
+      <a href="pages/about.html" class="split-link">
+        Meet Radhika
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       8. TESTIMONIAL CAROUSEL — warm cream bg
+  ═══════════════════════════════════════════════ -->
+  <section class="testimonial-section" aria-label="Client testimonials">
+    <div class="sec-header">
+      <span class="section-label">Client Stories</span>
+      <h2>Real voices, real results</h2>
+    </div>
+
+    <div class="tc-outer" id="tcCarousel">
+      <div class="tc-track" id="tcTrack">
+
+        <!-- Slide 1 -->
+        <div class="tc-slide">
+          <span class="tc-quote-mark">&ldquo;</span>
+          <p class="tc-quote">Working with Radhika was unlike any coaching experience I'd had before. She held space for the parts of me that corporate life had quietly suppressed — and helped me lead from a place of genuine clarity, not fear.</p>
+          <div class="tc-photo">
+            <!-- Replace with client headshot photo -->
+            <div class="photo-label" style="font-size:9px;top:2px;left:2px;">Photo</div>
+            🧑‍💼
+          </div>
+          <div class="tc-name">Priya Sharma</div>
+          <div class="tc-role">VP Operations, Fortune 500</div>
+          <div class="tc-loc">Singapore</div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="tc-slide">
+          <span class="tc-quote-mark">&ldquo;</span>
+          <p class="tc-quote">The menopause coaching programme changed everything. I finally understood what my body was going through — and instead of fighting it, I learned to move with it. I feel stronger at 52 than I did at 35.</p>
+          <div class="tc-photo">🌸</div>
+          <div class="tc-name">Anita Menon</div>
+          <div class="tc-role">Entrepreneur &amp; Mother</div>
+          <div class="tc-loc">Mumbai, India</div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="tc-slide">
+          <span class="tc-quote-mark">&ldquo;</span>
+          <p class="tc-quote">I came in burned out and deeply disconnected from myself. The combination of Radhika's yoga practice and coaching gave me an entirely new relationship with my own capacity. I'm a better leader — and a better human.</p>
+          <div class="tc-photo">✨</div>
+          <div class="tc-name">David Chen</div>
+          <div class="tc-role">Managing Director, Private Equity</div>
+          <div class="tc-loc">Singapore</div>
+        </div>
+
       </div>
-      <div class="service-cards-grid">
 
-        <!-- Executive Coaching -->
-        <div class="service-card fade-up">
-          <div class="service-card__image">
-            <!-- Replace with: <img src="assets/images/executive-coaching.jpg" alt="Executive Coaching"> -->
-            🏆
-          </div>
-          <div class="service-card__body">
-            <span class="service-card__tag">Coaching</span>
-            <h3 class="service-card__title">Executive Human Performance</h3>
-            <p class="service-card__desc">For senior leaders navigating high-stakes decisions, burnout, and career transitions. ICF-accredited 1:1 and group formats.</p>
-            <a href="pages/coaching.html" class="service-card__link">Learn More →</a>
-          </div>
+      <div class="tc-controls">
+        <button class="tc-arrow" id="tcPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="tc-dots" id="tcDots">
+          <button class="tc-dot active" data-idx="0" aria-label="Slide 1"></button>
+          <button class="tc-dot" data-idx="1" aria-label="Slide 2"></button>
+          <button class="tc-dot" data-idx="2" aria-label="Slide 3"></button>
         </div>
-
-        <!-- Menopause Coaching -->
-        <div class="service-card fade-up">
-          <div class="service-card__image">
-            <!-- Replace with: <img src="assets/images/menopause-coaching.jpg" alt="Menopause Coaching"> -->
-            🌸
-          </div>
-          <div class="service-card__body">
-            <span class="service-card__tag">Wellness</span>
-            <h3 class="service-card__title">Menopause Coaching</h3>
-            <p class="service-card__desc">Holistic support for women navigating perimenopause and menopause — blending coaching, yoga, and lifestyle medicine.</p>
-            <a href="pages/coaching.html" class="service-card__link">Learn More →</a>
-          </div>
-        </div>
-
-        <!-- Hatha Yoga -->
-        <div class="service-card fade-up">
-          <div class="service-card__image">
-            <!-- Replace with: <img src="assets/images/hatha-yoga.jpg" alt="Hatha Yoga"> -->
-            🪷
-          </div>
-          <div class="service-card__body">
-            <span class="service-card__tag">Yoga</span>
-            <h3 class="service-card__title">Traditional Hatha Yoga &amp; Therapy</h3>
-            <p class="service-card__desc">Classical Hatha practice rooted in ancient lineage — in-person in Singapore, online worldwide. Beginners to advanced.</p>
-            <a href="pages/yoga.html" class="service-card__link">Learn More →</a>
-          </div>
-        </div>
-
-        <!-- Courses — Full-width banner -->
-        <div class="service-card service-card--banner fade-up">
-          <div class="service-card__image">
-            <!-- Replace with: <img src="assets/images/courses-banner.jpg" alt="Courses"> -->
-            🎓
-          </div>
-          <div class="service-card__body">
-            <span class="service-card__tag">Courses</span>
-            <h3 class="service-card__title">Structured Learning &amp; Certification</h3>
-            <p class="service-card__desc">Deep-dive programmes for those ready to go further — Yoga Teacher Training, Yoga Therapy Certification, and the ANCHOR Executive Coaching course. Globally recognised, deeply transformative.</p>
-            <a href="pages/courses.html" class="service-card__link">Explore All Courses →</a>
-          </div>
-        </div>
-
+        <button class="tc-arrow" id="tcNext" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       7. TESTIMONIAL CAROUSEL
-  ══════════════════════════════════════ -->
-  <section class="bg-off-white">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <span class="section-label">Client Stories</span>
-        <h2>Transformations that <em style="font-style:italic;color:var(--burgundy)">speak</em></h2>
-      </div>
-
-      <div class="testimonial-carousel" id="tcCarousel">
-        <div class="tc-track" id="tcTrack">
-
-          <!-- Slide 1 -->
-          <div class="tc-slide">
-            <p class="tc-quote">Working with Radhika was unlike any coaching experience I'd had before. She held space for the parts of me that corporate life had quietly suppressed — and helped me lead from a place of genuine clarity, not fear.</p>
-            <div class="tc-photo">🧑‍💼</div>
-            <div class="tc-name">Priya Sharma</div>
-            <div class="tc-role">VP Operations, Fortune 500</div>
-            <div class="tc-location">Singapore</div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="tc-slide">
-            <p class="tc-quote">The menopause coaching programme changed everything. I finally understood what my body was going through — and instead of fighting it, I learned to move with it. I feel stronger at 52 than I did at 35.</p>
-            <div class="tc-photo">🌸</div>
-            <div class="tc-name">Anita Menon</div>
-            <div class="tc-role">Entrepreneur &amp; Mother</div>
-            <div class="tc-location">Mumbai, India</div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="tc-slide">
-            <p class="tc-quote">I came in burned out and deeply disconnected from myself. The combination of Radhika's yoga practice and coaching gave me an entirely new relationship with my own capacity. I'm a better leader — and a better human.</p>
-            <div class="tc-photo">✨</div>
-            <div class="tc-name">David Chen</div>
-            <div class="tc-role">Managing Director, Private Equity</div>
-            <div class="tc-location">Singapore</div>
-          </div>
-
-        </div>
-
-        <div class="tc-controls">
-          <button class="tc-arrow" id="tcPrev" aria-label="Previous testimonial">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <div class="tc-dots" id="tcDots">
-            <button class="tc-dot active" data-idx="0" aria-label="Testimonial 1"></button>
-            <button class="tc-dot" data-idx="1" aria-label="Testimonial 2"></button>
-            <button class="tc-dot" data-idx="2" aria-label="Testimonial 3"></button>
-          </div>
-          <button class="tc-arrow" id="tcNext" aria-label="Next testimonial">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
+  <!-- ═══════════════════════════════════════════════
+       9. COURSES SPLIT — full-width dark
+  ═══════════════════════════════════════════════ -->
+  <div class="split-section split-section--flip">
+    <div class="split-img">
+      <div class="photo-label">Replace with "yoga certification class" photo</div>
+      <img
+        src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=900&q=80&auto=format&fit=crop"
+        alt="Yoga teacher training course"
+        loading="lazy"
+      >
     </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       8. FOUNDER SECTION
-  ══════════════════════════════════════ -->
-  <section class="founder-section">
-    <div class="founder-section__inner">
-      <div class="founder-section__image fade-left">
-        <div class="founder-section__img-wrap">
-          <!-- Replace with: <img src="assets/images/radhika-avanthsa.jpg" alt="Radhika Avanthsa"> -->
-          🪷
-        </div>
-      </div>
-      <div class="founder-section__content">
-        <span class="section-label fade-up">Meet Your Guide</span>
-        <h2 class="fade-up" style="font-size:clamp(32px,4vw,52px);font-weight:300;margin:0.75rem 0;">Radhika Avanthsa</h2>
-        <p class="founder-section__subtitle fade-up">ICF-Accredited Executive Coach · Traditional Yoga Teacher · Menopause Coach</p>
-        <blockquote class="founder-section__pull-quote fade-up">"Not fixing — realigning."</blockquote>
-        <p class="fade-up" style="font-size:15px;line-height:1.8;color:var(--muted-brown);margin-bottom:1rem;">
-          Radhika brings over a decade of experience working with senior leaders, executives, and women across Singapore and India. Her work sits at the rare intersection of ICF-accredited coaching, classical Hatha Yoga, and holistic wellness — weaving ancient practices with the demands of modern professional life.
-        </p>
-        <p class="fade-up" style="font-size:15px;line-height:1.8;color:var(--muted-brown);margin-bottom:2rem;">
-          She doesn't believe in quick fixes or surface-level change. Every engagement is an invitation to go deeper — to understand the patterns, beliefs, and physiological states that shape how you perform, lead, and live. The result isn't just better outcomes. It's a different relationship with yourself.
-        </p>
-        <a href="pages/about.html" class="btn-outline-dark fade-up">Meet Radhika →</a>
-      </div>
+    <div class="split-text split-text--dark">
+      <span class="section-label">Courses</span>
+      <h2>Structured learning &amp; certification</h2>
+      <p>Yoga Teacher Training, Yoga Therapy Certification, and the ANCHOR Executive Coaching programme. Globally recognised, deeply transformative — for those ready to go further.</p>
+      <a href="pages/courses.html" class="split-link" style="color:var(--light-gold);">
+        Explore All Courses
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
-  </section>
+  </div>
 
-  <!-- ══════════════════════════════════════
-       9. CTA BAND
-  ══════════════════════════════════════ -->
-  <section class="cta-section">
-    <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
-      <span class="section-label" style="color:var(--gold);justify-content:center;display:flex;margin-bottom:1rem;">Start Your Journey</span>
-      <h2 class="fade-up">Ready to realign?</h2>
-      <p class="fade-up">A 30-minute discovery call is the first step — no pressure, no agenda, just an honest conversation about where you are and where you want to go.</p>
-      <div class="cta-actions fade-up">
+  <!-- ═══════════════════════════════════════════════
+       10. CTA BAND — photo background
+  ═══════════════════════════════════════════════ -->
+  <div class="cta-band">
+    <div class="photo-label" style="top:10px;left:10px;">Replace with "serene nature" photo</div>
+    <img
+      class="cta-band__bg"
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80&auto=format&fit=crop"
+      alt="Mountain sunrise landscape"
+      loading="lazy"
+    >
+    <div class="cta-band__overlay"></div>
+    <div class="cta-band__content">
+      <span class="section-label" style="color:var(--gold);justify-content:center;display:flex;margin-bottom:0.75rem;">Start Your Journey</span>
+      <h2>Perform at your best without burning through yourself.</h2>
+      <p>A 30-minute discovery call — no pressure, no agenda. Just an honest conversation about where you are and where you want to go.</p>
+      <div class="cta-band__actions">
         <a href="pages/contact.html" class="btn-primary">Book a Discovery Call</a>
         <a href="pages/coaching.html" class="btn-outline">Explore Coaching</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Footer injected by nav-component.js -->
 
   <script src="assets/nav-component.js"></script>
   <script>
-    /* ── Testimonial Carousel ── */
+    /* Testimonial Carousel */
     (function () {
-      const track = document.getElementById('tcTrack');
-      const dots  = document.querySelectorAll('.tc-dot');
+      var track  = document.getElementById('tcTrack');
+      var dots   = document.querySelectorAll('.tc-dot');
       if (!track) return;
-
-      let current = 0;
-      const total = document.querySelectorAll('.tc-slide').length;
-      let timer;
+      var current = 0, total = document.querySelectorAll('.tc-slide').length, timer;
 
       function goTo(idx) {
         current = (idx + total) % total;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d,i){ d.classList.toggle('active', i === current); });
       }
+      function startAuto() { clearInterval(timer); timer = setInterval(function(){ goTo(current+1); }, 5500); }
 
-      function next() { goTo(current + 1); }
-      function prev() { goTo(current - 1); }
+      document.getElementById('tcNext').addEventListener('click', function(){ goTo(current+1); startAuto(); });
+      document.getElementById('tcPrev').addEventListener('click', function(){ goTo(current-1); startAuto(); });
+      dots.forEach(function(d){ d.addEventListener('click', function(){ goTo(+d.dataset.idx); startAuto(); }); });
 
-      function startAuto() {
-        clearInterval(timer);
-        timer = setInterval(next, 5000);
-      }
-
-      document.getElementById('tcNext').addEventListener('click', function () { next(); startAuto(); });
-      document.getElementById('tcPrev').addEventListener('click', function () { prev(); startAuto(); });
-      dots.forEach(function (d) {
-        d.addEventListener('click', function () { goTo(+d.dataset.idx); startAuto(); });
-      });
-
-      const carousel = document.getElementById('tcCarousel');
-      carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
-      carousel.addEventListener('mouseleave', startAuto);
-
+      var car = document.getElementById('tcCarousel');
+      car.addEventListener('mouseenter', function(){ clearInterval(timer); });
+      car.addEventListener('mouseleave', startAuto);
       startAuto();
+    })();
+
+    /* Fade-up on scroll */
+    (function(){
+      var els = document.querySelectorAll('.fade-up');
+      if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('is-visible'); }); return; }
+      var obs = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-visible'); obs.unobserve(en.target); } }); }, { threshold: 0.12 });
+      els.forEach(function(e){ obs.observe(e); });
     })();
   </script>
 </body>
