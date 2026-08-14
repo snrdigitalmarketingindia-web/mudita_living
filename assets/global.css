@@ -1927,3 +1927,136 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .hero-chips { gap: 0.3rem; }
   .section-inner { padding: 0 4%; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   VISUAL POLISH v3.0 — Scroll reveals, micro-interactions
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Heading balance ── */
+h1, h2, h3, h4 { text-wrap: balance; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.18s; }
+.reveal-d3 { transition-delay: 0.28s; }
+.reveal-d4 { transition-delay: 0.38s; }
+.reveal-d5 { transition-delay: 0.48s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ── Button shimmer on hover ── */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.28) 50%, transparent 80%);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 160%; }
+
+/* ── Nav CTA shimmer ── */
+.nav-cta { position: relative; overflow: hidden; }
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.nav-cta:hover::after { left: 160%; }
+
+/* ── Split link — arrow slides on hover ── */
+.split-link svg { transition: transform 0.22s ease; }
+.split-link:hover svg { transform: translateX(6px); }
+
+/* ── Split image — subtle zoom on hover ── */
+.split-img img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.split-img:hover img { transform: scale(1.05); }
+
+/* ── Bento card — gold border reveal on hover ── */
+.bento-card { transition: border-color 0.4s ease, box-shadow 0.4s ease; }
+.bento-card:hover { border-color: rgba(184,136,42,0.5) !important; box-shadow: 0 0 0 1px rgba(184,136,42,0.25); }
+
+/* ── Bento card body — lift-up animation ── */
+.bento-card__body {
+  transform: translateY(6px);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-card:hover .bento-card__body { transform: translateY(0); }
+
+/* ── Bento card image scale ── */
+.bento-card__img { transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+.bento-card:hover .bento-card__img { transform: scale(1.07) !important; }
+
+/* ── Stats band item hover ── */
+.stats-band__item { transition: background 0.3s ease; }
+.stats-band__item:hover { background: rgba(184,136,42,0.05); }
+
+/* ── Testimonial initials avatar (replaces emoji) ── */
+.tc-initials {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 600; font-style: italic;
+  color: var(--light-gold);
+  margin: 0 auto 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(184,136,42,0.15);
+}
+
+/* ── Testimonial gold separator above attribution ── */
+.tc-attribution {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  border-top: 1px solid var(--pale-gold);
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* ── Card reveal bar — smooth from bottom ── */
+.card::before {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ── Page photo hero parallax (desktop only) ── */
+@media (min-width: 900px) {
+  .page-photo-hero { background-attachment: fixed; }
+}
+
+/* ── Ken Burns for page-photo-hero inner pages ── */
+@keyframes heroPan {
+  0%   { background-position: 50% 30%; }
+  50%  { background-position: 52% 28%; }
+  100% { background-position: 50% 30%; }
+}
+
+/* ── Smooth image hover for all inner-page photo heroes ── */
+.page-photo-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 70%, rgba(61,16,40,0.15) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 1;
+}
+.page-photo-hero__overlay { z-index: 1; }
+.page-photo-hero__content { z-index: 2; }
