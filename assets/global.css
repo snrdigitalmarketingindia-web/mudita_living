@@ -1047,17 +1047,42 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .bg-cream-2  { background: var(--cream-2); }
 .bg-off-white { background: var(--off-white); }
 .bg-dark     {
-  background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 100%);
+  background: var(--cream-2);
   position: relative;
   overflow: hidden;
 }
-.bg-dark::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
+/* Text overrides: bg-dark is now cream-2 so all text must be dark */
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 { color: var(--dark-burgundy) !important; }
+.bg-dark p { color: var(--muted-brown) !important; }
+.bg-dark span, .bg-dark li { color: var(--muted-brown); }
+.bg-dark .section-label { color: var(--gold) !important; }
+.bg-dark blockquote,
+.bg-dark .philosophy-bigquote { color: var(--dark-burgundy) !important; }
+.bg-dark .philosophy-attribution { color: var(--gold) !important; }
+.bg-dark .philosophy-deco-line { background: var(--gold) !important; }
+/* Cards inside bg-dark — give them white background */
+.bg-dark .card,
+.bg-dark .testimonial-card,
+.bg-dark .cred-card,
+.bg-dark .stat-card,
+.bg-dark [class*="-card"] { background: var(--off-white) !important; border-color: var(--warm-beige) !important; }
+.bg-dark [class*="-card"] h2,
+.bg-dark [class*="-card"] h3 { color: var(--dark-burgundy) !important; }
+.bg-dark [class*="-card"] p { color: var(--muted-brown) !important; }
+/* Stats in bg-dark */
+.bg-dark .stat-number, .bg-dark .stats-band__value { color: var(--dark-burgundy) !important; }
+.bg-dark .stat-label, .bg-dark .stats-band__label { color: var(--muted-brown) !important; }
+/* Buttons in bg-dark */
+.bg-dark .btn-primary { background: var(--gold) !important; color: var(--dark-burgundy) !important; }
+.bg-dark .btn-outline { border-color: var(--gold) !important; color: var(--gold) !important; background: transparent !important; }
+.bg-dark .btn-outline-dark { border-color: var(--gold) !important; color: var(--gold) !important; }
+/* Input / newsletter forms */
+.bg-dark input, .bg-dark textarea, .bg-dark select {
+  background: #fff !important; color: var(--dark-burgundy) !important;
+  border-color: var(--warm-beige) !important;
 }
+/* Dividers */
+.bg-dark .divider-gold { background: var(--gold) !important; }
 
 /* ─────────────────────────────────────────
    TRUSTED BY STRIP
