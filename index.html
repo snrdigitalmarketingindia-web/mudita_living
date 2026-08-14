@@ -6,6 +6,22 @@
   <title>Mudita Living — Executive Coaching, Yoga & Wellness | Radhika Avanthsa</title>
   <meta name="description" content="ICF-accredited executive coaching, Traditional Hatha Yoga, and menopause wellness with Radhika Avanthsa. Singapore & India. Ancient wisdom, modern practices.">
   <link rel="canonical" href="https://muditaliving.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://muditaliving.com/" />
+  <meta property="og:title" content="Mudita Living — Executive Coaching, Yoga & Wellness | Radhika Avanthsa" />
+  <meta property="og:description" content="ICF-accredited executive coaching, Traditional Hatha Yoga, and menopause wellness with Radhika Avanthsa. Singapore & India." />
+  <meta property="og:image" content="https://muditaliving.com/assets/images/og-home.jpg" />
+  <meta property="og:site_name" content="Mudita Living" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mudita Living — Executive Coaching, Yoga & Wellness" />
+  <meta name="twitter:description" content="ICF-accredited executive coaching, Traditional Hatha Yoga, and menopause wellness with Radhika Avanthsa. Singapore & India." />
+  <meta name="twitter:image" content="https://muditaliving.com/assets/images/og-home.jpg" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="assets/global.css">
   <style>
 
@@ -496,6 +512,72 @@
       .solution-pill { font-size: 11px; padding: 6px 12px; }
     }
   </style>
+  <!-- Structured Data: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Mudita Living",
+    "url": "https://muditaliving.com",
+    "email": "hello@muditaliving.com",
+    "description": "ICF-accredited executive coaching, Traditional Hatha Yoga, and menopause wellness with Radhika Avanthsa. Serving Singapore, India, and global online clients.",
+    "founder": {
+      "@type": "Person",
+      "name": "Radhika Avanthsa",
+      "url": "https://muditaliving.com/pages/about.html"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Singapore" },
+      { "@type": "Country", "name": "India" },
+      { "@type": "AdministrativeArea", "name": "Global (Online)" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Executive Human Performance Coaching",
+            "url": "https://muditaliving.com/pages/coaching.html"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Menopause Coaching",
+            "url": "https://muditaliving.com/pages/coaching.html"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Traditional Hatha Yoga & Yoga Therapy",
+            "url": "https://muditaliving.com/pages/yoga.html"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mudita Living",
+    "url": "https://muditaliving.com",
+    "description": "Executive coaching, Traditional Hatha Yoga, and menopause wellness with Radhika Avanthsa."
+  }
+  </script>
 </head>
 <body>
 
@@ -511,6 +593,7 @@
       src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&q=80&auto=format&fit=crop"
       alt="Yoga meditation at sunrise"
       loading="eager"
+      fetchpriority="high"
     >
     <div class="photo-label" style="position:absolute;top:80px;left:10px;z-index:10;">Replace with "Radhika hero" photo</div>
     <div class="home-hero__overlay" aria-hidden="true"></div>
@@ -827,7 +910,7 @@
 
   <!-- Footer injected by nav-component.js -->
 
-  <script src="assets/nav-component.js"></script>
+  <script src="assets/nav-component.js" defer></script>
   <script>
     /* Testimonial Carousel */
     (function () {
