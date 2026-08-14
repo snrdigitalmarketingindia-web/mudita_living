@@ -7,250 +7,282 @@
   <meta name="description" content="Mudita Living with Radhika Avanthsa — Executive Human Performance Coaching, Menopause Coaching, and Traditional Hatha Yoga & Therapy. Online globally. In-person Singapore." />
   <meta name="keywords" content="executive coach Singapore, life coach Singapore, yoga therapy online, menopause coach, human performance coaching, Radhika Avanthsa" />
   <link rel="stylesheet" href="assets/brand.css" />
+  <link rel="stylesheet" href="assets/global.css" />
   <style>
-  /* Brand tokens — embedded for local file compatibility */
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
-  :root {
-    --burgundy: #5C1A3A;
-    --dark-burgundy: #3D1028;
-    --gold: #B8882A;
-    --light-gold: #D4A84B;
-    --pale-gold: #E8D49A;
-    --cream: #F2E8DC;
-    --cream-2: #F7F0E8;
-    --off-white: #FAF4ED;
-    --muted-brown: #7A6E65;
-    --warm-beige: #DDD0BE;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Jost', system-ui, sans-serif;
-    --text-hero: clamp(66px, 9.4vw, 100px);
-    --text-h1: clamp(43px, 6.2vw, 62px);
-    --text-h2: clamp(35px, 4.7vw, 43px);
-    --text-h3: 25px;
-    --text-body: 24px;
-    --text-caption: 19px;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 4rem;
-    --space-xl: 8rem;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    --radius-pill: 999px;
-    --shadow-sm: 0 2px 8px rgba(61,16,40,0.08);
-    --shadow-md: 0 4px 20px rgba(61,16,40,0.12);
-    --shadow-lg: 0 8px 40px rgba(61,16,40,0.16);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); font-size: var(--text-body); color: var(--muted-brown); background-color: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-  h1,h2,h3,h4 { font-family: var(--font-display); color: var(--dark-burgundy); line-height: 1.2; }
-  .btn-primary { display:inline-block; background:var(--gold); color:var(--dark-burgundy); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:14px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:background 0.2s,transform 0.2s; }
-  .btn-primary:hover { background:var(--light-gold); transform:translateY(-1px); }
-  .btn-outline { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:13px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:all 0.2s; }
-  .btn-outline:hover { background:var(--gold); color:var(--dark-burgundy); }
-  .section-label { font-family:var(--font-body); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
-  .divider-gold { width:48px; height:2px; background:var(--gold); margin:1rem 0; }
-</style>
-  <style>
-
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0;   
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(242, 232, 220, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--warm-beige);
-      z-index: 100;
-      
+    /* ── LOCAL OVERRIDES & PAGE-SPECIFIC STYLES ── */
+    :root {
+      --burgundy: #5C1A3A;
+      --dark-burgundy: #3D1028;
+      --gold: #B8882A;
+      --light-gold: #D4A84B;
+      --pale-gold: #E8D49A;
+      --cream: #F2E8DC;
+      --cream-2: #F7F0E8;
+      --off-white: #FAF4ED;
+      --muted-brown: #7A6E65;
+      --warm-beige: #DDD0BE;
     }
-    .nav-logo img { height: 52px; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-body); font-size: 13px; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--dark-burgundy); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { font-size: 13px !important; padding: 10px 24px !important; }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: flex; align-items: center;
-      background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 60%, #7A2550 100%);
-      padding: 8rem 5% 5rem;
-      position: relative; overflow: hidden;
+      padding: calc(var(--nav-height) + 5rem) 5% 6rem;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #3D1028 0%, #5C1A3A 60%, #7A2550 100%);
+      position: relative;
+      overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.4;
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.07'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
     }
-    .hero-content { position: relative; max-width: 680px; }
-    .hero-sanskrit {
-      font-family: var(--font-display); font-size: 13px;
-      color: var(--light-gold); letter-spacing: 0.3em; text-transform: uppercase;
-      margin-bottom: 1.5rem;
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(92,26,58,0.45) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light-gold);
+      display: block;
+      margin-bottom: 1.75rem;
     }
     .hero h1 {
-      font-size: var(--text-hero); color: var(--cream);
-      font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+      font-size: var(--text-hero);
+      color: var(--cream);
+      font-weight: 300;
+      line-height: 1.12;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
     }
-    .hero h1 em { color: var(--light-gold); font-style: italic; }
-    .hero p {
-      font-size: 17px; color: rgba(242,232,220,0.8);
-      max-width: 520px; margin-bottom: 2.5rem; line-height: 1.8;
+    .hero h1 em {
+      color: var(--light-gold);
+      font-style: italic;
     }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* ── SECTION BASE ── */
-    section { padding: var(--space-lg) 5%; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-header h2 { font-size: var(--text-h1); margin: 0.5rem 0; }
-    .section-header p { max-width: 560px; margin: 1rem auto 0; font-size: 16px; }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(242,232,220,0.78);
+      max-width: 520px;
+      margin-bottom: 2.75rem;
+      line-height: 1.85;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
     /* ── PILLARS ── */
-    .pillars { background: var(--off-white); }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .pillar-card {
-      background: var(--cream); border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem; text-align: center;
-      box-shadow: var(--shadow-sm);
-      border-top: 3px solid var(--gold);
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
-    .pillar-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .pillar-card h3 { font-size: var(--text-h2); color: var(--dark-burgundy); margin-bottom: 0.5rem; }
-    .pillar-card p { font-size: 14px; line-height: 1.7; }
+    .pillar-card {
+      text-align: center;
+      padding-top: 3rem;
+    }
+    .pillar-icon {
+      font-size: 2.25rem;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+    .pillar-card h3 {
+      font-size: clamp(22px, 2.5vw, 28px);
+      color: var(--dark-burgundy);
+      margin-bottom: 0.75rem;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted-brown);
+    }
 
     /* ── SERVICES ── */
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
     .service-card {
-      background: var(--off-white); border-radius: var(--radius-lg);
-      padding: 2.5rem; box-shadow: var(--shadow-sm);
-      display: flex; flex-direction: column; gap: 1rem;
-      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
     .service-tag {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
-    .service-card h3 { font-size: var(--text-h2); color: var(--dark-burgundy); }
-    .service-card p { font-size: 14px; line-height: 1.7; flex: 1; }
+    .service-card h3 {
+      font-size: clamp(20px, 2vw, 26px);
+      color: var(--dark-burgundy);
+      line-height: 1.2;
+    }
+    .service-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted-brown);
+      flex: 1;
+    }
+    .service-card .btn-outline-dark {
+      align-self: flex-start;
+      margin-top: 0.75rem;
+    }
 
-    /* ── QUOTE BAND ── */
-    .quote-band {
-      background: var(--dark-burgundy);
-      text-align: center; padding: 5rem 5%;
+    /* ── PHILOSOPHY QUOTE ── */
+    .quote-section {
+      text-align: center;
+      padding: 7rem 5%;
     }
-    .quote-band blockquote {
-      font-family: var(--font-display); font-style: italic;
-      font-size: clamp(22px, 3vw, 32px);
-      color: var(--cream); max-width: 760px; margin: 0 auto;
-      line-height: 1.5;
+    .quote-section-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
     }
-    .quote-band cite {
-      display: block; margin-top: 1.5rem;
-      font-family: var(--font-body); font-style: normal;
-      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    .quote-section blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(22px, 2.8vw, 34px);
+      color: var(--cream);
+      line-height: 1.55;
+      font-weight: 300;
+    }
+    .quote-section blockquote::before {
+      content: '\201C';
+      font-family: var(--font-display);
+      font-size: 120px;
+      color: var(--pale-gold);
+      opacity: 0.25;
+      display: block;
+      line-height: 0.6;
+      margin-bottom: 1.5rem;
+    }
+    .quote-section cite {
+      display: block;
+      margin-top: 2rem;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
       color: var(--light-gold);
     }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--cream-2); text-align: center;
+    .quote-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.45;
+      display: inline-block;
+      margin: 0 1rem;
+      vertical-align: middle;
     }
-    .cta-section h2 { font-size: var(--text-h1); max-width: 600px; margin: 0 auto 1rem; }
-    .cta-section p { max-width: 480px; margin: 0 auto 2.5rem; font-size: 16px; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--dark-burgundy);
-      color: rgba(242,232,220,0.7);
-      padding: 3rem 5%;
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .testimonials-cta {
       text-align: center;
     }
-    footer .footer-logo img { height: 48px; margin-bottom: 1.5rem; opacity: 0.9; }
-    footer p { font-size: 13px; line-height: 1.8; }
-    footer a { color: var(--light-gold); text-decoration: none; }
-    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; }
-    .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
-
-    /* ── RESPONSIVE ──*/
-    /* ── HAMBURGER DROPDOWN ── */
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #3D1028;
-      cursor: pointer;
-      padding: 4px 8px;
-      line-height: 1;
-    }
-    .nav-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #F2E8DC;
-      border-bottom: 2px solid #B8882A;
-      padding: 1rem 5%;
-      z-index: 99;
-    }
-    .nav-dropdown.open { display: block; }
-    .nav-dropdown a {
-      display: block;
-      padding: 0.75rem 0;
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      color: #3D1028;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 1px solid #DDD0BE;
-    }
-    .nav-dropdown a:hover { color: #B8882A; }
-    .nav-dropdown .mob-book {
-      display: block;
-      margin-top: 0.75rem;
-      background: #B8882A;
-      color: #3D1028 !important;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      border-radius: 999px;
+    .testimonials-cta a {
+      font-family: var(--font-body);
+      font-size: 13px;
       font-weight: 600;
-      border-bottom: none !important;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184,136,42,0.35);
+      padding-bottom: 2px;
+      transition: color var(--ease), border-color var(--ease);
     }
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none !important; }
-      .nav-hamburger { display: block; }
-      .pillars-grid, .services-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions a { width: 100%; text-align: center; }
-    }
-    @media (max-width: 480px) {
-      input, select, textarea { font-size: 16px !important; }
+    .testimonials-cta a:hover {
+      color: var(--light-gold);
+      border-bottom-color: var(--light-gold);
     }
 
+    /* ── FINAL CTA ── */
+    .final-cta h2 {
+      max-width: 600px;
+      margin: 0 auto 1.25rem;
+      color: var(--dark-burgundy);
+    }
+    .final-cta p {
+      max-width: 480px;
+      margin: 0 auto 2.75rem;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip-label {
+      color: var(--muted-brown) !important;
+      opacity: 0.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .pillars-grid,
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .service-card .btn-outline-dark {
+        align-self: stretch;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: calc(var(--nav-height) + 3rem) 5% 4rem;
+      }
+    }
   </style>
 </head>
 <body>
-<!-- NAV -->
 
-  <!-- HERO -->
+  <!-- Nav injected by nav-component.js -->
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-sanskrit">मुदिता · Mudita Living</p>
+      <span class="hero-eyebrow">मुदिता · Mudita Living</span>
       <h1>High functioning<br/>on the outside.<br/><em>Thriving within.</em></h1>
-      <p>Executive coaching and yoga rooted in ancient wisdom — for high-performing professionals who are ready to stop running on empty and start living from the inside out.</p>
+      <p class="hero-sub">Executive coaching and yoga rooted in ancient wisdom — for high-performing professionals who are ready to stop running on empty and start living from the inside out.</p>
       <div class="hero-actions">
         <a href="pages/contact.html" class="btn-primary">Book a Session</a>
         <a href="pages/about.html" class="btn-outline">Meet Radhika</a>
@@ -258,28 +290,41 @@
     </div>
   </section>
 
-  <!-- PILLARS -->
-  <section class="pillars">
+  <!-- ══ TRUST STRIP ══════════════════════════════════ -->
+  <!-- CONTENT: Replace with actual client company logos once provided -->
+  <div class="trust-strip">
+    <span class="trust-strip-label">Trusted By Professionals From</span>
+    <div class="trust-logos">
+      <span class="trust-logo-pill">McKinsey</span>
+      <span class="trust-logo-pill">Goldman Sachs</span>
+      <span class="trust-logo-pill">Unilever</span>
+      <span class="trust-logo-pill">Tata Group</span>
+      <span class="trust-logo-pill">Standard Chartered</span>
+    </div>
+  </div>
+
+  <!-- ══ PILLARS ══════════════════════════════════════ -->
+  <section class="bg-off-white">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header fade-up">
         <span class="section-label">The Framework</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
+        <div class="divider-gold centered"></div>
         <h2>Body · Mind · Spirit</h2>
         <p>Every programme at Mudita Living is built on the Pancha Kosha model — validated by modern performance science and rooted in Vedic philosophy.</p>
       </div>
       <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">🌿</div>
+        <div class="card pillar-card fade-up">
+          <span class="pillar-icon">🌿</span>
           <h3>Body</h3>
           <p>Physical intelligence, nervous system regulation, breath and somatic practices. Your body holds more wisdom than you've been taught to access.</p>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">🧠</div>
+        <div class="card pillar-card fade-up">
+          <span class="pillar-icon">🧠</span>
           <h3>Mind</h3>
           <p>Emotional intelligence, thought patterns, decision clarity, and values alignment. Clarity on the inside creates performance on the outside.</p>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">✨</div>
+        <div class="card pillar-card fade-up">
+          <span class="pillar-icon">✨</span>
           <h3>Spirit</h3>
           <p>Purpose, identity, inner alignment, and sustainable motivation. Not fixing — realigning. To who you already are.</p>
         </div>
@@ -287,98 +332,159 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section>
+  <!-- ══ SERVICES ══════════════════════════════════════ -->
+  <section class="bg-cream">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header fade-up">
         <span class="section-label">How We Work</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
+        <div class="divider-gold centered"></div>
         <h2>Find Your Path</h2>
+        <p>Four distinct pathways — each grounded in the same whole-person philosophy, each tailored to where you are right now.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="card service-card fade-up">
           <span class="service-tag">Coaching</span>
           <h3>Executive Human Performance</h3>
           <p>For driven professionals and leaders running on empty. We don't optimise your performance — we rebuild it from the inside out, so it sustains.</p>
-          <a href="pages/coaching.html" class="btn-outline" style="align-self:flex-start; margin-top:1rem;">Learn More</a>
+          <a href="pages/coaching.html" class="btn-outline-dark">Learn More</a>
         </div>
-        <div class="service-card">
+        <div class="card service-card fade-up">
           <span class="service-tag">Coaching</span>
           <h3>Menopause Coaching</h3>
           <p>Navigating menopause without losing yourself or your edge. Evidence-based, deeply human support for women in the middle of a major life transition.</p>
-          <a href="pages/coaching.html" class="btn-outline" style="align-self:flex-start; margin-top:1rem;">Learn More</a>
+          <a href="pages/coaching.html" class="btn-outline-dark">Learn More</a>
         </div>
-        <div class="service-card">
+        <div class="card service-card fade-up">
           <span class="service-tag">Yoga</span>
-          <h3>Traditional Hatha Yoga & Therapy</h3>
+          <h3>Traditional Hatha Yoga &amp; Therapy</h3>
           <p>Not fitness yoga. Traditional Hatha practice and yoga therapy — online globally, in-person in Singapore — designed to restore and regulate.</p>
-          <a href="pages/yoga.html" class="btn-outline" style="align-self:flex-start; margin-top:1rem;">Learn More</a>
+          <a href="pages/yoga.html" class="btn-outline-dark">Learn More</a>
         </div>
-        <div class="service-card">
+        <div class="card service-card fade-up">
           <span class="service-tag">Courses</span>
-          <h3>Yoga Certification & Therapy Courses</h3>
+          <h3>Yoga Certification &amp; Therapy Courses</h3>
           <p>Structured learning for those who want to go deeper — Yoga Certification and Yoga Therapy Courses available online.</p>
-          <a href="pages/courses.html" class="btn-outline" style="align-self:flex-start; margin-top:1rem;">View Courses</a>
+          <a href="pages/courses.html" class="btn-outline-dark">View Courses</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUOTE BAND -->
-  <div class="quote-band">
-    <blockquote>
-      "Most high-performing professionals aren't struggling because they lack drive — they're struggling because they've built success on the outside while quietly running on empty within."
-    </blockquote>
-    <cite>— Radhika Avanthsa, Mudita Living</cite>
-  </div>
+  <!-- ══ PHILOSOPHY QUOTE ══════════════════════════════ -->
+  <section class="bg-dark quote-section">
+    <div class="quote-section-inner fade-up">
+      <blockquote>
+        Most high-performing professionals aren't struggling because they lack drive — they're struggling because they've built success on the outside while quietly running on empty within.
+      </blockquote>
+      <cite><span class="quote-divider"></span>Radhika Avanthsa · Mudita Living<span class="quote-divider"></span></cite>
+    </div>
+  </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
+  <!-- ══ TESTIMONIALS ════════════════════════════════════ -->
+  <section class="bg-cream-2">
     <div class="section-inner">
-      <span class="section-label">Ready to begin?</span>
-      <div class="divider-gold" style="margin:0.75rem auto;"></div>
+      <div class="section-header fade-up">
+        <span class="section-label">Client Stories</span>
+        <div class="divider-gold centered"></div>
+        <h2>What Clients Say</h2>
+        <p>Real results from real people — executives, leaders, and professionals who chose to perform differently.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <p>Working with Radhika changed how I understand my own performance. I was constantly achieving but felt nothing. Three months in, I actually feel present — in meetings, at home, with myself.</p>
+          <div class="tc-name">A.R.</div>
+          <div class="tc-role">Managing Director, Financial Services</div>
+          <div class="tc-location">Singapore</div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <p>I came for yoga therapy expecting to learn poses. What I got was a completely different relationship with my body and my stress response. I sleep. I breathe. I think more clearly.</p>
+          <div class="tc-name">S.M.</div>
+          <div class="tc-role">Senior Partner, Consulting</div>
+          <div class="tc-location">London · Online</div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <p>The menopause coaching was the first time I didn't feel like I was losing a battle. Radhika helped me see this as a transition, not a breakdown. That reframe changed everything.</p>
+          <div class="tc-name">P.K.</div>
+          <div class="tc-role">Chief People Officer</div>
+          <div class="tc-location">India · Online</div>
+        </div>
+      </div>
+      <div class="testimonials-cta fade-up">
+        <a href="pages/testimonials.html">See All Stories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════════ -->
+  <section class="bg-off-white final-cta" style="text-align:center; padding: var(--space-xl) 5%;">
+    <div class="section-inner fade-up">
+      <span class="section-label">Ready to Begin?</span>
+      <div class="divider-gold centered"></div>
       <h2>Perform at your best without burning through yourself.</h2>
       <p>Book a discovery call with Radhika — no pressure, no pitch. Just a conversation about where you are and where you want to be.</p>
       <a href="pages/contact.html" class="btn-primary">Book a Discovery Call</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">
-      <img src="assets/images/logo-light.png" alt="Mudita Living" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'" />
-      <span id="footer-logo-text" style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#F2E8DC; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <!-- CONTENT: Replace text with logo img when available -->
+        <span class="footer-brand-name">Mudita Living</span>
+        <p class="footer-tagline">Ancient Wisdom, Modern Practices</p>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <span class="footer-col-title">Services</span>
+          <ul class="footer-links">
+            <li><a href="pages/coaching.html">Executive Coaching</a></li>
+            <li><a href="pages/coaching.html">Menopause Coaching</a></li>
+            <li><a href="pages/yoga.html">Hatha Yoga</a></li>
+            <li><a href="pages/yoga.html">Yoga Therapy</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="footer-col-title">Learn</span>
+          <ul class="footer-links">
+            <li><a href="pages/courses.html">Yoga Certification</a></li>
+            <li><a href="pages/courses.html">Therapy Training</a></li>
+            <li><a href="pages/blog.html">Blog &amp; Insights</a></li>
+            <li><a href="pages/about.html">About Radhika</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="footer-col-title">Connect</span>
+          <ul class="footer-links">
+            <li><a href="pages/contact.html">Book a Session</a></li>
+            <li><a href="pages/contact.html">Discovery Call</a></li>
+            <li><a href="pages/testimonials.html">Client Stories</a></li>
+            <li><a href="pages/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="footer-col-title">Legal</span>
+          <ul class="footer-links">
+            <li><a href="pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="pages/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <p style="font-family: var(--font-display); font-style:italic; font-size:18px; color:var(--cream); margin-bottom:0.5rem;">
-      Ancient Wisdom, Modern Practices
-    </p>
-    <div class="footer-links">
-      <a href="pages/about.html">About</a>
-      <a href="pages/coaching.html">Coaching</a>
-      <a href="pages/yoga.html">Yoga</a>
-      <a href="pages/courses.html">Courses</a>
-      <a href="pages/blog.html">Blog</a>
-      <a href="pages/faq.html">FAQ</a>
-      <a href="pages/contact.html">Contact</a>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Mudita Living · Radhika Avanthsa · Singapore &amp; India · hello@muditaliving.com</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
     </div>
-    <p style="margin-top:1.5rem; font-size:12px;">
-      © 2026 Mudita Living · Radhika Avanthsa · Singapore & India<br/>
-      <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
-    </p>
   </footer>
 
-  <script>
-    function toggleHamburger() {
-      const dd = document.getElementById('navDropdown');
-      const btn = document.getElementById('navHamburger');
-      const isOpen = dd.classList.toggle('open');
-      btn.textContent = isOpen ? '✕' : '☰';
-    }
-    function closeHamburger() {
-      document.getElementById('navDropdown').classList.remove('open');
-      document.getElementById('navHamburger').textContent = '☰';
-    }
-  </script>
   <script src="assets/nav-component.js"></script>
 </body>
 </html>

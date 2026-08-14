@@ -11,333 +11,693 @@
   <meta property="og:image" content="../assets/images/og-coaching.jpg" />
   <link rel="canonical" href="https://muditaliving.com/pages/coaching.html" />
   <link rel="stylesheet" href="../assets/brand.css" />
+  <link rel="stylesheet" href="../assets/global.css" />
   <style>
-  /* Brand tokens — embedded for local file compatibility */
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
-  :root {
-    --burgundy: #5C1A3A;
-    --dark-burgundy: #3D1028;
-    --gold: #B8882A;
-    --light-gold: #D4A84B;
-    --pale-gold: #E8D49A;
-    --cream: #F2E8DC;
-    --cream-2: #F7F0E8;
-    --off-white: #FAF4ED;
-    --muted-brown: #7A6E65;
-    --warm-beige: #DDD0BE;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Jost', system-ui, sans-serif;
-    --text-hero: clamp(66px, 9.4vw, 100px);
-    --text-h1: clamp(43px, 6.2vw, 62px);
-    --text-h2: clamp(35px, 4.7vw, 43px);
-    --text-h3: 25px;
-    --text-body: 24px;
-    --text-caption: 19px;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 2rem;
-    --space-lg: 4rem;
-    --space-xl: 8rem;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    --radius-pill: 999px;
-    --shadow-sm: 0 2px 8px rgba(61,16,40,0.08);
-    --shadow-md: 0 4px 20px rgba(61,16,40,0.12);
-    --shadow-lg: 0 8px 40px rgba(61,16,40,0.16);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); font-size: var(--text-body); color: var(--muted-brown); background-color: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-  h1,h2,h3,h4 { font-family: var(--font-display); color: var(--dark-burgundy); line-height: 1.2; }
-  .btn-primary { display:inline-block; background:var(--gold); color:var(--dark-burgundy); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:14px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:background 0.2s,transform 0.2s; }
-  .btn-primary:hover { background:var(--light-gold); transform:translateY(-1px); }
-  .btn-outline { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); font-family:var(--font-body); font-weight:600; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; padding:13px 32px; border-radius:var(--radius-pill); text-decoration:none; transition:all 0.2s; }
-  .btn-outline:hover { background:var(--gold); color:var(--dark-burgundy); }
-  .section-label { font-family:var(--font-body); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
-  .divider-gold { width:48px; height:2px; background:var(--gold); margin:1rem 0; }
-</style>
-  <style>
+    /* ── PAGE-LEVEL OVERRIDES & SECTION STYLES ── */
 
-    /* ── NAV ── */
-    nav {
-      position: sticky; top: 0;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(242,232,220,0.95); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--warm-beige); z-index: 100;
+    /* Hero — left-aligned custom override on top of .page-hero */
+    .coaching-hero {
+      background: linear-gradient(135deg, #3D1028 0%, #5C1A3A 65%, #7A2550 100%);
+      min-height: 80vh;
+      display: flex;
+      align-items: flex-start;
+      padding: calc(var(--nav-height) + 4rem) 5% 5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      margin-top: 0;
     }
-    .nav-logo img { height: 52px; }
-    .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--dark-burgundy); text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-burgundy); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-cta { font-size: 13px !important; padding: 10px 24px !important; }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #3D1028;
-      cursor: pointer;
-      padding: 4px 8px;
+    .coaching-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.07'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    .coaching-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(92,26,58,0.45) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .coaching-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+    .coaching-hero .hero-eyebrow {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--light-gold);
+      margin-bottom: 1.5rem;
+    }
+    .coaching-hero h1 {
+      font-size: var(--text-hero);
+      color: var(--cream);
+      font-weight: 300;
+      line-height: 1.1;
+      margin: 0 0 1.25rem;
+    }
+    .coaching-hero h1 em {
+      color: var(--light-gold);
+      font-style: italic;
+    }
+    .coaching-hero .hero-sub {
+      font-size: 17px;
+      color: rgba(242,232,220,0.80);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .coaching-hero .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── PROBLEM / PAIN POINTS ── */
+    .pain-section {
+      padding: var(--space-lg) 5%;
+    }
+    .pain-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .pain-section .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .pain-section .section-header .section-label {
+      color: var(--light-gold);
+    }
+    .pain-section .section-header h2 {
+      font-size: var(--text-h1);
+      color: var(--cream);
+      margin: 0.75rem 0 1rem;
+    }
+    .pain-section .section-header p {
+      color: rgba(242,232,220,0.72);
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.75rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: background var(--ease), border-color var(--ease);
+      color: var(--cream);
+    }
+    .pain-card:hover {
+      background: rgba(184,136,42,0.08);
+      border-color: rgba(184,136,42,0.35);
+    }
+    .pain-icon {
+      font-size: 1.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
       line-height: 1;
     }
-    .nav-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #F2E8DC;
-      border-bottom: 2px solid #B8882A;
-      padding: 1rem 5%;
-      z-index: 99;
+    .pain-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+      font-weight: 500;
     }
-    .nav-dropdown.open { display: block; }
-    .nav-dropdown a {
-      display: block;
-      padding: 0.75rem 0;
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      color: #3D1028;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 1px solid #DDD0BE;
+    .pain-card p {
+      font-size: 13px;
+      color: rgba(242,232,220,0.65);
+      line-height: 1.75;
     }
-    .nav-dropdown a:hover { color: #B8882A; }
-    .nav-dropdown .mob-book {
-      display: block;
-      margin-top: 0.75rem;
-      background: #B8882A;
-      color: #3D1028 !important;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      border-radius: 999px;
+
+    /* ── EXECUTIVE COACHING ── */
+    .exec-section {
+      padding: var(--space-lg) 5%;
+    }
+    .exec-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .exec-header {
+      margin-bottom: 3.5rem;
+    }
+    .exec-header .section-label { margin-bottom: 0.5rem; }
+    .exec-header h2 {
+      font-size: var(--text-h1);
+      color: var(--dark-burgundy);
+      margin: 0.5rem 0 1rem;
+    }
+    .exec-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .exec-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .exec-left p {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .exec-phrase {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-style: italic;
+      color: var(--burgundy);
+      line-height: 1.5;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+    .format-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .format-chip {
+      font-family: var(--font-body);
+      font-size: 11px;
       font-weight: 600;
-      border-bottom: none !important;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+    }
+    .exec-right { display: flex; flex-direction: column; gap: 1.5rem; }
+    .img-placeholder-wrap {
+      width: 100%;
+      aspect-ratio: 4/5;
+      min-height: 300px;
+    }
+    .exec-bullets {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border-top: 3px solid var(--gold);
+      box-shadow: var(--shadow-sm);
+    }
+    .exec-bullets h3 {
+      font-size: 16px;
+      color: var(--dark-burgundy);
+      margin-bottom: 1rem;
+    }
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .check-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .check-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 10px;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .who-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .who-chip {
+      font-size: 12px;
+      background: var(--off-white);
+      border: 1px solid var(--warm-beige);
+      border-radius: var(--radius-pill);
+      padding: 4px 14px;
+      color: var(--muted-brown);
     }
 
-    /* ── BASE ── */
-    section { padding: var(--space-lg) 5%; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-header h2 { font-size: var(--text-h1); margin: 0.5rem 0 1rem; }
-    .section-header p { max-width: 580px; margin: 0 auto; font-size: 16px; line-height: 1.8; }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 85vh; display: flex; align-items: center;
-      background: linear-gradient(135deg, var(--dark-burgundy) 0%, var(--burgundy) 60%, #7A2550 100%);
-      padding: 8rem 5% 5rem; position: relative; overflow: hidden;
+    /* ── MENOPAUSE COACHING ── */
+    .meno-section {
+      padding: var(--space-lg) 5%;
     }
-    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .hero-content { position: relative; max-width: 720px; }
-    .hero-eyebrow { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--light-gold); margin-bottom: 1.25rem; display: block; }
-    .hero h1 { font-size: var(--text-hero); color: var(--cream); font-weight: 300; line-height: 1.1; margin-bottom: 1.25rem; }
-    .hero h1 em { color: var(--light-gold); font-style: italic; }
-    .hero-sub { font-size: 18px; color: rgba(242,232,220,0.82); max-width: 560px; line-height: 1.75; margin-bottom: 2.5rem; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* ── 2. PROBLEM ── */
-    .problem { background: var(--dark-burgundy); position: relative; overflow: hidden; }
-    .problem::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8882A' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .problem .section-inner { position: relative; }
-    .problem-header { text-align: center; margin-bottom: 3rem; }
-    .problem-header .section-label { color: var(--light-gold); }
-    .problem-header h2 { font-size: var(--text-h1); color: var(--cream); margin: 0.5rem 0 1rem; }
-    .problem-header p { color: rgba(242,232,220,0.75); max-width: 540px; margin: 0 auto; font-size: 16px; line-height: 1.8; }
-    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .pain-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(184,136,42,0.2);
-      border-radius: var(--radius-md); padding: 1.75rem;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: background 0.2s, border-color 0.2s;
+    .meno-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
     }
-    .pain-card:hover { background: rgba(184,136,42,0.08); border-color: rgba(184,136,42,0.4); }
-    .pain-arrow { color: var(--gold); font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
-    .pain-card h3 { font-family: var(--font-display); font-size: 18px; color: var(--cream); margin-bottom: 0.4rem; font-style: italic; }
-    .pain-card p { font-size: 13px; color: rgba(242,232,220,0.65); line-height: 1.7; }
-
-    /* ── 3. SERVICE 1 — EXECUTIVE COACHING ── */
-    .exec-coaching { background: var(--off-white); }
-    .service-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .service-left { display: flex; flex-direction: column; gap: 1.5rem; }
-    .service-tag { font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-    .service-left h2 { font-size: var(--text-h1); }
-    .service-left p { font-size: 15px; line-height: 1.85; }
-    .service-phrase { font-family: var(--font-display); font-size: 22px; font-style: italic; color: var(--burgundy); line-height: 1.5; border-left: 3px solid var(--gold); padding-left: 1.25rem; }
-    .format-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .format-chip { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border: 1.5px solid var(--gold); color: var(--gold); padding: 5px 14px; border-radius: var(--radius-pill); }
-
-    .service-right { display: flex; flex-direction: column; gap: 1.25rem; }
-    .outcome-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .outcome-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 14px; line-height: 1.65; }
-    .outcome-list li::before { content: '✦'; color: var(--gold); font-size: 10px; flex-shrink: 0; margin-top: 4px; }
-    .outcome-box { background: var(--cream); border-radius: var(--radius-md); padding: 1.5rem; border-top: 3px solid var(--gold); box-shadow: var(--shadow-sm); }
-    .outcome-box h3 { font-size: 15px; color: var(--dark-burgundy); margin-bottom: 0.75rem; }
-    .who-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .who-chip { font-size: 12px; background: var(--off-white); border: 1px solid var(--warm-beige); border-radius: var(--radius-pill); padding: 4px 12px; color: var(--muted-brown); }
-
-    /* ── 4. SERVICE 2 — MENOPAUSE ── */
-    .menopause { background: var(--cream-2); }
-    .menopause-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
-    .menopause-card {
-      background: var(--dark-burgundy); border-radius: var(--radius-lg);
-      padding: 3rem; color: var(--cream); position: relative; overflow: hidden;
+    .meno-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
     }
-    .menopause-card::before { content: '🌙'; position: absolute; right: 2rem; top: 2rem; font-size: 4rem; opacity: 0.12; }
-    .menopause-card .service-tag { color: var(--light-gold); margin-bottom: 1rem; display: block; }
-    .menopause-card h2 { font-size: clamp(24px,3vw,34px); color: var(--cream); margin-bottom: 1rem; }
-    .menopause-card p { font-size: 15px; color: rgba(242,232,220,0.8); line-height: 1.8; margin-bottom: 1.5rem; }
-    .menopause-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
-    .menopause-features li { display: flex; gap: 0.6rem; font-size: 13px; color: rgba(242,232,220,0.8); }
-    .menopause-features li::before { content: '✦'; color: var(--light-gold); font-size: 9px; flex-shrink: 0; margin-top: 4px; }
-    .menopause-right { display: flex; flex-direction: column; gap: 1.5rem; }
-    .menopause-right h3 { font-size: var(--text-h2); color: var(--dark-burgundy); }
-    .menopause-right p { font-size: 15px; line-height: 1.85; }
-    .stat-row { display: flex; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--warm-beige); border-bottom: 1px solid var(--warm-beige); }
-    .stat { text-align: center; }
-    .stat-num { font-family: var(--font-display); font-size: 36px; color: var(--gold); font-weight: 300; display: block; }
-    .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-brown); }
-
-    /* ── 5. HOW IT WORKS ── */
-    .how { background: var(--cream); }
-    .timeline { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-    .timeline-step { display: flex; gap: 2rem; align-items: flex-start; padding-bottom: 3rem; position: relative; }
-    .timeline-step:not(:last-child)::after { content: ''; position: absolute; left: 24px; top: 52px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), transparent); opacity: 0.3; }
-    .step-num-wrap { flex-shrink: 0; }
-    .step-num {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--light-gold));
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-size: 20px; font-weight: 500;
-      color: var(--dark-burgundy); box-shadow: 0 4px 12px rgba(184,136,42,0.3);
+    /* Image on LEFT, text on RIGHT */
+    .meno-image { order: 1; }
+    .meno-text  { order: 2; }
+    .meno-text .section-label { margin-bottom: 0.5rem; }
+    .meno-text h2 {
+      font-size: var(--text-h1);
+      color: var(--dark-burgundy);
+      margin: 0.5rem 0 1.25rem;
     }
-    .step-content { flex: 1; padding-top: 0.5rem; }
-    .step-content h3 { font-size: 22px; color: var(--dark-burgundy); margin-bottom: 0.5rem; }
-    .step-content p { font-size: 14px; line-height: 1.8; }
+    .meno-text p {
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .meno-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+    .meno-features li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .meno-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 10px;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .meno-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--burgundy);
+      line-height: 1.55;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.25rem;
+      margin: 1.25rem 0 2rem;
+    }
+    .stat-row {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--warm-beige);
+      border-bottom: 1px solid var(--warm-beige);
+      margin-bottom: 1.5rem;
+    }
+    .stat-item-meno { text-align: center; flex: 1; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--gold);
+      font-weight: 300;
+      display: block;
+    }
+    .stat-lbl {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted-brown);
+      line-height: 1.5;
+    }
 
-    /* ── 6. CORPORATE ── */
-    .corporate { background: var(--dark-burgundy); text-align: center; }
-    .corporate-inner { max-width: 720px; margin: 0 auto; }
-    .corporate h2 { font-size: var(--text-h1); color: var(--cream); margin: 0.75rem 0 1.25rem; }
-    .corporate p { color: rgba(242,232,220,0.8); font-size: 16px; line-height: 1.8; margin-bottom: 2rem; }
-    .corporate-offerings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
-    .corp-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,136,42,0.2); border-radius: var(--radius-md); padding: 1.25rem; }
-    .corp-item h4 { font-family: var(--font-display); font-size: 16px; font-style: italic; color: var(--light-gold); margin-bottom: 0.4rem; }
-    .corp-item p { font-size: 12px; color: rgba(242,232,220,0.65); line-height: 1.6; }
-
-    /* ── 7. TESTIMONIALS ── */
-    .testimonials { background: var(--off-white); }
-    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .testimonial-card {
-      background: var(--cream); border-radius: var(--radius-lg);
-      padding: 2.5rem; box-shadow: var(--shadow-sm);
-      display: flex; flex-direction: column; gap: 1.25rem;
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      padding: var(--space-lg) 5%;
+    }
+    .how-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .how-section .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .how-section .section-header h2 {
+      font-size: var(--text-h1);
+      color: var(--dark-burgundy);
+    }
+    /* Horizontal steps with connecting line */
+    .steps-row {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
       position: relative;
     }
-    .quote-mark { font-family: var(--font-display); font-size: 72px; color: var(--gold); opacity: 0.2; line-height: 0.8; position: absolute; top: 1.25rem; right: 1.75rem; }
-    .testimonial-card blockquote { font-family: var(--font-display); font-size: 18px; font-style: italic; color: var(--dark-burgundy); line-height: 1.65; }
-    .testimonial-author { display: flex; flex-direction: column; gap: 0.2rem; border-top: 1px solid var(--warm-beige); padding-top: 1rem; }
-    .author-name { font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--dark-burgundy); }
-    .author-role { font-size: 12px; color: var(--muted-brown); }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(33.333% / 2);
+      right: calc(33.333% / 2);
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .step-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--light-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--dark-burgundy);
+      box-shadow: 0 4px 12px rgba(184,136,42,0.35);
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+    .step-col h3 {
+      font-size: 20px;
+      color: var(--dark-burgundy);
+      margin-bottom: 0.75rem;
+    }
+    .step-col p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted-brown);
+    }
 
-    /* ── 8. CTA ── */
-    .cta-section { background: var(--cream-2); text-align: center; }
-    .cta-section h2 { font-size: var(--text-h1); max-width: 600px; margin: 0.5rem auto 1.25rem; }
-    .cta-section p { max-width: 480px; margin: 0 auto 2.5rem; font-size: 16px; line-height: 1.8; }
-    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .cta-note { margin-top: 1.25rem; font-size: 12px; color: var(--muted-brown); }
+    /* ── CORPORATE ── */
+    .corp-section {
+      padding: var(--space-lg) 5%;
+    }
+    .corp-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .corp-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .corp-header .section-label { color: var(--light-gold); }
+    .corp-header h2 {
+      font-size: var(--text-h1);
+      color: var(--dark-burgundy);
+      margin: 0.75rem 0 1.25rem;
+    }
+    .corp-header p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .corp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .corp-card {
+      background: var(--off-white);
+      border: 1px solid var(--warm-beige);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      border-top: 3px solid var(--gold);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .corp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .corp-card h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--dark-burgundy);
+      margin-bottom: 0.6rem;
+    }
+    .corp-card p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .corp-cta {
+      text-align: center;
+    }
+    .corp-note {
+      margin-top: 1rem;
+      font-size: 12px;
+      color: var(--muted-brown);
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-dark {
+      padding: var(--space-lg) 5%;
+      text-align: center;
+    }
+    .cta-dark .section-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-dark .section-label { color: var(--light-gold); }
+    .cta-dark h2 {
+      font-size: var(--text-h1);
+      color: var(--cream);
+      margin: 0.75rem 0 1.25rem;
+    }
+    .cta-dark p {
+      color: rgba(242,232,220,0.78);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-note {
+      margin-top: 1.25rem;
+      font-size: 12px;
+      color: rgba(242,232,220,0.45);
+    }
 
     /* ── FOOTER ── */
-    footer { background: var(--dark-burgundy); color: rgba(242,232,220,0.7); padding: 3rem 5%; text-align: center; }
-    footer p { font-size: 13px; line-height: 1.8; }
-    footer a { color: var(--light-gold); text-decoration: none; }
-    .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
-    .footer-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .site-footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 5% 0;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-brand-block {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .footer-brand-block .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .footer-brand-block .footer-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(242,232,220,0.48);
+    }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-col-title {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .footer-col-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .footer-col-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: rgba(242,232,220,0.55);
+      transition: color var(--ease);
+      line-height: 1.4;
+    }
+    .footer-col-links a:hover { color: var(--light-gold); }
+    .footer-col-links a.active { color: var(--light-gold); }
+    .footer-divider-line {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0.22;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-base {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 5%;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copyright {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: rgba(242,232,220,0.33);
+    }
+    .footer-copyright a { color: var(--light-gold); }
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-social a {
+      color: rgba(242,232,220,0.35);
+      font-size: 13px;
+      transition: color var(--ease);
+    }
+    .footer-social a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none !important; }
-      .nav-hamburger { display: block; }
-      .pain-grid { grid-template-columns: 1fr; }
-      .service-layout, .menopause-layout { grid-template-columns: 1fr; }
-      .corporate-offerings { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .stat-row { flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 900px) {
+      .pain-grid { grid-template-columns: repeat(2, 1fr); }
+      .exec-layout { grid-template-columns: 1fr; }
+      .meno-layout { grid-template-columns: 1fr; }
+      .meno-image { order: 2; }
+      .meno-text  { order: 1; }
+      .steps-row { flex-direction: column; gap: 2.5rem; }
+      .steps-row::before { display: none; }
+      .step-col { align-items: flex-start; text-align: left; padding: 0; flex-direction: row; gap: 1.5rem; }
+      .step-num { flex-shrink: 0; margin-bottom: 0; }
+      .corp-grid { grid-template-columns: 1fr; }
+      .footer-cols { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 480px) {
-      input, select, textarea { font-size: 16px !important; }
-      .btn-primary, .btn-outline { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+    @media (max-width: 600px) {
+      .pain-grid { grid-template-columns: 1fr; }
+      .coaching-hero h1 { font-size: clamp(32px, 9vw, 54px); }
+      .coaching-hero .hero-actions { flex-direction: column; }
+      .footer-cols { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .stat-row { flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
-<!-- NAV -->
 
-  <!-- 1. HERO -->
-  <section class="hero">
-    <div class="hero-content">
+  <!-- NAV — injected by nav-component.js -->
+
+  <!-- ══════════════════════════════════════
+       1. HERO
+  ══════════════════════════════════════ -->
+  <section class="coaching-hero page-hero">
+    <div class="coaching-hero__content">
       <span class="hero-eyebrow">Coaching with Radhika Avanthsa</span>
-      <h1>Executive Human<br/>Performance<br/><em>Coaching.</em></h1>
+      <div class="divider-gold"></div>
+      <h1>Executive Human Performance<br/><em>Coaching.</em></h1>
       <p class="hero-sub">For leaders who are high-functioning on the outside, running on empty within. Not optimising your performance — rebuilding it from the inside out.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
-        <a href="#how-it-works" class="btn-outline">How it works</a>
+        <a href="#how-it-works" class="btn-outline">How It Works</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. THE PROBLEM -->
-  <section class="problem">
+  <!-- ══════════════════════════════════════
+       2. PROBLEM / PAIN POINTS
+  ══════════════════════════════════════ -->
+  <section class="pain-section bg-dark">
     <div class="section-inner">
-      <div class="problem-header">
+      <div class="section-header">
         <span class="section-label">Sound familiar?</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
-        <h2>The things no one talks about<br/>at the top.</h2>
+        <div class="divider-gold centered"></div>
+        <h2>You're succeeding on paper.<br/>Something's still off.</h2>
         <p>You have the title, the success, the respect. And something still isn't right. You're not alone — and it's not a character flaw.</p>
       </div>
       <div class="pain-grid">
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>Running on empty — but can't stop</h3>
             <p>Your diary is full. Your output is high. Your battery is at 3%. And slowing down feels like a risk you can't afford to take.</p>
           </div>
         </div>
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>High-functioning but hollow</h3>
             <p>You're performing — but something vital has gone quiet. The drive is there; the meaning is harder to locate.</p>
           </div>
         </div>
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>Living on autopilot</h3>
             <p>You're excellent at executing. But when did you last feel like you were actually choosing your life — rather than just running it?</p>
           </div>
         </div>
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>Burnout productivity tips won't fix</h3>
             <p>You've tried the hacks. The morning routines. The app. This isn't a productivity problem — it's a deeper misalignment that needs a different kind of work.</p>
           </div>
         </div>
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>Success that doesn't feel like enough</h3>
             <p>You've built what you wanted. So why does it feel like you're still running toward something? Radhika calls this the gap — and she knows how to close it.</p>
           </div>
         </div>
-        <div class="pain-card">
-          <div class="pain-arrow">→</div>
+        <div class="card card--dark fade-up">
+          <div class="pain-icon">⚡</div>
           <div>
             <h3>Identity beyond the job title</h3>
             <p>Who are you when you take the role away? For many leaders, that question arrives uninvited — during a transition, a health scare, or a quiet Sunday morning.</p>
@@ -347,27 +707,22 @@
     </div>
   </section>
 
-  <!-- 3. SERVICE 1 — EXECUTIVE COACHING -->
-  <section class="exec-coaching">
+  <!-- ══════════════════════════════════════
+       3. EXECUTIVE COACHING
+  ══════════════════════════════════════ -->
+  <section class="exec-section bg-cream">
     <div class="section-inner">
-      <div class="service-layout">
-        <div class="service-left">
-          <span class="service-tag">Service 01</span>
-          <div class="divider-gold"></div>
-          <h2>Executive Human Performance Coaching</h2>
+      <div class="exec-header">
+        <span class="section-label">For High Performers</span>
+        <div class="divider-gold"></div>
+        <h2>Executive Human Performance Coaching</h2>
+      </div>
+      <div class="exec-layout">
+        <div class="exec-left">
           <p>This is not about working harder, smarter, or faster. It's about building a relationship with your performance that is sustainable — rooted in who you actually are, not who you've been conditioned to be.</p>
-          <p class="service-phrase">"Perform at your best without burning through yourself."</p>
+          <p class="exec-phrase">"Perform at your best without burning through yourself."</p>
           <p>Working with Radhika, you'll use the Pancha Kosha framework to understand performance across the five layers of self — body, energy, mind, wisdom, and identity — and rebuild from wherever the gap is.</p>
-          <div class="format-chips">
-            <span class="format-chip">1:1 Coaching</span>
-            <span class="format-chip">Small Group Programmes</span>
-            <span class="format-chip">Online Globally</span>
-            <span class="format-chip">In-Person Singapore</span>
-          </div>
-          <a href="contact.html" class="btn-primary" style="align-self:flex-start; margin-top:0.5rem;">Start Here →</a>
-        </div>
-        <div class="service-right">
-          <div class="outcome-box">
+          <div class="exec-bullets">
             <h3>Who this is for</h3>
             <div class="who-chips">
               <span class="who-chip">Executives &amp; Directors</span>
@@ -378,9 +733,29 @@
               <span class="who-chip">Founders mid-transition</span>
             </div>
           </div>
-          <div class="outcome-box">
+          <div class="format-chips">
+            <span class="format-chip">1:1 Coaching</span>
+            <span class="format-chip">Small Group Programmes</span>
+            <span class="format-chip">Online Globally</span>
+            <span class="format-chip">In-Person Singapore</span>
+          </div>
+          <div>
+            <a href="contact.html" class="btn-primary">Start Here &rarr;</a>
+          </div>
+        </div>
+        <div class="exec-right">
+          <div class="img-placeholder img-placeholder-wrap">
+            <!-- CONTENT: Add coaching session photo -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="8" width="36" height="32" rx="2" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+              <circle cx="24" cy="22" r="8" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+              <path d="M8 40c2-6 8-10 16-10s14 4 16 10" stroke="#B8882A" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Coaching Session Photo</span>
+          </div>
+          <div class="exec-bullets">
             <h3>What changes</h3>
-            <ul class="outcome-list">
+            <ul class="check-list">
               <li>You stop running on willpower alone — and start accessing a deeper, more sustainable source of energy</li>
               <li>You make decisions from clarity and values — not from fear or people-pleasing</li>
               <li>You lead with presence, not just output</li>
@@ -389,9 +764,9 @@
               <li>You build something from the inside out — that actually lasts</li>
             </ul>
           </div>
-          <div class="outcome-box">
+          <div class="exec-bullets">
             <h3>The approach</h3>
-            <ul class="outcome-list">
+            <ul class="check-list">
               <li>ICF-accredited coaching methodology — structured, rigorous, ethical</li>
               <li>Pancha Kosha framework — whole-person, not just mindset</li>
               <li>Somatic and yoga philosophy tools woven in where useful</li>
@@ -404,15 +779,33 @@
     </div>
   </section>
 
-  <!-- 4. SERVICE 2 — MENOPAUSE COACHING -->
-  <section class="menopause">
+  <!-- ══════════════════════════════════════
+       4. MENOPAUSE COACHING
+  ══════════════════════════════════════ -->
+  <section class="meno-section bg-cream-2">
     <div class="section-inner">
-      <div class="menopause-layout">
-        <div class="menopause-card">
-          <span class="service-tag">Service 02</span>
+      <div class="meno-layout">
+        <!-- Image LEFT -->
+        <div class="meno-image">
+          <div class="img-placeholder" style="min-height: 460px; aspect-ratio: 3/4; width: 100%;">
+            <!-- CONTENT: Add menopause coaching photo -->
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="14" r="8" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+              <path d="M8 44c0-9 7-16 16-16s16 7 16 16" stroke="#B8882A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M32 10c2.5 1.5 4 4.2 4 7.5" stroke="#D4A84B" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Menopause Coaching Photo</span>
+          </div>
+        </div>
+        <!-- Text RIGHT -->
+        <div class="meno-text">
+          <span class="section-label">Service 02</span>
+          <div class="divider-gold"></div>
           <h2>Menopause Coaching</h2>
           <p>For high-achieving women navigating perimenopause and menopause without losing their edge, their identity, or their sense of self. Evidence-based, deeply human support — with someone who won't treat this as a footnote.</p>
-          <ul class="menopause-features">
+          <p>Menopause doesn't announce itself neatly. It arrives in disrupted sleep, unexpected brain fog, a shorter fuse, and a feeling that you're somehow less than you were — even when your track record says otherwise.</p>
+          <p>Radhika's menopause coaching integrates hormonal health education, emotional intelligence work, somatic practices, and the practical reality of being a high-functioning woman in the middle of a significant biological transition. It is the support you deserved years ago.</p>
+          <ul class="meno-features">
             <li>Specialist training in menopause coaching</li>
             <li>Hormonal intelligence — understand what's actually happening</li>
             <li>Performance continuity through the transition</li>
@@ -421,52 +814,55 @@
             <li>Nervous system regulation and sleep support</li>
             <li>Yoga and breathwork practices tailored to hormonal phases</li>
           </ul>
-          <a href="contact.html" class="btn-primary">Enquire About Menopause Coaching</a>
-        </div>
-        <div class="menopause-right">
-          <h3>You're still at the top of your game.<br/>Your body is asking for a different kind of attention.</h3>
-          <p>Menopause doesn't announce itself neatly. It arrives in disrupted sleep, unexpected brain fog, a shorter fuse, and a feeling that you're somehow less than you were — even when your track record says otherwise.</p>
-          <p>Radhika's menopause coaching integrates hormonal health education, emotional intelligence work, somatic practices, and the practical reality of being a high-functioning woman in the middle of a significant biological transition. It is the support you deserved years ago.</p>
           <div class="stat-row">
-            <div class="stat"><span class="stat-num">1 in 2</span><span class="stat-label">Women report menopause impacting work performance</span></div>
-            <div class="stat"><span class="stat-num">0</span><span class="stat-label">Times this is usually discussed at senior leadership level</span></div>
+            <div class="stat-item-meno">
+              <span class="stat-num">1 in 2</span>
+              <span class="stat-lbl">Women report menopause impacting work performance</span>
+            </div>
+            <div class="stat-item-meno">
+              <span class="stat-num">0</span>
+              <span class="stat-lbl">Times this is usually discussed at senior leadership level</span>
+            </div>
           </div>
-          <p style="font-family:var(--font-display); font-style:italic; font-size:19px; color:var(--burgundy); line-height:1.5;">
-            "Not fixing — realigning. To who you've always been, on the other side of this."
-          </p>
+          <p class="meno-quote">"Not fixing — realigning. To who you've always been, on the other side of this."</p>
+          <div>
+            <a href="contact.html" class="btn-primary">Enquire About Menopause Coaching</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS -->
-  <section class="how" id="how-it-works">
+  <!-- ══════════════════════════════════════
+       5. HOW IT WORKS
+  ══════════════════════════════════════ -->
+  <section class="how-section bg-off-white" id="how-it-works">
     <div class="section-inner">
       <div class="section-header">
         <span class="section-label">The Process</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
-        <h2>How it works</h2>
+        <div class="divider-gold centered"></div>
+        <h2>How We Work Together</h2>
         <p>Three stages. Fully personalised. No rush, no script.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-step">
-          <div class="step-num-wrap"><div class="step-num">1</div></div>
-          <div class="step-content">
+      <div class="steps-row">
+        <div class="step-col fade-up">
+          <div class="step-num">1</div>
+          <div>
             <h3>Discovery Call</h3>
             <p>A free 30-minute conversation — no pitch, no pressure. Radhika listens, asks the questions that matter, and gives you an honest read on whether and how working together would help. If it's not the right fit, she'll say so — and often point you in a better direction.</p>
           </div>
         </div>
-        <div class="timeline-step">
-          <div class="step-num-wrap"><div class="step-num">2</div></div>
-          <div class="step-content">
+        <div class="step-col fade-up">
+          <div class="step-num">2</div>
+          <div>
             <h3>Personalised Programme Design</h3>
             <p>No off-the-shelf packages. After the discovery call, Radhika designs a programme around your specific context — the pressures, the goals, the timeline, the budget. You'll know what you're working toward, why, and roughly how. Then you begin.</p>
           </div>
         </div>
-        <div class="timeline-step">
-          <div class="step-num-wrap"><div class="step-num">3</div></div>
-          <div class="step-content">
-            <h3>Ongoing Support & Accountability</h3>
+        <div class="step-col fade-up">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Ongoing Support &amp; Accountability</h3>
             <p>Sessions are typically fortnightly via Zoom, with email support between. Radhika holds both the warmth and the rigour — she will celebrate your wins and hold you to what you said you wanted when you drift. The work deepens as trust builds.</p>
           </div>
         </div>
@@ -474,114 +870,132 @@
     </div>
   </section>
 
-  <!-- 6. CORPORATE -->
-  <section class="corporate">
+  <!-- ══════════════════════════════════════
+       6. CORPORATE PROGRAMS
+  ══════════════════════════════════════ -->
+  <section class="corp-section bg-cream-2">
     <div class="section-inner">
-      <div class="corporate-inner">
-        <span class="section-label" style="color:var(--light-gold);">For Organisations</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
-        <h2>Corporate Programmes</h2>
+      <div class="corp-header">
+        <span class="section-label">For Organisations</span>
+        <div class="divider-gold centered"></div>
+        <h2>Corporate Wellness Programs</h2>
         <p>Radhika works with organisations seeking to invest in their people at a level that actually changes something — beyond the standard wellbeing app or lunch-and-learn. Custom programmes designed for your team's real needs.</p>
-        <div class="corporate-offerings">
-          <div class="corp-item">
-            <h4>Leadership Development</h4>
-            <p>Executive coaching for senior leadership teams — individual and group formats, delivered over 3–6 months.</p>
-          </div>
-          <div class="corp-item">
-            <h4>Wellbeing Workshops</h4>
-            <p>Half-day or full-day sessions on human performance, burnout prevention, and sustainable leadership.</p>
-          </div>
-          <div class="corp-item">
-            <h4>Keynote Speaking</h4>
-            <p>Engaging, evidence-based talks on performance, resilience, and leading from the inside out. Available for conferences and internal events.</p>
-          </div>
+      </div>
+      <div class="corp-grid">
+        <div class="corp-card fade-up">
+          <h4>Leadership Development</h4>
+          <p>Executive coaching for senior leadership teams — individual and group formats, delivered over 3–6 months.</p>
         </div>
-        <a href="mailto:hello@muditaliving.com?subject=Corporate%20Programme%20Enquiry" class="btn-primary">Enquire About Corporate Programmes</a>
-        <p style="margin-top:1rem; font-size:12px; color:rgba(242,232,220,0.5);">Custom pricing · Minimum group size applies · Singapore &amp; online</p>
+        <div class="corp-card fade-up">
+          <h4>Wellbeing Workshops</h4>
+          <p>Half-day or full-day sessions on human performance, burnout prevention, and sustainable leadership.</p>
+        </div>
+        <div class="corp-card fade-up">
+          <h4>Keynote Speaking</h4>
+          <p>Engaging, evidence-based talks on performance, resilience, and leading from the inside out. Available for conferences and internal events.</p>
+        </div>
+      </div>
+      <div class="corp-cta">
+        <a href="mailto:hello@muditaliving.com?subject=Corporate%20Programme%20Enquiry" class="btn-outline-dark">Enquire About Corporate Programs</a>
+        <p class="corp-note">Custom pricing &middot; Minimum group size applies &middot; Singapore &amp; online</p>
       </div>
     </div>
   </section>
 
-  <!-- 7. TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">Client Stories</span>
-        <div class="divider-gold" style="margin:0.75rem auto;"></div>
-        <h2>In their own words</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <blockquote>
-            "I came to Radhika burned out and honestly not sure I even believed coaching could help. Three months later, I'm making decisions differently, sleeping better, and — this sounds strange — I'm enjoying my work again. Not because my job changed. Because I did."
-          </blockquote>
-          <div class="testimonial-author">
-            <span class="author-name">[Client Name]</span>
-            <span class="author-role">Managing Director · Financial Services · Singapore</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <blockquote>
-            "What set Radhika apart was that she didn't treat my situation as a problem to fix. She treated it as something to understand. The combination of coaching and the yoga framework she uses is unlike anything I've encountered in 15 years of working with coaches and consultants."
-          </blockquote>
-          <div class="testimonial-author">
-            <span class="author-name">[Client Name]</span>
-            <span class="author-role">Founder &amp; CEO · Technology · India</span>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem;">
-        <a href="testimonials.html" class="btn-outline">Read More Stories</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. CTA -->
-  <section class="cta-section">
+  <!-- ══════════════════════════════════════
+       7. CTA
+  ══════════════════════════════════════ -->
+  <section class="cta-dark bg-dark">
     <div class="section-inner">
       <span class="section-label">Ready to begin?</span>
-      <div class="divider-gold" style="margin:0.75rem auto;"></div>
+      <div class="divider-gold centered"></div>
       <h2>Stop managing.<br/>Start thriving.</h2>
       <p>Book a complimentary 30-minute discovery call. No pitch, no pressure — just a real conversation about where you are and whether working together makes sense.</p>
       <div class="cta-actions">
         <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
         <a href="about.html" class="btn-outline">Meet Radhika</a>
       </div>
-      <p class="cta-note">30 minutes · Free · Online via Zoom · Singapore, India & globally</p>
+      <p class="cta-note">30 minutes &middot; Free &middot; Online via Zoom &middot; Singapore, India &amp; globally</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--cream); margin-bottom:0.5rem;">Ancient Wisdom, Modern Practices</p>
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="coaching.html" class="active">Coaching</a>
-      <a href="yoga.html">Yoga</a>
-      <a href="courses.html">Courses</a>
-      <a href="blog.html">Blog</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-brand-block">
+        <span class="footer-brand-name">Mudita Living</span>
+        <span class="footer-tagline">Ancient Wisdom, Modern Practices</span>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <span class="footer-col-title">Services</span>
+          <nav class="footer-col-links">
+            <a href="coaching.html" class="active">Executive Coaching</a>
+            <a href="coaching.html#menopause">Menopause Coaching</a>
+            <a href="yoga.html">Hatha Yoga</a>
+            <a href="yoga.html#therapy">Yoga Therapy</a>
+            <a href="courses.html">Courses &amp; Training</a>
+          </nav>
+        </div>
+        <div>
+          <span class="footer-col-title">Learn</span>
+          <nav class="footer-col-links">
+            <a href="about.html">About Radhika</a>
+            <a href="blog.html">Blog &amp; Articles</a>
+            <a href="faq.html">FAQ</a>
+            <a href="testimonials.html">Client Stories</a>
+          </nav>
+        </div>
+        <div>
+          <span class="footer-col-title">Work Together</span>
+          <nav class="footer-col-links">
+            <a href="contact.html">Book a Discovery Call</a>
+            <a href="contact.html">Corporate Enquiries</a>
+            <a href="contact.html">Book a Yoga Session</a>
+            <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
+          </nav>
+        </div>
+        <div>
+          <span class="footer-col-title">Connect</span>
+          <nav class="footer-col-links">
+            <a href="https://instagram.com/muditaliving" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://linkedin.com/in/radhikaavanthsa" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://facebook.com/muditaliving" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://youtube.com/@muditaliving" target="_blank" rel="noopener">YouTube</a>
+          </nav>
+        </div>
+      </div>
     </div>
-    <p style="margin-top:1.5rem; font-size:12px;">
-      © 2026 Mudita Living · Radhika Avanthsa · Singapore & India<br/>
-      <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
-    </p>
+    <div class="footer-divider-line"></div>
+    <div class="footer-base">
+      <span class="footer-copyright">
+        &copy; 2026 Mudita Living &middot; Radhika Avanthsa &middot; Singapore &amp; India &middot;
+        <a href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
+      </span>
+      <div class="footer-social">
+        <a href="https://instagram.com/muditaliving" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://linkedin.com/in/radhikaavanthsa" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    function toggleHamburger() {
-      const dd = document.getElementById('navDropdown');
-      const btn = document.getElementById('navHamburger');
-      const isOpen = dd.classList.toggle('open');
-      btn.textContent = isOpen ? '✕' : '☰';
-    }
-    function closeHamburger() {
-      document.getElementById('navDropdown').classList.remove('open');
-      document.getElementById('navHamburger').textContent = '☰';
-    }
+    // Scroll-triggered fade-up animations
+    (function() {
+      const targets = document.querySelectorAll('.fade-up');
+      if (!targets.length) return;
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      targets.forEach(function(el) { observer.observe(el); });
+    })();
   </script>
   <script src="../assets/nav-component.js"></script>
 </body>

@@ -3,1086 +3,545 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Insights & Wisdom | Mudita Living</title>
-  <meta name="description" content="Ancient wisdom, modern context, practical tools. Articles on executive coaching, traditional yoga, menopause, and high performance wellbeing by Radhika Avanthsa.">
+  <title>Blog — Insights &amp; Wisdom | Mudita Living</title>
+  <meta name="description" content="Ancient wisdom, modern context, practical tools. Articles on executive coaching, traditional yoga, menopause, and high-performance wellbeing by Radhika Avanthsa.">
   <meta property="og:title" content="Blog — Mudita Living">
   <meta property="og:description" content="Insights on coaching, yoga, menopause, and performance from ICF-accredited life coach Radhika Avanthsa.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://muditaliving.com/pages/blog.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="../assets/brand.css">
+  <link rel="stylesheet" href="../assets/global.css">
   <style>
-    /* ── TOKENS ── */
-    :root {
-      --burgundy: #5C1A3A;
-      --dark-burgundy: #3D1028;
-      --gold: #B8882A;
-      --light-gold: #D4A84B;
-      --cream: #F2E8DC;
-      --white: #FFFFFF;
-      --charcoal: #2C2C2C;
-    }
+    /* ── Page-specific styles ── */
 
-    /* ── RESET ── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      color: var(--charcoal);
-      background: var(--white);
-      overflow-x: hidden;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    /* ── NAV ── */
-    .nav {
-      position: sticky; top: 0;
-      z-index: 1000;
-      background: rgba(242, 232, 220, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(184, 136, 42, 0.18);
-      height: 70px;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav__inner {
-      width: 100%;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .nav__logo {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .nav__logo img {
-      height: 48px;
-      width: auto;
-    }
-
-    .nav__links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav__links a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      color: var(--dark-burgundy);
-      transition: color 0.2s;
-      position: relative;
-    }
-
-    .nav__links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.25s ease;
-    }
-
-    .nav__links a:hover { color: var(--gold); }
-    .nav__links a:hover::after { width: 100%; }
-
-    .nav__cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 22px;
-      background: var(--gold);
-      color: var(--dark-burgundy);
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      border-radius: 2px;
-      min-height: 44px;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .nav__cta:hover {
-      background: var(--light-gold);
-      transform: translateY(-1px);
-    }
-
-    /* ── HAMBURGER DROPDOWN ── */
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #3D1028;
-      cursor: pointer;
-      padding: 4px 8px;
-      line-height: 1;
-    }
-    .nav-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0; right: 0;
-      background: #F2E8DC;
-      border-bottom: 2px solid #B8882A;
-      padding: 1rem 5%;
-      z-index: 99;
-    }
-    .nav-dropdown.open { display: block; }
-    .nav-dropdown a {
-      display: block;
-      padding: 0.75rem 0;
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      color: #3D1028;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 1px solid #DDD0BE;
-    }
-    .nav-dropdown a:hover { color: #B8882A; }
-    .nav-dropdown .mob-book {
-      display: block;
-      margin-top: 0.75rem;
-      background: #B8882A;
-      color: #3D1028 !important;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      border-radius: 999px;
-      font-weight: 600;
-      border-bottom: none !important;
-    }
-    @media (max-width: 768px) {
-      .nav__links, .nav__cta { display: none !important; }
-      .nav-hamburger { display: block; }
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--cream);
-      padding: 120px 32px 60px;
-      text-align: center;
-    }
-
-    .hero__label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      font-variant: small-caps;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      color: var(--dark-burgundy);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-
-    .hero__subtitle {
-      font-family: 'Jost', sans-serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1rem, 2.2vw, 1.15rem);
-      color: var(--charcoal);
-      opacity: 0.8;
-      margin-bottom: 32px;
-    }
-
-    .hero__divider {
-      width: 40px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto;
-    }
-
-    /* ── FILTER BAR ── */
-    .filter-bar {
-      background: var(--white);
+    /* Filter bar strip */
+    .filter-strip {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--warm-beige);
+      padding: 1.5rem 5%;
       position: sticky;
-      top: 70px;
-      z-index: 90;
-      border-bottom: 1px solid rgba(184, 136, 42, 0.15);
-      padding: 14px 32px;
-      display: flex;
-      justify-content: center;
+      top: var(--nav-height);
+      z-index: 80;
     }
 
-    .filter-bar__inner {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      flex-wrap: nowrap;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 2px;
-    }
-
-    .filter-bar__inner::-webkit-scrollbar { display: none; }
-
-    .filter-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 20px;
-      border: 1px solid var(--gold);
-      border-radius: 40px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--gold);
-      background: transparent;
-      cursor: pointer;
-      white-space: nowrap;
-      min-height: 44px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .filter-pill:hover,
-    .filter-pill.active {
-      background: var(--gold);
-      color: var(--white);
-    }
-
-    /* ── FEATURED ARTICLE ── */
-    .featured {
-      background: var(--cream);
-      padding: 72px 32px;
-    }
-
-    .featured__inner {
-      max-width: 1240px;
+    /* Featured article */
+    .featured-wrap {
+      max-width: var(--max-width);
       margin: 0 auto;
     }
-
-    .featured__card {
+    .featured-card {
       display: grid;
-      grid-template-columns: 60% 40%;
-      min-height: 400px;
-      border-radius: 4px;
+      grid-template-columns: 58% 42%;
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: 0 8px 40px rgba(61, 16, 40, 0.1);
-    }
-
-    .featured__image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: var(--shadow-lg);
       min-height: 400px;
     }
-
-    .featured__content {
-      background: var(--white);
-      padding: 48px 40px;
+    .featured-image {
+      min-height: 400px;
+    }
+    .featured-content {
+      background: #fff;
+      padding: 3rem 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 16px;
+      gap: 1rem;
     }
-
-    .tag {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+    .featured-tag {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
     }
-
-    .featured__content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 600;
+    .featured-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 500;
       color: var(--dark-burgundy);
       line-height: 1.25;
     }
-
-    .featured__excerpt {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--charcoal);
-      opacity: 0.85;
+    .featured-excerpt {
+      font-size: 15px;
+      color: var(--muted-brown);
+      line-height: 1.8;
     }
-
-    .featured__meta {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 4px;
+    .featured-meta {
+      font-size: 12px;
+      color: var(--warm-beige);
+      letter-spacing: 0.04em;
     }
-
     .read-more {
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
       color: var(--gold);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-      margin-top: 4px;
+      transition: border-color var(--ease);
     }
+    .read-more:hover { border-bottom-color: var(--gold); }
 
-    .read-more:hover {
-      border-bottom-color: var(--gold);
-    }
-
-    /* ── ARTICLE GRID ── */
-    .articles {
-      background: var(--white);
-      padding: 72px 32px;
-    }
-
-    .articles__inner {
-      max-width: 1240px;
+    /* Articles section */
+    .articles-wrap {
+      max-width: var(--max-width);
       margin: 0 auto;
     }
-
-    .section-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 600;
+    .articles-wrap h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: 400;
       color: var(--dark-burgundy);
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
-
-    .articles__grid {
+    .articles-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 2rem;
     }
 
+    /* Article card */
     .article-card {
-      background: var(--white);
-      border: 1px solid rgba(184, 136, 42, 0.15);
-      border-radius: 4px;
+      background: #fff;
+      border: 1px solid var(--warm-beige);
+      border-radius: var(--radius-lg);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
+      transition: transform var(--ease), box-shadow var(--ease);
     }
-
     .article-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(61, 16, 40, 0.13);
+      box-shadow: var(--shadow-lg);
     }
-
-    .card__image {
+    .card-image {
       flex-shrink: 0;
     }
-
-    .card__body {
-      padding: 24px;
+    .card-body {
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0.6rem;
       flex: 1;
     }
-
-    .card__title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
+    .card-tag {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 500;
       color: var(--dark-burgundy);
       line-height: 1.3;
     }
-
-    .card__excerpt {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--charcoal);
-      opacity: 0.8;
+    .card-excerpt {
+      font-size: 13px;
+      color: var(--muted-brown);
+      line-height: 1.7;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-
-    .card__footer {
+    .card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid rgba(184, 136, 42, 0.12);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(184,136,42,0.12);
+    }
+    .card-date {
+      font-size: 11px;
+      color: var(--warm-beige);
+      letter-spacing: 0.04em;
     }
 
-    .card__date {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      color: #999;
-    }
-
-    /* ── NEWSLETTER ── */
-    .newsletter {
-      background: var(--dark-burgundy);
-      padding: 80px 32px;
-      text-align: center;
-    }
-
-    .newsletter__inner {
-      max-width: 680px;
+    /* Newsletter */
+    .newsletter-inner {
+      max-width: 640px;
       margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
-
-    .newsletter h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
+    .newsletter-inner h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: 400;
       color: var(--cream);
-      margin-bottom: 14px;
+      margin-bottom: 0.75rem;
     }
-
-    .newsletter__subtitle {
-      font-family: 'Jost', sans-serif;
+    .newsletter-subtitle {
+      font-family: var(--font-body);
       font-style: italic;
       font-weight: 300;
-      font-size: 1rem;
-      color: var(--cream);
-      opacity: 0.85;
-      margin-bottom: 36px;
-      line-height: 1.6;
+      font-size: 16px;
+      color: rgba(242,232,220,0.8);
+      line-height: 1.7;
+      margin-bottom: 2rem;
     }
-
-    .newsletter__form {
+    .newsletter-form {
       display: flex;
-      gap: 14px;
-      margin-bottom: 14px;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
     }
-
-    .newsletter__form input {
+    .newsletter-form input {
       flex: 1;
       padding: 14px 18px;
-      background: rgba(242, 232, 220, 0.1);
-      border: 1px solid rgba(242, 232, 220, 0.3);
-      border-radius: 2px;
+      background: rgba(242,232,220,0.1);
+      border: 1.5px solid rgba(242,232,220,0.25);
+      border-radius: var(--radius-pill);
       color: var(--cream);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      min-height: 44px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      min-height: 48px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color var(--ease);
     }
-
-    .newsletter__form input::placeholder { color: rgba(242, 232, 220, 0.5); }
-    .newsletter__form input:focus { border-color: var(--gold); }
-
-    .newsletter__form button {
+    .newsletter-form input::placeholder { color: rgba(242,232,220,0.45); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form button {
       padding: 14px 28px;
       background: var(--gold);
       color: var(--dark-burgundy);
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      font-size: 0.88rem;
-      letter-spacing: 0.06em;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       border: none;
-      border-radius: 2px;
+      border-radius: var(--radius-pill);
       cursor: pointer;
-      min-height: 44px;
+      min-height: 48px;
       white-space: nowrap;
-      transition: background 0.2s, transform 0.15s;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .newsletter-form button:hover { background: var(--light-gold); transform: translateY(-1px); }
+    .newsletter-fine {
+      font-size: 11px;
+      color: rgba(242,232,220,0.45);
+      letter-spacing: 0.04em;
     }
 
-    .newsletter__form button:hover {
-      background: var(--light-gold);
-      transform: translateY(-1px);
-    }
-
-    .newsletter__fine {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      color: rgba(242, 232, 220, 0.55);
-    }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--cream);
-      padding: 80px 32px;
+    /* Blog CTA */
+    .blog-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
       text-align: center;
     }
-
-    .cta-section__inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .cta-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 600;
+    .blog-cta-inner h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-h2);
+      font-weight: 400;
       color: var(--dark-burgundy);
-      margin-bottom: 14px;
+      margin-bottom: 1rem;
     }
-
-    .cta-section__subtitle {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: var(--charcoal);
-      opacity: 0.8;
-      margin-bottom: 36px;
-      line-height: 1.6;
+    .blog-cta-inner p {
+      color: var(--muted-brown);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
     }
-
-    .cta-section__buttons {
+    .blog-cta-buttons {
       display: flex;
-      gap: 16px;
+      gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
-
-    .btn-primary {
+    .btn-outline-burgundy {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 14px 32px;
-      background: var(--burgundy);
-      color: var(--white);
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      border-radius: 2px;
-      min-height: 44px;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: var(--dark-burgundy);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 32px;
-      background: transparent;
-      color: var(--burgundy);
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      border: 1.5px solid var(--burgundy);
-      border-radius: 2px;
-      min-height: 44px;
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-    }
-
-    .btn-outline:hover {
-      background: var(--burgundy);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--dark-burgundy);
-      padding: 64px 32px 32px;
-      color: var(--cream);
-    }
-
-    .footer__inner {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .footer__top {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      margin-bottom: 56px;
-    }
-
-    .footer__tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--cream);
-      opacity: 0.75;
-      margin-top: 8px;
-      line-height: 1.5;
-    }
-
-    .footer__logo-area {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer__logo-area img {
-      height: 36px;
-      width: auto;
-      filter: brightness(10);
-    }
-
-    .footer__col-title {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
+      gap: 0.5rem;
+      border: 1.5px solid var(--dark-burgundy);
+      color: var(--dark-burgundy);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
+      padding: 14px 36px;
+      border-radius: var(--radius-pill);
+      transition: all var(--ease);
+      white-space: nowrap;
+      min-height: 48px;
+    }
+    .btn-outline-burgundy:hover {
+      background: var(--dark-burgundy);
+      color: var(--cream);
+      transform: translateY(-1px);
     }
 
-    .footer__links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer__links a {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 300;
-      color: rgba(242, 232, 220, 0.72);
-      transition: color 0.2s;
-    }
-
-    .footer__links a:hover { color: var(--light-gold); }
-
-    .footer__bottom {
-      border-top: 1px solid rgba(242, 232, 220, 0.12);
-      padding-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer__copy {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: rgba(242, 232, 220, 0.5);
-    }
-
-    .footer__email {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: rgba(242, 232, 220, 0.5);
-      transition: color 0.2s;
-    }
-
-    .footer__email:hover { color: var(--light-gold); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .footer__top { grid-template-columns: repeat(2, 1fr); }
-    }
-
+    /* Responsive */
     @media (max-width: 900px) {
-      .articles__grid { grid-template-columns: repeat(2, 1fr); }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 768px) {
-      .featured__card {
-        grid-template-columns: 1fr;
-      }
-
-      .featured__image { min-height: 260px; }
-
-      .featured__content {
-        padding: 32px 28px;
-      }
-
-      .featured__content h2 { font-size: 1.55rem; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-image { min-height: 260px; }
+      .featured-content { padding: 2rem 1.5rem; }
     }
-
     @media (max-width: 600px) {
-      .newsletter__form {
-        flex-direction: column;
-      }
-
-      .newsletter__form button {
-        width: 100%;
-      }
-
-      .cta-section__buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-primary,
-      .btn-outline {
-        width: 100%;
-        max-width: 320px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .articles__grid { grid-template-columns: 1fr; }
-
-      .footer__top { grid-template-columns: 1fr 1fr; gap: 28px; }
-
-      .hero { padding: 100px 20px 48px; }
-      .featured { padding: 48px 20px; }
-      .articles { padding: 48px 20px; }
-      .newsletter { padding: 56px 20px; }
-      .cta-section { padding: 56px 20px; }
-      .footer { padding: 48px 20px 24px; }
-    }
-
-    @media (max-width: 380px) {
-      .footer__top { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form button { width: 100%; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .blog-cta-buttons { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
-<!-- ══════════════════════════════════════════
-       NAV
-  ══════════════════════════════════════════ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
 
-      <a class="nav__logo" href="../index.html" aria-label="Mudita Living home">
-        <img src="../assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living"
-          style="height:48px;"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
-        <span style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#3D1028; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
-      </a>
-
-      <ul class="nav__links">
-        <li><a href="../pages/about.html">About</a></li>
-        <li><a href="../pages/coaching.html">Coaching</a></li>
-        <li><a href="../pages/yoga.html">Yoga</a></li>
-        <li><a href="../pages/courses.html">Courses</a></li>
-        <li><a href="../pages/blog.html" aria-current="page">Blog</a></li>
-      </ul>
-
-      <a class="nav__cta" href="../pages/contact.html">Book a Session</a>
-
-      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">&#9776;</button>
+  <!-- ═══ HERO ═══ -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="section-label">Insights &amp; Wisdom</span>
+      <h1>Insights &amp; <em>Wisdom</em></h1>
+      <p>Ancient wisdom. Modern context. Practical tools.</p>
+      <div class="divider-gold centered"></div>
     </div>
-  </nav>
-
-
-  <!-- ══════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════ -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <p class="hero__label">Insights &amp; Wisdom</p>
-    <h1 id="hero-heading">Insights &amp; Wisdom</h1>
-    <p class="hero__subtitle">Ancient wisdom. Modern context. Practical tools.</p>
-    <div class="hero__divider" aria-hidden="true"></div>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       FILTER BAR
-  ══════════════════════════════════════════ -->
-  <div class="filter-bar" role="navigation" aria-label="Filter articles by category">
-    <div class="filter-bar__inner">
-      <button class="filter-pill active" onclick="filterPosts('all', event)" aria-pressed="true">All</button>
-      <button class="filter-pill" onclick="filterPosts('coaching', event)" aria-pressed="false">Coaching</button>
-      <button class="filter-pill" onclick="filterPosts('yoga', event)" aria-pressed="false">Yoga</button>
-      <button class="filter-pill" onclick="filterPosts('menopause', event)" aria-pressed="false">Menopause</button>
-      <button class="filter-pill" onclick="filterPosts('wellness', event)" aria-pressed="false">Wellness</button>
-      <button class="filter-pill" onclick="filterPosts('performance', event)" aria-pressed="false">Performance</button>
+  <!-- ═══ FILTER BAR ═══ -->
+  <div class="filter-strip" role="navigation" aria-label="Filter articles by category">
+    <div class="filter-bar" style="padding:1.5rem 0;">
+      <button class="filter-pill active" data-filter="all" onclick="filterPosts('all')">All</button>
+      <button class="filter-pill" data-filter="coaching" onclick="filterPosts('coaching')">Coaching</button>
+      <button class="filter-pill" data-filter="yoga" onclick="filterPosts('yoga')">Yoga</button>
+      <button class="filter-pill" data-filter="menopause" onclick="filterPosts('menopause')">Menopause</button>
+      <button class="filter-pill" data-filter="wellness" onclick="filterPosts('wellness')">Wellness</button>
+      <button class="filter-pill" data-filter="performance" onclick="filterPosts('performance')">Performance</button>
     </div>
   </div>
 
-
-  <!-- ══════════════════════════════════════════
-       FEATURED ARTICLE
-  ══════════════════════════════════════════ -->
-  <section class="featured" aria-labelledby="featured-heading">
-    <div class="featured__inner">
-      <article class="featured__card">
-        <div class="featured__image" role="img" aria-label="Featured article image placeholder">
-          <!-- Replace with: assets/images/article-high-performers-paradox.jpg -->
-          <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:400px; width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-            <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-            </svg>
-            <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">FEATURED ARTICLE IMAGE</span>
-          </div>
+  <!-- ═══ FEATURED ARTICLE ═══ -->
+  <section class="bg-cream">
+    <div class="featured-wrap">
+      <!-- CONTENT: Replace placeholder with actual featured article image -->
+      <article class="featured-card">
+        <div class="featured-image img-placeholder" role="img" aria-label="Featured article image placeholder" style="min-height:400px;">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+            <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+            <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+          </svg>
+          <span>Featured Article Image</span>
         </div>
-        <div class="featured__content">
-          <span class="tag">Coaching</span>
-          <h2 id="featured-heading">The High-Performer's Paradox: Why Success Can Feel So Empty</h2>
-          <p class="featured__excerpt">You've achieved everything you set out to achieve. The title, the salary, the respect. So why does something still feel... off? Here's what no one tells you about the cost of high performance — and what you can do about it.</p>
-          <p class="featured__meta">December 2026</p>
+        <div class="featured-content">
+          <span class="featured-tag">Coaching</span>
+          <h2>The High-Performer's Paradox: Why Success Can Feel So Empty</h2>
+          <p class="featured-excerpt">You've achieved everything you set out to achieve. The title, the salary, the respect. So why does something still feel... off? Here's what no one tells you about the cost of high performance — and what you can do about it.</p>
+          <p class="featured-meta">December 2026</p>
           <a href="#" class="read-more" aria-label="Read: The High-Performer's Paradox">Read More →</a>
         </div>
       </article>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       ARTICLE GRID
-  ══════════════════════════════════════════ -->
-  <section class="articles" aria-labelledby="articles-heading">
-    <div class="articles__inner">
-      <h2 class="section-heading" id="articles-heading">All Articles</h2>
-
-      <div class="articles__grid" id="articleGrid">
+  <!-- ═══ ARTICLES GRID ═══ -->
+  <section class="bg-cream-2">
+    <div class="articles-wrap">
+      <h2>All Articles</h2>
+      <div class="articles-grid" id="articleGrid">
 
         <!-- Card 1: Yoga -->
-        <article class="article-card" data-category="yoga">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-pancha-kosha.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">YOGA</span>
-            </div>
+        <article class="article-card fade-up" data-category="yoga">
+          <div class="card-image img-placeholder" role="img" aria-label="Pancha Kosha article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Yoga</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Yoga</span>
-            <h3 class="card__title">The Five Bodies You Didn't Know You Had: A Practical Guide to the Pancha Kosha</h3>
-            <p class="card__excerpt">Most yoga classes work one body — the physical. But you have five. Understanding all of them changes everything about how you practice and how you live.</p>
-            <div class="card__footer">
-              <span class="card__date">November 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Yoga</span>
+            <h3 class="card-title">The Five Bodies You Didn't Know You Had: A Practical Guide to the Pancha Kosha</h3>
+            <p class="card-excerpt">Most yoga classes work one body — the physical. But you have five. Understanding all of them changes everything about how you practice and how you live.</p>
+            <div class="card-footer">
+              <span class="card-date">November 2026</span>
               <a href="#" class="read-more" aria-label="Read: The Five Bodies You Didn't Know You Had">Read More →</a>
             </div>
           </div>
         </article>
 
         <!-- Card 2: Menopause -->
-        <article class="article-card" data-category="menopause">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-menopause-redesign.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">MENOPAUSE</span>
-            </div>
+        <article class="article-card fade-up" data-category="menopause">
+          <div class="card-image img-placeholder" role="img" aria-label="Menopause redesign article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Menopause</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Menopause</span>
-            <h3 class="card__title">Menopause Is Not a Breakdown. It's a Redesign.</h3>
-            <p class="card__excerpt">The narrative around menopause is broken. Here's how to reclaim this life stage as one of the most powerful transitions a woman can move through.</p>
-            <div class="card__footer">
-              <span class="card__date">October 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Menopause</span>
+            <h3 class="card-title">Menopause Is Not a Breakdown. It's a Redesign.</h3>
+            <p class="card-excerpt">The narrative around menopause is broken. Here's how to reclaim this life stage as one of the most powerful transitions a woman can move through.</p>
+            <div class="card-footer">
+              <span class="card-date">October 2026</span>
               <a href="#" class="read-more" aria-label="Read: Menopause Is Not a Breakdown">Read More →</a>
             </div>
           </div>
         </article>
 
         <!-- Card 3: Performance -->
-        <article class="article-card" data-category="performance">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-morning-routine.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">PERFORMANCE</span>
-            </div>
+        <article class="article-card fade-up" data-category="performance">
+          <div class="card-image img-placeholder" role="img" aria-label="Morning routine article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Performance</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Performance</span>
-            <h3 class="card__title">Why Your Morning Routine Isn't Working (And What To Do Instead)</h3>
-            <p class="card__excerpt">Productivity culture sold you a lie. The problem isn't your morning — it's the model of performance you're running on.</p>
-            <div class="card__footer">
-              <span class="card__date">October 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Performance</span>
+            <h3 class="card-title">Why Your Morning Routine Isn't Working (And What To Do Instead)</h3>
+            <p class="card-excerpt">Productivity culture sold you a lie. The problem isn't your morning — it's the model of performance you're running on.</p>
+            <div class="card-footer">
+              <span class="card-date">October 2026</span>
               <a href="#" class="read-more" aria-label="Read: Why Your Morning Routine Isn't Working">Read More →</a>
             </div>
           </div>
         </article>
 
         <!-- Card 4: Coaching -->
-        <article class="article-card" data-category="coaching">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-busy-vs-purposeful.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">COACHING</span>
-            </div>
+        <article class="article-card fade-up" data-category="coaching">
+          <div class="card-image img-placeholder" role="img" aria-label="Busy vs purposeful article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Coaching</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Coaching</span>
-            <h3 class="card__title">The Difference Between Being Busy and Being Purposeful</h3>
-            <p class="card__excerpt">Busyness is armour. Purpose is different. Here's how to tell which one is running your days.</p>
-            <div class="card__footer">
-              <span class="card__date">September 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Coaching</span>
+            <h3 class="card-title">The Difference Between Being Busy and Being Purposeful</h3>
+            <p class="card-excerpt">Busyness is armour. Purpose is different. Here's how to tell which one is running your days.</p>
+            <div class="card-footer">
+              <span class="card-date">September 2026</span>
               <a href="#" class="read-more" aria-label="Read: The Difference Between Being Busy and Being Purposeful">Read More →</a>
             </div>
           </div>
         </article>
 
         <!-- Card 5: Wellness -->
-        <article class="article-card" data-category="wellness">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-nervous-system.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">WELLNESS</span>
-            </div>
+        <article class="article-card fade-up" data-category="wellness">
+          <div class="card-image img-placeholder" role="img" aria-label="Nervous system article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Wellness</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Wellness</span>
-            <h3 class="card__title">Nervous System 101: The Hidden Driver Behind Everything You Feel</h3>
-            <p class="card__excerpt">Your nervous system is running the show. Most of us were never taught how to work with it. This is where to start.</p>
-            <div class="card__footer">
-              <span class="card__date">September 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Wellness</span>
+            <h3 class="card-title">Nervous System 101: The Hidden Driver Behind Everything You Feel</h3>
+            <p class="card-excerpt">Your nervous system is running the show. Most of us were never taught how to work with it. This is where to start.</p>
+            <div class="card-footer">
+              <span class="card-date">September 2026</span>
               <a href="#" class="read-more" aria-label="Read: Nervous System 101">Read More →</a>
             </div>
           </div>
         </article>
 
         <!-- Card 6: Yoga -->
-        <article class="article-card" data-category="yoga">
-          <div class="card__image" role="img" aria-label="Article image placeholder">
-            <!-- Replace with: assets/images/article-hatha-yoga.jpg -->
-            <div style="background:#F2E8DC; border:2px dashed #B8882A; border-radius:8px; height:200px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.75rem;">
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-                <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
-                <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
-                <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
-              </svg>
-              <span style="font-family:'Jost',sans-serif; font-size:10px; color:#B8882A; letter-spacing:0.15em; text-transform:uppercase;">YOGA</span>
-            </div>
+        <article class="article-card fade-up" data-category="yoga">
+          <div class="card-image img-placeholder" role="img" aria-label="Hatha yoga article image" style="min-height:200px; border-radius:0;">
+            <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+              <ellipse cx="22" cy="30" rx="8" ry="11" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="13" cy="28" rx="6" ry="9" transform="rotate(-20 13 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <ellipse cx="31" cy="28" rx="6" ry="9" transform="rotate(20 31 28)" fill="none" stroke="#B8882A" stroke-width="1.5"/>
+              <path d="M22 19 C20 14,18 10,22 6 C26 10,24 14,22 19Z" fill="#B8882A"/>
+              <circle cx="22" cy="19" r="2.5" fill="#D4A84B"/>
+            </svg>
+            <span>Yoga</span>
           </div>
-          <div class="card__body">
-            <span class="tag">Yoga</span>
-            <h3 class="card__title">Why I Teach Hatha Yoga in a World of Hot Yoga and Power Flows</h3>
-            <p class="card__excerpt">Traditional Hatha yoga isn't slow yoga — it's whole-system yoga. Here's why the ancient approach works better for modern bodies.</p>
-            <div class="card__footer">
-              <span class="card__date">August 2026</span>
+          <div class="card-body">
+            <span class="card-tag">Yoga</span>
+            <h3 class="card-title">Why I Teach Hatha Yoga in a World of Hot Yoga and Power Flows</h3>
+            <p class="card-excerpt">Traditional Hatha yoga isn't slow yoga — it's whole-system yoga. Here's why the ancient approach works better for modern bodies.</p>
+            <div class="card-footer">
+              <span class="card-date">August 2026</span>
               <a href="#" class="read-more" aria-label="Read: Why I Teach Hatha Yoga">Read More →</a>
             </div>
           </div>
         </article>
 
-      </div><!-- /.articles__grid -->
+      </div><!-- /#articleGrid -->
     </div>
   </section>
 
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-dark">
+    <div class="newsletter-inner">
+      <span class="section-label" style="color:var(--light-gold); justify-content:center; display:flex; margin-bottom:1rem;">Stay Connected</span>
+      <h2>Stay in the Practice</h2>
+      <p class="newsletter-subtitle">Monthly insights on performance, wellbeing, and the art of living fully. No noise. Just depth.</p>
 
-  <!-- ══════════════════════════════════════════
-       NEWSLETTER SIGNUP
-  ══════════════════════════════════════════ -->
-  <section class="newsletter" aria-labelledby="newsletter-heading">
-    <div class="newsletter__inner">
-      <h2 id="newsletter-heading">Wisdom in Your Inbox</h2>
-      <p class="newsletter__subtitle">Monthly insights on performance, wellbeing, and the art of living fully.</p>
-
-      <!-- TODO: Connect to email platform (Mailchimp, ConvertKit) -->
-      <form class="newsletter__form" action="#" method="POST" novalidate aria-label="Newsletter signup form">
+      <!-- CONTENT: Connect to email service (Mailchimp/ConvertKit) -->
+      <form class="newsletter-form" action="#" method="POST" novalidate aria-label="Newsletter signup">
         <input type="text" name="first_name" placeholder="First Name" autocomplete="given-name" aria-label="First name" required>
         <input type="email" name="email" placeholder="Email address" autocomplete="email" aria-label="Email address" required>
         <button type="submit">Subscribe</button>
       </form>
-
-      <p class="newsletter__fine">No spam. Unsubscribe anytime.</p>
+      <p class="newsletter-fine">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════════════════
-       CTA
-  ══════════════════════════════════════════ -->
-  <section class="cta-section" aria-labelledby="cta-heading">
-    <div class="cta-section__inner">
-      <h2 id="cta-heading">Ready to Work With Radhika?</h2>
-      <p class="cta-section__subtitle">Coaching, yoga, and courses — start wherever feels right.</p>
-      <div class="cta-section__buttons">
-        <a class="btn-primary" href="../pages/contact.html">Book a Discovery Call</a>
-        <a class="btn-outline" href="../pages/courses.html">Explore Courses</a>
+  <!-- ═══ BLOG CTA ═══ -->
+  <section class="bg-cream" style="text-align:center;">
+    <div class="blog-cta-inner">
+      <span class="section-label" style="justify-content:center; display:flex; margin-bottom:1rem;">Ready to Go Deeper?</span>
+      <h2>Ready to Work With Radhika?</h2>
+      <p>Coaching, yoga, and courses — start wherever feels right.</p>
+      <div class="blog-cta-buttons">
+        <a href="../pages/contact.html" class="btn-primary">Book a Discovery Call</a>
+        <a href="../pages/courses.html" class="btn-outline-burgundy">Explore Courses</a>
       </div>
     </div>
   </section>
 
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living" class="footer-logo-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span class="footer-brand-name" style="display:none;">Mudita Living</span>
+        <p class="footer-tagline">Where ancient wisdom meets modern life.</p>
+      </div>
 
-  <!-- ══════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-      <div class="footer__top">
-
-        <!-- Brand -->
-        <div class="footer__logo-area">
-          <img src="../assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
-          <span style="display:none;font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#F2E8DC;font-weight:600;">Mudita Living</span>
-          <p class="footer__tagline">Where ancient wisdom meets modern life.</p>
-        </div>
-
+      <div class="footer-grid">
         <!-- Services -->
         <div>
-          <p class="footer__col-title">Services</p>
-          <ul class="footer__links">
+          <span class="footer-col-title">Services</span>
+          <ul class="footer-links">
             <li><a href="../pages/coaching.html">Coaching</a></li>
             <li><a href="../pages/yoga.html">Yoga</a></li>
             <li><a href="../pages/courses.html">Courses</a></li>
@@ -1091,92 +550,86 @@
 
         <!-- Learn -->
         <div>
-          <p class="footer__col-title">Learn</p>
-          <ul class="footer__links">
+          <span class="footer-col-title">Learn</span>
+          <ul class="footer-links">
             <li><a href="../pages/blog.html">Blog</a></li>
-      <li><a href="../pages/testimonials.html">Testimonials</a></li>
-      <li><a href="../pages/contact.html">Contact</a></li>
-      <li><a href="../pages/faq.html">FAQ</a></li>
+            <li><a href="../pages/testimonials.html">Testimonials</a></li>
             <li><a href="../pages/faq.html">FAQ</a></li>
-            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="../pages/about.html">About Radhika</a></li>
           </ul>
         </div>
 
         <!-- Connect -->
         <div>
-          <p class="footer__col-title">Connect</p>
-          <ul class="footer__links">
+          <span class="footer-col-title">Connect</span>
+          <ul class="footer-links">
             <li><a href="../pages/contact.html">Book a Call</a></li>
             <li><a href="../pages/contact.html">Contact</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://instagram.com/muditaliving" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
 
+        <!-- Legal -->
+        <div>
+          <span class="footer-col-title">Legal</span>
+          <ul class="footer-links">
+            <li><a href="../pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="../pages/terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="../pages/refunds.html">Refund Policy</a></li>
+          </ul>
+        </div>
       </div>
+    </div>
 
-      <!-- Legal row -->
-      <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;">
-        <a href="../pages/privacy.html" style="font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:300;color:rgba(242,232,220,0.5);transition:color 0.2s;" onmouseover="this.style.color='#D4A84B'" onmouseout="this.style.color='rgba(242,232,220,0.5)'">Privacy Policy</a>
-        <a href="../pages/terms.html" style="font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:300;color:rgba(242,232,220,0.5);transition:color 0.2s;" onmouseover="this.style.color='#D4A84B'" onmouseout="this.style.color='rgba(242,232,220,0.5)'">Terms</a>
-      </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 Mudita Living</p>
-        <a class="footer__email" href="mailto:hello@muditaliving.com">hello@muditaliving.com</a>
-      </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Mudita Living</p>
+      <a class="footer-copyright" href="mailto:hello@muditaliving.com" style="transition:color var(--ease);">hello@muditaliving.com</a>
     </div>
   </footer>
 
-
-  <!-- ══════════════════════════════════════════
-       JAVASCRIPT
-  ══════════════════════════════════════════ -->
+  <!-- ═══ JAVASCRIPT ═══ -->
   <script>
-    /* ── Hamburger Dropdown ── */
-    function toggleHamburger() {
-      const dd = document.getElementById('navDropdown');
-      const btn = document.getElementById('navHamburger');
-      const isOpen = dd.classList.toggle('open');
-      btn.textContent = isOpen ? '✕' : '☰';
-    }
-    function closeHamburger() {
-      document.getElementById('navDropdown').classList.remove('open');
-      document.getElementById('navHamburger').textContent = '☰';
-    }
-
     /* ── Category Filter ── */
-    function filterPosts(category, event) {
-      // Update pill states
-      document.querySelectorAll('.filter-pill').forEach(function (p) {
-        p.classList.remove('active');
-        p.setAttribute('aria-pressed', 'false');
+    function filterPosts(cat) {
+      document.querySelectorAll('.article-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
       });
-      event.target.classList.add('active');
-      event.target.setAttribute('aria-pressed', 'true');
-
-      // Show / hide cards
-      var cards = document.querySelectorAll('.article-card');
-      cards.forEach(function (card) {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      document.querySelectorAll('.filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.filter === cat);
       });
     }
 
-    /* ── Newsletter form ── */
-    document.querySelector('.newsletter__form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = this.querySelector('button[type="submit"]');
-      btn.textContent = 'Subscribed!';
-      btn.style.background = '#3D1028';
-      btn.style.color = '#F2E8DC';
-      btn.disabled = true;
-    });
-  </script>
+    /* ── Newsletter form feedback ── */
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        btn.textContent = 'Subscribed!';
+        btn.style.background = 'var(--dark-burgundy)';
+        btn.style.color = 'var(--cream)';
+        btn.disabled = true;
+      });
+    }
 
+    /* ── Scroll Animations ── */
+    const fadeEls = document.querySelectorAll('.fade-up');
+    if (fadeEls.length && 'IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeEls.forEach(el => obs.observe(el));
+    } else {
+      fadeEls.forEach(el => el.classList.add('is-visible'));
+    }
+  </script>
   <script src="../assets/nav-component.js"></script>
 </body>
 </html>
