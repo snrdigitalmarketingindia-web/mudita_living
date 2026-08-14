@@ -430,25 +430,70 @@
     .cta-band__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* ══ RESPONSIVE ══ */
+    /* ── Tablet ── */
     @media (max-width: 900px) {
-      .bento-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
+      .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
       .bento-card { min-height: 300px; }
       .bento-card--large { min-height: 400px; grid-row: auto; }
       .split-section { grid-template-columns: 1fr; }
       .split-section--flip { direction: ltr; }
-      .split-img { height: 320px; min-height: 280px; }
+      .split-img { height: 300px; min-height: 260px; }
       .split-text { padding: 3rem 5%; }
-      .stats-band__item { border-right: none; border-bottom: 1px solid var(--warm-beige); }
-      .stats-band__item:last-child { border-bottom: none; }
     }
-    @media (max-width: 600px) {
-      .home-hero__content { left: 5%; right: 5%; max-width: 90%; }
-      .home-hero__title { font-size: clamp(30px, 8vw, 46px); }
-      .solution-pills { padding: 0 2%; }
-      .stats-band__inner { padding: 0 4%; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      /* Hero */
+      .home-hero { min-height: 92vh; }
+      .home-hero__content { left: 5%; right: 5%; bottom: 10%; max-width: 100%; }
+      .home-hero__title { font-size: clamp(28px, 8vw, 44px); margin-bottom: 1rem; }
+      .home-hero__subtitle { font-size: 15px; margin-bottom: 1.75rem; }
+      .home-hero__actions { flex-direction: column; gap: 0.75rem; }
+      .home-hero__actions .btn-primary,
+      .home-hero__actions .btn-outline { width: 100%; justify-content: center; }
+
+      /* Solutions strip */
+      .solutions-strip { padding: 2rem 4%; }
+      .solutions-strip h3 { font-size: 17px; margin-bottom: 1rem; }
+      .solution-pill { font-size: 12px; padding: 7px 14px; }
+
+      /* Bento */
+      .bento-card { min-height: 260px; }
+      .bento-card--large { min-height: 340px; }
+      .bento-card__title { font-size: 20px; }
+      .bento-card__desc { display: none; }
+      .bento-card__body { padding: 1.25rem 1.5rem; }
+      .services-section { padding: 3.5rem 4%; }
+      .services-section .sec-header h2 { font-size: 28px; }
+
+      /* Split sections */
+      .split-section { grid-template-columns: 1fr; overflow: hidden; }
+      .split-section--flip { direction: ltr; }
+      .split-img { height: 260px; }
+      .split-text { padding: 2.5rem 5%; }
+      .split-text h2 { font-size: clamp(22px, 6vw, 32px); }
+      .split-text p { font-size: 15px; }
+      .split-link { font-size: 12px; }
+
+      /* Testimonial section */
+      .testimonial-section { padding: 3.5rem 4%; }
+      .testimonial-section .sec-header h2 { font-size: 26px; }
+
+      /* CTA band */
+      .cta-band__content h2 { font-size: clamp(24px, 6vw, 36px); }
+      .cta-band__content p { font-size: 15px; }
+      .cta-band__actions { flex-direction: column; gap: 0.75rem; align-items: center; }
+      .cta-band__actions .btn-primary,
+      .cta-band__actions .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ── Small mobile ── */
+    @media (max-width: 480px) {
+      .home-hero__title { font-size: clamp(24px, 9vw, 36px); }
+      .bento-card { min-height: 220px; }
+      .bento-card--large { min-height: 280px; }
+      .split-img { height: 220px; }
+      .solution-pill { font-size: 11px; padding: 6px 12px; }
     }
   </style>
 </head>

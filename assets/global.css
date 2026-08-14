@@ -1809,3 +1809,96 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .tc-quote { font-size: 18px; }
   .media-bar__inner { gap: 1.5rem; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE — 768px and below
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Page photo hero ── */
+  .page-photo-hero { min-height: 55vh; align-items: flex-end; }
+  .page-photo-hero__content {
+    padding: calc(var(--nav-height) + 2.5rem) 5% 3rem;
+    max-width: 100%;
+  }
+  .page-photo-hero__content h1 { font-size: clamp(28px, 7vw, 42px); }
+  .page-photo-hero__content p { font-size: 15px; }
+  .page-photo-hero__chip-row { gap: 0.4rem; }
+  .page-photo-hero__chip { font-size: 10px; padding: 5px 12px; }
+  .page-photo-hero__content .hero-actions { flex-direction: column; gap: 0.75rem; }
+  .page-photo-hero__content .hero-actions .btn-primary,
+  .page-photo-hero__content .hero-actions .btn-outline { width: 100%; justify-content: center; text-align: center; }
+
+  /* ── Nav ── */
+  .ml-nav { padding: 0 4%; }
+  .nav-logo img { height: 38px; }
+  .nav-logo-text { font-size: 20px; }
+
+  /* ── Footer mega grid ── */
+  .footer-mega-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 2.5rem 5% 1.5rem; }
+
+  /* ── Approach / pillar grids ── */
+  .approach-grid,
+  .pillars-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+
+  /* ── Credentials grid ── */
+  .creds-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+
+  /* ── FAQ ── */
+  .faq-question { font-size: 18px; }
+  .faq-answer-inner { font-size: 15px; }
+
+  /* ── Section headers ── */
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header p { font-size: 15px; }
+  .section-label { font-size: 11px; letter-spacing: 0.2em; }
+
+  /* ── Section padding ── */
+  section { padding: 3.5rem 0; }
+  .section-inner { padding: 0 5%; }
+
+  /* ── Cards ── */
+  .card { padding: 1.5rem; }
+  .cred-card { padding: 1.5rem 1rem; }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-outline, .btn-outline-dark {
+    font-size: 13px;
+    padding: 13px 28px;
+    min-height: 44px;
+  }
+
+  /* ── Stats band ── */
+  .stats-band__inner { flex-direction: column; }
+  .stats-band__item { width: 100%; border-right: none; border-bottom: 1px solid var(--warm-beige); padding: 1.5rem 5%; text-align: left; display: flex; align-items: center; gap: 1rem; }
+  .stats-band__item:last-child { border-bottom: none; }
+  .stats-band__value { font-size: 32px; margin-bottom: 0; }
+  .stats-band__label { text-align: left; }
+
+  /* ── Testimonial carousel ── */
+  .tc-slide { padding: 0 1rem; }
+  .tc-quote { font-size: 18px; }
+  .tc-quote-mark { font-size: 64px; }
+  .tc-controls { margin-top: 1.75rem; }
+
+  /* ── Pull quote ── */
+  .pull-quote { padding: 1.25rem 1rem 1.25rem 2rem; font-size: 18px; margin: 1.5rem 0; }
+  .pull-quote::before { font-size: 80px; left: 0.1rem; }
+
+  /* ── Form ── */
+  .form-control { font-size: 16px !important; padding: 12px 14px; }
+  .form-label { font-size: 11px; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SMALL MOBILE — 480px and below
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .page-photo-hero { min-height: 50vh; }
+  .page-photo-hero__content h1 { font-size: clamp(24px, 8vw, 36px); }
+  .creds-grid { grid-template-columns: 1fr !important; }
+  .footer-mega-grid { grid-template-columns: 1fr !important; }
+  .tc-quote { font-size: 16px; line-height: 1.7; }
+  .hero-chips { gap: 0.3rem; }
+  .section-inner { padding: 0 4%; }
+}
