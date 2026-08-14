@@ -48,8 +48,7 @@
 
     /* ─── NAV ─── */
     .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky; top: 0;
       z-index: 1000;
       background: rgba(242,232,220,0.92);
       backdrop-filter: blur(12px);
@@ -827,8 +826,7 @@
   </style>
 </head>
 <body>
-
-  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
   <nav class="nav">
     <div class="nav__inner">
       <a href="../index.html" class="nav__logo">
@@ -846,17 +844,6 @@
         <a href="../pages/contact.html" class="btn-nav">Book a Session</a>
       </div>
       <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">&#9776;</button>
-    </div>
-    <div class="nav-dropdown" id="navDropdown">
-      <a href="about.html" onclick="closeHamburger()">About</a>
-      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
-      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
-      <a href="courses.html" class="active" onclick="closeHamburger()">Courses</a>
-      <a href="blog.html" onclick="closeHamburger()">Blog</a>
-    <a href="testimonials.html" onclick="closeHamburger()">Testimonials</a>
-    <a href="contact.html" onclick="closeHamburger()">Contact</a>
-    <a href="faq.html" onclick="closeHamburger()">FAQ</a>
-      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
     </div>
   </nav>
 
@@ -1221,9 +1208,6 @@
       document.getElementById('navDropdown').classList.remove('open');
       document.getElementById('navHamburger').textContent = '☰';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeHamburger();
-    });
 
     /* ── Currency Toggle ── */
     function setCurrency(currency) {
@@ -1254,5 +1238,6 @@
       }
     }
   </script>
+  <script src="../assets/nav-component.js"></script>
 </body>
 </html>

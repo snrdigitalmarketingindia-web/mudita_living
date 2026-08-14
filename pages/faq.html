@@ -56,7 +56,7 @@
   <style>
 
     /* ── NAV ── */
-    nav { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 5%; background: rgba(242,232,220,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--warm-beige); }
+    nav { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 5%; background: rgba(242,232,220,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--warm-beige); }
     .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--dark-burgundy); text-decoration: none; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark-burgundy); text-decoration: none; transition: color 0.2s; }
@@ -188,40 +188,8 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
+<!-- NAV -->
   <div style="position:fixed; top:0; left:0; right:0; z-index:100;">
-    <nav>
-      <a class="nav-logo" href="../index.html">
-        <img src="../assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living"
-          style="height:48px;"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'"/>
-        <span style="display:none; font-family:'Cormorant Garamond',serif; font-size:22px; color:#3D1028; font-weight:600; letter-spacing:0.05em;">Mudita Living</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="yoga.html">Yoga</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="faq.html" class="active">FAQ</a></li>
-      </ul>
-      <a href="contact.html" class="btn-primary nav-cta">Book a Session</a>
-      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">☰</button>
-    </nav>
-    <div class="nav-dropdown" id="navDropdown">
-      <a href="about.html" onclick="closeHamburger()">About</a>
-      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
-      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
-      <a href="courses.html" onclick="closeHamburger()">Courses</a>
-      <a href="blog.html" onclick="closeHamburger()">Blog</a>
-    <a href="testimonials.html" onclick="closeHamburger()">Testimonials</a>
-    <a href="contact.html" onclick="closeHamburger()">Contact</a>
-    <a href="faq.html" onclick="closeHamburger()">FAQ</a>
-      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
-    </div>
   </div>
 
   <!-- HERO -->
@@ -507,12 +475,7 @@
       document.getElementById('navDropdown').classList.remove('open');
       document.getElementById('navHamburger').textContent = '☰';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeHamburger();
-        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      }
-    });
   </script>
+  <script src="../assets/nav-component.js"></script>
 </body>
 </html>

@@ -32,8 +32,7 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky; top: 0;
       z-index: 100;
       background: rgba(242,232,220,0.92);
       backdrop-filter: blur(12px);
@@ -238,33 +237,7 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
-        <img src="../assets/MuditaLiving-Logo-WithoutTL.png" alt="Mudita Living" style="height:48px;" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'" />
-        <span style="display:none;font-family:'Cormorant Garamond',serif;font-size:22px;color:#3D1028;font-weight:600;letter-spacing:0.05em;">Mudita Living</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="yoga.html">Yoga</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <a class="nav-cta" href="contact.html">Book a Session</a>
-      <button class="nav-hamburger" id="navHamburger" onclick="toggleHamburger()" aria-label="Open menu">☰</button>
-    </div>
-    <div class="nav-dropdown" id="navDropdown">
-      <a href="about.html" onclick="closeHamburger()">About</a>
-      <a href="coaching.html" onclick="closeHamburger()">Coaching</a>
-      <a href="yoga.html" onclick="closeHamburger()">Yoga</a>
-      <a href="courses.html" onclick="closeHamburger()">Courses</a>
-      <a href="blog.html" onclick="closeHamburger()">Blog</a>
-      <a href="contact.html" class="mob-book" onclick="closeHamburger()">Book a Session</a>
-    </div>
-  </nav>
+<!-- NAV -->
 
   <!-- HERO -->
   <section class="hero">
@@ -345,10 +318,8 @@
   </footer>
 
   <script>
-    function toggleHamburger(){const dd=document.getElementById('navDropdown');const btn=document.getElementById('navHamburger');const isOpen=dd.classList.toggle('open');btn.textContent=isOpen?'✕':'☰';}
-    function closeHamburger(){document.getElementById('navDropdown').classList.remove('open');document.getElementById('navHamburger').textContent='☰';}
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeHamburger();});
   </script>
 
+  <script src="../assets/nav-component.js"></script>
 </body>
 </html>
